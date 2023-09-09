@@ -1,13 +1,13 @@
 import React from "react";
 
-import MainPage from "./components/MainPage";
+import MainLanding from "./components/MainLanding";
 
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <MainPage />
+      <MainLanding />
     </div>
   );
 };
