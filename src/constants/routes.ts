@@ -1,5 +1,6 @@
 export const Routes = {
   mainLanding: '/',
-  bookingsListDesks: '/venue/bookings/workdesks',
+  services: '/services',
+  contacts: '/contacts',
   page404: '/404',
 };
