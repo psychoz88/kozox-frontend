@@ -3,7 +3,8 @@ import {Layout} from 'antd';
 import {useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 import Div100vh from 'react-div-100vh';
-import Header from './Header';
+
+import Header from './Header/Header';
 
 const AppContainer = styled(Div100vh)`
   display: flex;
