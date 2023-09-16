@@ -1,8 +1,9 @@
 // import {ESpaceSelectedTab, ISpacesData} from 'types/venue';
 
+import { SyntheticEvent } from "react";
 import { ESpaceSelectedTab } from "types.ts/main";
 
-export enum SupplierHeaderItems {
+export enum ESupplierHeaderItems {
   MultiLocation = 'MultiLocation',
   LocationButton = 'LocationButton',
   VenueDetails = 'VenueDetails',
@@ -32,10 +33,11 @@ type TLayout = {
 type TMenuListProps = {
   currentPath: string;
   venueId: string;
-  activeItem: SupplierHeaderItems | '';
-  selectMenuItem: (value: SupplierHeaderItems) => void;
-  activeDropdownItem: '' | SupplierHeaderItems | ESpaceSelectedTab;
-  selectActiveDropdownItem: (id: SupplierHeaderItems) => void;
+  activeItem: ESupplierHeaderItems | '';
+  selectMenuItem: (value: ESupplierHeaderItems) => void;
+  activeDropdownItem: '' | ESupplierHeaderItems | ESpaceSelectedTab;
+  selectActiveDropdownItem: (id: ESupplierHeaderItems) => void;
+  role?: string;
 };
 
 // type TMenuListPropsWithSpaces = {
@@ -47,4 +49,14 @@ export type {
   TLayoutComponent,
   TMenuListProps,
   // TMenuListPropsWithSpaces,
+};
+
+export type TDropdownItem = {
+  id: ESupplierHeaderItems;
+  title: string;
+  isExternal: boolean;
+  link?: string;
+  disabled?: boolean;
+  customComponent?: JSX.Element;
+  onClick?: (() => void) | ((e: SyntheticEvent) => void);
 };

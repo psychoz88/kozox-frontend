@@ -1,16 +1,19 @@
 import React from 'react';
-import { SupplierHeaderItems, TMenuListProps } from './types';
-import { ESpaceSelectedTab } from 'types.ts/main';
+
 import HeaderLogo from './HeaderLogo';
 import NavBackButton from './NavBackButton';
+import NavSelectLocationButton from './NavSelectLocationButton';
+
+import {ESupplierHeaderItems, TMenuListProps} from './types';
+import {ESpaceSelectedTab} from 'types.ts/main';
 
 const containerComponents = (
   currentPath: string,
   venueId: string,
-  activeItem: SupplierHeaderItems | '',
-  selectMenuItem: (value: SupplierHeaderItems) => void,
-  activeDropdownItem: SupplierHeaderItems | ESpaceSelectedTab | '',
-  selectActiveDropdownItem: (id: SupplierHeaderItems) => void,
+  activeItem: ESupplierHeaderItems | '',
+  selectMenuItem: (value: ESupplierHeaderItems) => void,
+  activeDropdownItem: ESupplierHeaderItems | ESpaceSelectedTab | '',
+  selectActiveDropdownItem: (id: ESupplierHeaderItems) => void,
   rest: Partial<Record<string, unknown>>,
 ): Record<string, JSX.Element> => {
   const commonProps: TMenuListProps = {
@@ -22,22 +25,20 @@ const containerComponents = (
     venueId,
   };
 
-  console.log(commonProps);
-
   return {
     isLogo: <HeaderLogo />,
     isBackButton: <NavBackButton {...rest} />,
-    // isSelectLocationButton: <NavSelectLocationButton {...commonProps} />,
+    isSelectLocationButton: <NavSelectLocationButton {...commonProps} />,
   };
 };
 
 type TProps = {
   currentPath: string;
   component: string;
-  activeItem: SupplierHeaderItems | '';
-  activeDropdownItem: SupplierHeaderItems | ESpaceSelectedTab | '';
-  selectMenuItem: (value: SupplierHeaderItems) => void;
-  selectActiveDropdownItem: (id: SupplierHeaderItems) => void;
+  activeItem: ESupplierHeaderItems | '';
+  activeDropdownItem: ESupplierHeaderItems | ESpaceSelectedTab | '';
+  selectMenuItem: (value: ESupplierHeaderItems) => void;
+  selectActiveDropdownItem: (id: ESupplierHeaderItems) => void;
   venueId: string;
 };
 

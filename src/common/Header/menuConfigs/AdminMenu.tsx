@@ -1,11 +1,11 @@
 import {Routes} from 'constants/routes';
-import {SupplierHeaderItems} from '../types';
+import {ESupplierHeaderItems} from '../types';
 import { getAdminLayout } from '../layoutConfigs/AdminLayout';
 
 const getUserMenuDropdownItems = () => {
   return [
     {
-      id: SupplierHeaderItems.LogOut,
+      id: ESupplierHeaderItems.LogOut,
       title: 'Log out',
       // check
       link: Routes.contacts,
@@ -16,7 +16,7 @@ const getUserMenuDropdownItems = () => {
 
 const userMenuList = () => [
   {
-    id: SupplierHeaderItems.Profile,
+    id: ESupplierHeaderItems.Profile,
     text: 'Profile',
     isVisible: true,
     dropDownItems: getUserMenuDropdownItems(),

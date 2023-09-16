@@ -1,5 +1,5 @@
 import { matchPath } from "react-router";
-import { SupplierHeaderItems, TLayout } from "./types";
+import { ESupplierHeaderItems, TLayout } from "./types";
 import { adminMenu } from "./menuConfigs/AdminMenu";
 import { Routes } from "constants/routes";
 
@@ -40,31 +40,31 @@ export const setHeaderStyle = (
   };
 };
 
-export const getActiveItemFromRoute = (pathname: string): SupplierHeaderItems => {
+export const getActiveItemFromRoute = (pathname: string): ESupplierHeaderItems => {
   switch (pathname) {
     case Routes.mainLanding:
-      return SupplierHeaderItems.LocationButton;
+      return ESupplierHeaderItems.LocationButton;
     default:
-      return SupplierHeaderItems.VenueDetails;
+      return ESupplierHeaderItems.VenueDetails;
   }
 };
 
 export const getActiveDropdownItemFromRoute = (
   location: any,
-): SupplierHeaderItems | '' => {
+): ESupplierHeaderItems | '' => {
   if (location.hash) {
     switch (location.hash) {
       case '#desk':
-        return SupplierHeaderItems.WorkDesks;
+        return ESupplierHeaderItems.WorkDesks;
       case '#room':
-        return SupplierHeaderItems.MeetingRooms;
+        return ESupplierHeaderItems.MeetingRooms;
       default:
         return '';
     }
   } else {
     switch (location.pathname) {
       case Routes.mainLanding:
-        return SupplierHeaderItems.VenueDetails;
+        return ESupplierHeaderItems.VenueDetails;
       default:
         return '';
     }

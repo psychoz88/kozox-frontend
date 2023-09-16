@@ -1,15 +1,17 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import * as History from 'history';
 
+import HeaderInnerContainer from 'common/Header/HeaderInnerContainer';
+
 import {
   getActiveDropdownItemFromRoute,
   getActiveItemFromRoute,
   setHeaderStyle,
 } from 'common/Header/helpers';
-import {SupplierHeaderItems} from 'common/Header/types';
+
+import {ESupplierHeaderItems} from 'common/Header/types';
 import {ESpaceSelectedTab} from 'types.ts/main';
 import {NW2HeaderContainer, StyledHeader} from 'common/Header/Header.styles';
-import HeaderInnerContainer from 'common/Header/HeaderInnerContainer';
 
 type TProps = {
   location: History.Location;
@@ -20,11 +22,11 @@ const Navigation = ({location}: TProps) => {
 
   const {components, type} = setHeaderStyle(pathname);
 
-  const [activeItem, setActiveItem] = useState<SupplierHeaderItems | ''>(
+  const [activeItem, setActiveItem] = useState<ESupplierHeaderItems | ''>(
     getActiveItemFromRoute(pathname),
   );
   const [activeDropdownItem, setActiveDropdownItem] = useState<
-    ESpaceSelectedTab | SupplierHeaderItems | ''
+    ESpaceSelectedTab | ESupplierHeaderItems | ''
   >(getActiveDropdownItemFromRoute(location));
 
   useEffect(() => {
@@ -45,11 +47,11 @@ const Navigation = ({location}: TProps) => {
   }, []);
 
   const selectMenuItem = useCallback(
-    (id: SupplierHeaderItems) => {
+    (id: ESupplierHeaderItems) => {
       const excludedButtons = [
-        SupplierHeaderItems.LocationButton,
-        SupplierHeaderItems.Profile,
-        SupplierHeaderItems.Spaces,
+        ESupplierHeaderItems.LocationButton,
+        ESupplierHeaderItems.Profile,
+        ESupplierHeaderItems.Spaces,
       ].includes(id);
 
       getActionFromMenuItem(id);
@@ -66,7 +68,7 @@ const Navigation = ({location}: TProps) => {
   );
 
   const selectDropdownItem = useCallback(
-    (id: SupplierHeaderItems) => {
+    (id: ESupplierHeaderItems) => {
       getActionFromMenuItem(id);
       setActiveDropdownItem(id);
     },
