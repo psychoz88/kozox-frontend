@@ -1,13 +1,15 @@
 import React from 'react';
 
+import MainLanding from 'pages/MainLanding';
+
 import {Routes} from './routes';
 
 const RouteComponents = [
   {
     exact: true,
     path: Routes.mainLanding,
-    component: () => <div></div>,
-    pageTitle: 'Registration - Venue - NewWork',
+    component: MainLanding,
+    pageTitle: 'Kozox',
   },
   {
     exact: true,

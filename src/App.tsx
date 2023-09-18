@@ -1,8 +1,9 @@
-import React, {FC} from 'react';
+import React, {FC, Suspense} from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Navigate,
+  Outlet,
   Route,
   RouterProvider,
 } from 'react-router-dom';
@@ -15,16 +16,25 @@ import {Routes} from 'constants/routes';
 
 import './App.css';
 
+const LayoutContainer: FC = () => {
+  return (
+    <Layout>
+      <Suspense>
+        <Outlet />
+      </Suspense>
+    </Layout>
+  );
+};
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
+    <Route path='/' element={<LayoutContainer />}>
       {RouteComponents.map(({key, ...rest}) => (
         <Route
           key={key}
           {...rest}
-          // errorElement={<Page404 />}
           element={<RouteContainer {...rest} />}
+          // errorElement={<Page404 />}
         />
       ))}
       <Route path='*' element={<Navigate to={Routes.page404} />} />

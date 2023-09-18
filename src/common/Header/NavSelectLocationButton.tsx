@@ -74,7 +74,7 @@ function NavSelectLocationButton({
           url={url}
           width={width}
           iconSize={16}
-          color='NW2Primary'
+          color='main'
           onClick={handleMenuClick(id)}
           activeDropdownItem={activeDropdownItem}
           onDropdownClick={handleDropdownClick}

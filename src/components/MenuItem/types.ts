@@ -1,7 +1,7 @@
 import { ESupplierHeaderItems } from "common/Header/types";
 import { SyntheticEvent } from "react";
 import { app_colors } from "styles";
-import { ESpaceSelectedTab } from "types.ts/main";
+import { ESpaceSelectedTab } from "types/main";
 
 export type TColor = typeof app_colors;
 

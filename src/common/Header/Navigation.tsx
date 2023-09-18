@@ -10,8 +10,8 @@ import {
 } from 'common/Header/helpers';
 
 import {ESupplierHeaderItems} from 'common/Header/types';
-import {ESpaceSelectedTab} from 'types.ts/main';
-import {NW2HeaderContainer, StyledHeader} from 'common/Header/Header.styles';
+import {ESpaceSelectedTab} from 'types/main';
+import {HeaderContainer, StyledHeader} from 'common/Header/Header.styles';
 
 type TProps = {
   location: History.Location;
@@ -20,7 +20,7 @@ type TProps = {
 const Navigation = ({location}: TProps) => {
   const {pathname} = location;
 
-  const {components, type} = setHeaderStyle(pathname);
+  const {components} = setHeaderStyle(pathname);
 
   const [activeItem, setActiveItem] = useState<ESupplierHeaderItems | ''>(
     getActiveItemFromRoute(pathname),
@@ -76,8 +76,8 @@ const Navigation = ({location}: TProps) => {
   );
 
   return (
-    <StyledHeader datatype={type}>
-      <NW2HeaderContainer datatype={type}>
+    <StyledHeader>
+      <HeaderContainer>
         {components.map((el) => (
           <HeaderInnerContainer
             key={el.component}
@@ -90,7 +90,7 @@ const Navigation = ({location}: TProps) => {
             {...el}
           />
         ))}
-      </NW2HeaderContainer>
+      </HeaderContainer>
     </StyledHeader>
   );
 };

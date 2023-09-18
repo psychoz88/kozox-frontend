@@ -5,7 +5,7 @@ import NavBackButton from './NavBackButton';
 import NavSelectLocationButton from './NavSelectLocationButton';
 
 import {ESupplierHeaderItems, TMenuListProps} from './types';
-import {ESpaceSelectedTab} from 'types.ts/main';
+import {ESpaceSelectedTab} from 'types/main';
 
 const containerComponents = (
   currentPath: string,

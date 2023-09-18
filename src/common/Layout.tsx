@@ -1,8 +1,8 @@
 import React, {FC, PropsWithChildren, useEffect} from 'react';
-import {Layout} from 'antd';
-import {useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 import Div100vh from 'react-div-100vh';
+import {Layout} from 'antd';
+import {useLocation} from 'react-router-dom';
 
 import Header from './Header/Header';
 

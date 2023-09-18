@@ -1,12 +1,45 @@
-import {Layout} from 'antd';
-import { NW2Container } from 'components/MainLanding.styles';
 import styled from 'styled-components';
+import {Layout} from 'antd';
+
+import {
+  contentMaxWidthLg,
+  lgBp,
+  mainColor,
+  mdBp,
+  offsetDef,
+  offsetXXLg,
+} from 'styles';
 
 const {Header} = Layout;
 
-export const StyledHeader = styled(Header)<{datatype: string}>`
-  display: flex;
-  align-items: center;
+export const Container = styled.div<{offset?: string}>`
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  ${({offset}) => (offset ? `margin-top: ${offset}` : '')}
+  padding: 0 ${offsetDef};
+
+  @media (min-width: ${mdBp}px) {
+    padding: 0 ${offsetXXLg};
+  }
+
+  @media (min-width: ${lgBp}px) {
+    max-width: calc(${contentMaxWidthLg} + 2 * ${offsetXXLg});
+  }
 `;
 
-export const NW2HeaderContainer = styled(NW2Container)<{datatype?: string}>``;
+export const StyledHeader = styled(Header)`
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  padding: 0;
+  background: ${mainColor};
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+`;
+
+export const HeaderContainer = styled(Container)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;

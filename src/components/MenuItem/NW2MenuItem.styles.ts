@@ -6,7 +6,7 @@ import {
   app_colors,
   blackColor,
   fontWeightBold,
-  NW2Primary,
+  warnColor,
   offsetDef,
   offsetXXSm,
   offsetXXLg,
@@ -17,7 +17,7 @@ import {
   lineHeightSm,
   fontSizeLg,
   offsetSm,
-  NW2Blue200Color,
+  infoColor,
   lineHeightXL,
 } from 'constants/styleVars';
 import { TArrowBlockProps, TItemStyle, TPosition } from './types';
@@ -41,18 +41,18 @@ export const OuterWrapper = styled.div<{position: TPosition}>`
     stroke 0.15s;
 
   &:hover * {
-    color: ${NW2Primary};
+    color: ${warnColor};
     transition: color 0.15s, background-color 0.15s, border-color 0.15s,
       stroke 0.15s;
 
     & > :after {
-      color: ${NW2Primary};
+      color: ${warnColor};
     }
 
     svg path.styled-stroke,
     svg circle.styled-stroke {
       transition: stroke 0.15s;
-      stroke: ${NW2Primary};
+      stroke: ${warnColor};
     }
   }
 
@@ -186,7 +186,7 @@ export const StyledMenuItem = styled(Menu.Item)<{disabled?: boolean}>`
         font-weight: ${fontWeightBold};
 
         transition: background-color 0.15s;
-        background-color: ${NW2Blue200Color};
+        background-color: ${infoColor};
       }
     `};
 `;
@@ -221,14 +221,14 @@ export const StyledMenu = styled(Menu)<{
 
   .ant-dropdown-menu-item:hover {
     transition: background-color 0.15s;
-    background-color: ${NW2Blue200Color};
+    background-color: ${infoColor};
   }
 
   .ant-dropdown-menu-item:active {
     font-weight: ${fontWeightBold};
 
     transition: background-color 0.15s;
-    background-color: ${NW2Blue200Color};
+    background-color: ${infoColor};
   }
 
   .ant-dropdown-menu-item-selected {
@@ -241,7 +241,7 @@ export const StyledMenu = styled(Menu)<{
     }
 
     &:before {
-      background-color: ${NW2Primary};
+      background-color: ${warnColor};
     }
 
     &:hover {
@@ -326,13 +326,13 @@ export const ArrowBlock = styled(AvatarInnerBlock)<TArrowBlockProps>`
     svg,
     button,
     button:before {
-      color: ${NW2Primary};
+      color: ${warnColor};
       opacity: 1;
     }
 
     svg path.styled-stroke,
     svg circle.styled-stroke {
-      stroke: ${NW2Primary};
+      stroke: ${warnColor};
     }
 
     div:before {

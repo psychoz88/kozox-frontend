@@ -66,7 +66,7 @@ export const NW2MenuItem = ({
   // icon,
   activeDropdownItem,
   dropdownItems,
-  color = 'whiteColor',
+  color = 'white',
   position = 'center',
   // iconSize = 20,
   itemStyle = 'default',

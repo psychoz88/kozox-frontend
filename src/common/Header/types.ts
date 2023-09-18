@@ -1,7 +1,7 @@
 // import {ESpaceSelectedTab, ISpacesData} from 'types/venue';
 
 import { SyntheticEvent } from "react";
-import { ESpaceSelectedTab } from "types.ts/main";
+import { ESpaceSelectedTab } from "types/main";
 
 export enum ESupplierHeaderItems {
   MultiLocation = 'MultiLocation',
