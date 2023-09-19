@@ -1,5 +1,5 @@
 import {Routes} from 'constants/routes';
-import { ESupplierHeaderItems, TDropdownItem } from '../types';
+import { ECommonHeaderItems, TDropdownItem } from '../types';
 import { getCenteredLayout } from '../layoutConfigs/CenteredLayout';
 import { getSupplierLayout } from '../layoutConfigs/SupplierLayout';
 import { TNmmNavMenuList } from '../headerTypes';
@@ -7,7 +7,7 @@ import { TNmmNavMenuList } from '../headerTypes';
 const getLocationButtonDropDownItems = (): TDropdownItem[] => {
   return [
     {
-      id: ESupplierHeaderItems.VenueDetails,
+      id: ECommonHeaderItems.Contacts,
       title: 'Venue details',
       link: `${Routes.contacts}`,
       isExternal: false,
@@ -20,13 +20,13 @@ export const getNavigationDropdownItems = (
 ): TDropdownItem[] => {
   return [
     {
-      id: ESupplierHeaderItems.MeetingRooms,
+      id: ECommonHeaderItems.Services,
       title: 'Meeting rooms',
       link: `${Routes.mainLanding}?id=${venueId}#room`,
       isExternal: false,
     },
     {
-      id: ESupplierHeaderItems.WorkDesks,
+      id: ECommonHeaderItems.Contacts,
       title: 'Workdesks',
       link: `${Routes.contacts}?id=${venueId}#desk`,
       isExternal: false,
@@ -37,7 +37,7 @@ export const getNavigationDropdownItems = (
 const getUserMenuDropdownItems = (): TDropdownItem[] => {
   return [
     {
-      id: ESupplierHeaderItems.LogOut,
+      id: ECommonHeaderItems.Contacts,
       title: 'Log out',
       link: Routes.mainLanding,
       isExternal: false,
@@ -50,7 +50,7 @@ const selectLocationButtonList = (
   venueName?: string,
 ): TNmmNavMenuList[] => [
   {
-    id: ESupplierHeaderItems.LocationButton,
+    id: ECommonHeaderItems.Contacts,
     text: `${venueName}`,
     isVisible: true,
     dropDownItems: getLocationButtonDropDownItems(),
@@ -60,14 +60,14 @@ const selectLocationButtonList = (
 
 const quickNavigationList = (): TNmmNavMenuList[] => [
   {
-    id: ESupplierHeaderItems.BookingMeetingRooms,
+    id: ECommonHeaderItems.Contacts,
     url: Routes.page404,
     text: 'Meetings',
     isVisible: true,
     icon: 'SEARCH_MEETING_ROOM',
   },
   {
-    id: ESupplierHeaderItems.BookingDesks,
+    id: ECommonHeaderItems.Contacts,
     url: Routes.mainLanding,
     text: 'Workdesks',
     isVisible: true,
@@ -77,14 +77,14 @@ const quickNavigationList = (): TNmmNavMenuList[] => [
 
 export const restNavigationList = (venueId?: string): TNmmNavMenuList[] => [
   {
-    id: ESupplierHeaderItems.Spaces,
+    id: ECommonHeaderItems.Contacts,
     text: 'Spaces',
     isVisible: true,
     dropDownItems: getNavigationDropdownItems(venueId),
     icon: 'NW2_SPACES',
   },
   {
-    id: ESupplierHeaderItems.Availability,
+    id: ECommonHeaderItems.Contacts,
     url: Routes.contacts,
     text: 'Availability',
     isVisible: true,
@@ -93,7 +93,7 @@ export const restNavigationList = (venueId?: string): TNmmNavMenuList[] => [
 ];
 const userMenuList = (): TNmmNavMenuList[] => [
   {
-    id: ESupplierHeaderItems.Profile,
+    id: ECommonHeaderItems.Contacts,
     text: 'Profile',
     isVisible: true,
     dropDownItems: getUserMenuDropdownItems(),

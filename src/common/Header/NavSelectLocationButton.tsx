@@ -1,10 +1,11 @@
-import React, {useCallback} from 'react';
-
-import {ESupplierHeaderItems, TMenuListProps} from './types';
-import {supplierMenu} from './menuConfigs/SupplierMenu';
+import React from 'react';
 import styled from 'styled-components';
+
+import {supplierMenu} from './menuConfigs/SupplierMenu';
 import {NW2MenuItem} from 'components/MenuItem/NW2MenuItem';
-import { TNmmNavMenuList } from './headerTypes';
+
+import {TNmmNavMenuList} from './headerTypes';
+import {ECommonHeaderItems, TMenuListProps} from './types';
 
 export const LocationSelectContainer = styled.div`
   flex-grow: 1;
@@ -38,24 +39,15 @@ function NavSelectLocationButton({
   role,
   activeItem,
   selectMenuItem,
-  activeDropdownItem,
-  selectActiveDropdownItem,
   venueId,
 }: TMenuListProps) {
-  const handleDropdownClick = useCallback(
-    (id: ESupplierHeaderItems) => {
-      selectActiveDropdownItem(id);
-    },
-    [selectActiveDropdownItem],
-  );
-
   const locationButtonList = setLocationButtonList({
     venueId,
     venueName: '123',
     role,
   });
 
-  const handleMenuClick = (id: ESupplierHeaderItems) => () => {
+  const handleMenuClick = (id: ECommonHeaderItems) => () => {
     selectMenuItem(id);
   };
 
@@ -76,8 +68,6 @@ function NavSelectLocationButton({
           iconSize={16}
           color='main'
           onClick={handleMenuClick(id)}
-          activeDropdownItem={activeDropdownItem}
-          onDropdownClick={handleDropdownClick}
           dropdownItems={dropDownItems}
           icon={icon}
         />

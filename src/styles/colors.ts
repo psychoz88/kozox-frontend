@@ -1,4 +1,4 @@
-export const mainColor = '#060f11';
+export const mainColor = '#0a1012';
 export const blackColor = '#000000';
 export const whiteColor = '#ffffff';
 export const successColor = '#52c41a';

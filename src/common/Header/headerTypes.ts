@@ -1,4 +1,4 @@
-import { ESupplierHeaderItems } from "./types";
+import { ECommonHeaderItems } from "./types";
 
 export type TNavMenuList = {
   url: string;
@@ -7,7 +7,7 @@ export type TNavMenuList = {
 };
 
 export type TNmmNavMenuList = {
-  id: ESupplierHeaderItems;
+  id: ECommonHeaderItems;
   url?: string;
   text: string;
   icon: string;

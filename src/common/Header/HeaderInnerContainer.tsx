@@ -4,23 +4,18 @@ import HeaderLogo from './HeaderLogo';
 import NavBackButton from './NavBackButton';
 import NavSelectLocationButton from './NavSelectLocationButton';
 
-import {ESupplierHeaderItems, TMenuListProps} from './types';
-import {ESpaceSelectedTab} from 'types/main';
+import {ECommonHeaderItems, TMenuListProps} from './types';
 
 const containerComponents = (
   currentPath: string,
   venueId: string,
-  activeItem: ESupplierHeaderItems | '',
-  selectMenuItem: (value: ESupplierHeaderItems) => void,
-  activeDropdownItem: ESupplierHeaderItems | ESpaceSelectedTab | '',
-  selectActiveDropdownItem: (id: ESupplierHeaderItems) => void,
+  activeItem: ECommonHeaderItems | '',
+  selectMenuItem: (value: ECommonHeaderItems) => void,
   rest: Partial<Record<string, unknown>>,
 ): Record<string, JSX.Element> => {
   const commonProps: TMenuListProps = {
     activeItem,
     selectMenuItem,
-    activeDropdownItem,
-    selectActiveDropdownItem,
     currentPath,
     venueId,
   };
@@ -35,10 +30,8 @@ const containerComponents = (
 type TProps = {
   currentPath: string;
   component: string;
-  activeItem: ESupplierHeaderItems | '';
-  activeDropdownItem: ESupplierHeaderItems | ESpaceSelectedTab | '';
-  selectMenuItem: (value: ESupplierHeaderItems) => void;
-  selectActiveDropdownItem: (id: ESupplierHeaderItems) => void;
+  activeItem: ECommonHeaderItems | '';
+  selectMenuItem: (value: ECommonHeaderItems) => void;
   venueId: string;
 };
 
@@ -47,8 +40,6 @@ function HeaderInnerContainer({
   component,
   venueId,
   activeItem,
-  activeDropdownItem,
-  selectActiveDropdownItem,
   selectMenuItem,
   ...rest
 }: TProps) {
@@ -57,8 +48,6 @@ function HeaderInnerContainer({
     venueId,
     activeItem,
     selectMenuItem,
-    activeDropdownItem,
-    selectActiveDropdownItem,
     rest,
   )[component];
   return ComponentToRender || null;

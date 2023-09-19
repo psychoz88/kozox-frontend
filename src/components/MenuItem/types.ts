@@ -1,4 +1,4 @@
-import { ESupplierHeaderItems } from "common/Header/types";
+import { ECommonHeaderItems } from "common/Header/types";
 import { SyntheticEvent } from "react";
 import { app_colors } from "styles";
 import { ESpaceSelectedTab } from "types/main";
@@ -9,7 +9,7 @@ export type TPosition = 'left' | 'center' | 'right';
 export type TItemStyle = 'inline' | 'default';
 
 export type TdropdownItem = {
-  id: ESupplierHeaderItems;
+  id: ECommonHeaderItems;
   title: string;
   isExternal: boolean;
   link?: string;
@@ -19,12 +19,11 @@ export type TdropdownItem = {
 };
 
 export type TProps = {
-  id: ESupplierHeaderItems;
+  id: ECommonHeaderItems;
   icon?: string;
   isActive: boolean;
   color: keyof TColor;
   title: string;
-  activeDropdownItem: '' | ESupplierHeaderItems | ESpaceSelectedTab;
   itemStyle?: TItemStyle;
   iconSize?: number;
   width?: string;
@@ -32,7 +31,6 @@ export type TProps = {
   position?: TPosition;
   dropdownItems?: TdropdownItem[];
   onClick: () => void;
-  onDropdownClick: (id: ESupplierHeaderItems) => void;
 };
 
 export type TArrowBlockProps = {
@@ -44,8 +42,8 @@ export type TArrowBlockProps = {
 
 export type TMenuProps = {
   dropdownItems: TdropdownItem[] | undefined;
-  activeDropdownItem: ESupplierHeaderItems | ESpaceSelectedTab | '';
+  activeDropdownItem: ECommonHeaderItems | ESpaceSelectedTab | '';
   width?: string;
   itemStyle?: TItemStyle;
-  onDropdownClick: (id: ESupplierHeaderItems) => void;
+  onDropdownClick: (id: ECommonHeaderItems) => void;
 };

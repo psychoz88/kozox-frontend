@@ -1,23 +1,10 @@
+import {SyntheticEvent} from 'react';
+
 // import {ESpaceSelectedTab, ISpacesData} from 'types/venue';
 
-import { SyntheticEvent } from "react";
-import { ESpaceSelectedTab } from "types/main";
-
-export enum ESupplierHeaderItems {
-  MultiLocation = 'MultiLocation',
-  LocationButton = 'LocationButton',
-  VenueDetails = 'VenueDetails',
-  CreateNewOffice = 'CreateNewOffice',
-  BookingMeetingRooms = 'BookingMeetingRooms',
-  BookingDesks = 'BookingDesks',
-  WorkDesks = 'desk',
-  MeetingRooms = 'room',
-  Bedrooms = 'bedroom',
-  Spaces = 'Spaces',
-  Availability = 'Availability',
+export enum ECommonHeaderItems {
   Services = 'Services',
-  Profile = 'Profile',
-  LogOut = 'LogOut',
+  Contacts = 'Contacts',
 }
 
 type TLayoutComponent = {
@@ -33,10 +20,8 @@ type TLayout = {
 type TMenuListProps = {
   currentPath: string;
   venueId: string;
-  activeItem: ESupplierHeaderItems | '';
-  selectMenuItem: (value: ESupplierHeaderItems) => void;
-  activeDropdownItem: '' | ESupplierHeaderItems | ESpaceSelectedTab;
-  selectActiveDropdownItem: (id: ESupplierHeaderItems) => void;
+  activeItem: ECommonHeaderItems | '';
+  selectMenuItem: (value: ECommonHeaderItems) => void;
   role?: string;
 };
 
@@ -52,7 +37,7 @@ export type {
 };
 
 export type TDropdownItem = {
-  id: ESupplierHeaderItems;
+  id: ECommonHeaderItems;
   title: string;
   isExternal: boolean;
   link?: string;

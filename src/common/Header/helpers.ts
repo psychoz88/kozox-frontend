@@ -1,10 +1,12 @@
-import { matchPath } from "react-router";
-import { ESupplierHeaderItems, TLayout } from "./types";
-import { adminMenu } from "./menuConfigs/AdminMenu";
-import { Routes } from "constants/routes";
+import {matchPath} from 'react-router';
 
-const getNmmCurrentMenu = (): any => {
-  return adminMenu();
+import {Routes} from 'constants/routes';
+import {commonMenu} from './menuConfigs/CommonMenu';
+
+import {ECommonHeaderItems, TLayout} from './types';
+
+const getCurrentMenu = (): any => {
+  return commonMenu();
 };
 
 const getIsExactPath = (customRoutes: string[], currentPath: string) =>
@@ -12,12 +14,11 @@ const getIsExactPath = (customRoutes: string[], currentPath: string) =>
     return matchPath(route, currentPath);
   }) || '';
 
-export const setHeaderStyle = (
-  currentPath: string,
-): TLayout => {
+export const setHeaderStyle = (currentPath: string): TLayout => {
   const {
     layout: {defaultLayoutType, customRoutesLayout = {}},
-  } = getNmmCurrentMenu();
+  } = getCurrentMenu();
+
   let menuComponents = defaultLayoutType.components;
   let layoutType = defaultLayoutType.type;
 
@@ -40,33 +41,13 @@ export const setHeaderStyle = (
   };
 };
 
-export const getActiveItemFromRoute = (pathname: string): ESupplierHeaderItems => {
+export const getActiveItemFromRoute = (
+  pathname: string,
+): ECommonHeaderItems => {
   switch (pathname) {
-    case Routes.mainLanding:
-      return ESupplierHeaderItems.LocationButton;
+    case Routes.contacts:
+      return ECommonHeaderItems.Contacts;
     default:
-      return ESupplierHeaderItems.VenueDetails;
-  }
-};
-
-export const getActiveDropdownItemFromRoute = (
-  location: any,
-): ESupplierHeaderItems | '' => {
-  if (location.hash) {
-    switch (location.hash) {
-      case '#desk':
-        return ESupplierHeaderItems.WorkDesks;
-      case '#room':
-        return ESupplierHeaderItems.MeetingRooms;
-      default:
-        return '';
-    }
-  } else {
-    switch (location.pathname) {
-      case Routes.mainLanding:
-        return ESupplierHeaderItems.VenueDetails;
-      default:
-        return '';
-    }
+      return ECommonHeaderItems.Services;
   }
 };

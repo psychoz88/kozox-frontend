@@ -1,11 +1,12 @@
 import {Routes} from 'constants/routes';
-import {ESupplierHeaderItems} from '../types';
-import { getAdminLayout } from '../layoutConfigs/AdminLayout';
+import {getCommonLayout} from '../layoutConfigs/CommonLayout';
+
+import {ECommonHeaderItems} from '../types';
 
 const getUserMenuDropdownItems = () => {
   return [
     {
-      id: ESupplierHeaderItems.LogOut,
+      id: ECommonHeaderItems.Contacts,
       title: 'Log out',
       // check
       link: Routes.contacts,
@@ -16,7 +17,7 @@ const getUserMenuDropdownItems = () => {
 
 const userMenuList = () => [
   {
-    id: ESupplierHeaderItems.Profile,
+    id: ECommonHeaderItems.Contacts,
     text: 'Profile',
     isVisible: true,
     dropDownItems: getUserMenuDropdownItems(),
@@ -24,13 +25,14 @@ const userMenuList = () => [
   },
 ];
 
-export const adminMenu = () => {
+export const commonMenu = () => {
   return {
     layout: {
-      defaultLayoutType: getAdminLayout(),
+      defaultLayoutType: getCommonLayout(),
       customRoutesLayout: {
-        [Routes.services.toLowerCase()]: getAdminLayout(),
-        [Routes.mainLanding.toLowerCase()]: getAdminLayout(),
+        [Routes.services.toLowerCase()]: getCommonLayout(),
+        [Routes.contacts.toLowerCase()]: getCommonLayout(),
+        [Routes.mainLanding.toLowerCase()]: getCommonLayout(),
       },
     },
     userMenuList: userMenuList(),
