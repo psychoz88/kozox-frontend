@@ -24,7 +24,7 @@ import React from 'react';
 // }
 
 const HeaderLogo = () => {
-  return <div></div>;
+  return <div>Kozox</div>;
 };
 
 export default HeaderLogo;
