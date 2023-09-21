@@ -1,30 +1,21 @@
-import React from 'react';
-// import {useNavigate} from 'react-router-dom';
-// import {useAppSelector} from 'store/hooks';
+import React, {useCallback} from 'react';
+import {useNavigate} from 'react-router';
+import styled from 'styled-components';
 
-// import {Routes} from 'constants/routes';
+import {Routes} from 'constants/routes';
 
-// function HeaderLogo() {
-//   const navigate = useNavigate();
-
-//   const userRole: EUserRoleCognito = useAppSelector(({app}) => app.user.role);
-
-//   const onLogoClick = useCallback(() => {
-//     const allowedRolesToGoHome = [
-//       EUserRoleCognito.ROLE_GUEST,
-//       EUserRoleCognito.ROLE_CUSTOMER,
-//     ];
-
-//     if (allowedRolesToGoHome.includes(userRole)) {
-//       navigate(Routes.mainLanding);
-//     }
-//   }, [navigate, userRole]);
-
-//   return <HeaderLogoIcon icon='LOGO' onClick={onLogoClick} />;
-// }
+const StyledLink = styled.a`
+  color: white;
+`;
 
 const HeaderLogo = () => {
-  return <div>Kozox</div>;
+  const navigate = useNavigate();
+
+  const onLogoClick = useCallback(() => {
+    navigate(Routes.mainLanding);
+  }, [navigate]);
+
+  return <StyledLink onClick={onLogoClick}>Kozox</StyledLink>;
 };
 
 export default HeaderLogo;

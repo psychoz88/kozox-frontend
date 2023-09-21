@@ -24,7 +24,6 @@ const Navigation = ({location}: TProps) => {
   const selectMenuItem = useCallback((item: ECommonHeaderItems) => {
     const excludedButtons = [
       ECommonHeaderItems.Contacts,
-      ECommonHeaderItems.Contacts,
     ].includes(item);
 
     if (!excludedButtons) {
@@ -39,14 +38,14 @@ const Navigation = ({location}: TProps) => {
   return (
     <StyledHeader>
       <HeaderContainer>
-        {components.map((el) => (
+        {components.map((item) => (
           <HeaderInnerContainer
-            key={el.component}
+            key={item.component}
             activeItem={activeItem}
             selectMenuItem={selectMenuItem}
             currentPath={pathname}
             venueId={'123'}
-            {...el}
+            {...item}
           />
         ))}
       </HeaderContainer>

@@ -30,9 +30,9 @@ export const commonMenu = () => {
     layout: {
       defaultLayoutType: getCommonLayout(),
       customRoutesLayout: {
+        [Routes.mainLanding.toLowerCase()]: getCommonLayout(),
         [Routes.services.toLowerCase()]: getCommonLayout(),
         [Routes.contacts.toLowerCase()]: getCommonLayout(),
-        [Routes.mainLanding.toLowerCase()]: getCommonLayout(),
       },
     },
     userMenuList: userMenuList(),

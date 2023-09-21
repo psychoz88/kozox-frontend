@@ -1,4 +1,4 @@
-import { TLayout } from "../types";
+import {TLayout} from '../types';
 
 const getCommonLayout = (): TLayout => {
   return {
