@@ -4,8 +4,10 @@ import styled from 'styled-components';
 
 import {Routes} from 'constants/routes';
 
+import {maxGreenTextColor} from 'styles';
+
 const StyledLink = styled.a`
-  color: white;
+  color: ${maxGreenTextColor};
 `;
 
 const NavServices = () => {
