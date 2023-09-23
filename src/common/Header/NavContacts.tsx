@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {Routes} from 'constants/routes';
 
-import {maxGreenTextColor} from 'styles';
+import {maxGreenTextColor} from 'constants/styleVars';
 
 const StyledLink = styled.a`
   color: ${maxGreenTextColor};

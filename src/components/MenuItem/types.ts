@@ -1,7 +1,8 @@
-import { ECommonHeaderItems } from "common/Header/types";
-import { SyntheticEvent } from "react";
-import { app_colors } from "styles";
-import { ESpaceSelectedTab } from "types/main";
+import {SyntheticEvent} from 'react';
+
+import {ECommonHeaderItems} from 'common/Header/types';
+import {app_colors} from 'constants/styleVars';
+import {ESpaceSelectedTab} from 'types/main';
 
 export type TColor = typeof app_colors;
 

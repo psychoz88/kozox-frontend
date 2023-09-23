@@ -14,7 +14,7 @@ export const greyTextColor = '#e4e4e6'; // on nav
 export const dirtyWhiteTextColor = '#e7e7e8'; // use for white text
 export const dirtyGreyTextColor = '#7d8385'; // grey text
 
-// Common
+// Common colors
 export const maxGreenColor = maxGreenTextColor; // max green
 export const middleGreenColor = '#122322'; // middle green
 export const minGreenColor = mainColor; // min green, the darkest 

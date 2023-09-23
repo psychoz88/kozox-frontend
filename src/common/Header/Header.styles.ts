@@ -8,7 +8,7 @@ import {
   mdBp,
   offsetDef,
   offsetXXLg,
-} from 'styles';
+} from 'constants/styleVars';
 
 const {Header} = Layout;
 
