@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 import {Routes} from 'constants/routes';
 
-import {maxGreenTextColor} from 'constants/styleVars';
+import {greyTextColor} from 'constants/styleVars';
 
 const StyledLink = styled.a`
-  color: ${maxGreenTextColor};
+  color: ${greyTextColor};
 `;
 
 const NavServices = () => {
@@ -17,7 +17,7 @@ const NavServices = () => {
     navigate(Routes.services);
   }, [navigate]);
 
-  return <StyledLink onClick={onLogoClick}>Services</StyledLink>;
+  return <StyledLink onClick={onLogoClick}>SERVICES</StyledLink>;
 };
 
 export default NavServices;

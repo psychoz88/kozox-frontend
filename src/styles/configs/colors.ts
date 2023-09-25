@@ -1,5 +1,5 @@
 // Main colors
-export const mainColor = '#060f11';
+export const mainColor = '#070f10';
 export const blackColor = '#000000';
 export const whiteColor = '#ffffff';
 export const successColor = '#52c41a';
@@ -10,7 +10,7 @@ export const disabledColor = 'rgba(0, 0, 0, 0.25)';
 
 // Text colors
 export const maxGreenTextColor = '#00d993'; // green as code
-export const greyTextColor = '#e4e4e6'; // on nav
+export const greyTextColor = '#9a9e9f'; // on nav
 export const dirtyWhiteTextColor = '#e7e7e8'; // use for white text
 export const dirtyGreyTextColor = '#7d8385'; // grey text
 

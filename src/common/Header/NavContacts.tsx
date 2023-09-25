@@ -4,10 +4,10 @@ import styled from 'styled-components';
 
 import {Routes} from 'constants/routes';
 
-import {maxGreenTextColor} from 'constants/styleVars';
+import {greyTextColor} from 'constants/styleVars';
 
 const StyledLink = styled.a`
-  color: ${maxGreenTextColor};
+  color: ${greyTextColor};
 `;
 
 const NavContacts = () => {
@@ -17,7 +17,7 @@ const NavContacts = () => {
     navigate(Routes.contacts);
   }, [navigate]);
 
-  return <StyledLink onClick={onLogoClick}>Contacts</StyledLink>;
+  return <StyledLink onClick={onLogoClick}>CONTACTS</StyledLink>;
 };
 
 export default NavContacts;

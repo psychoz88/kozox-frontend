@@ -16,13 +16,20 @@ import {
 export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  // font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  // 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  // sans-serif;
+
+  font-family: 'Roboto', sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: ${fontSizeDefault};
   line-height: ${lineHeightDefault};
+}
+
+header {
+  font-family: 'GT America Mono Trial', monospace;
 }
   
 .ant-steps-item-content > .ant-steps-item-title {

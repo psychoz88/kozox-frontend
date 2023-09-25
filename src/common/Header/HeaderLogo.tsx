@@ -8,6 +8,7 @@ import {maxGreenTextColor} from 'constants/styleVars';
 
 const StyledLink = styled.a`
   color: ${maxGreenTextColor};
+  font-size: 25px;
 `;
 
 const HeaderLogo = () => {
@@ -17,7 +18,7 @@ const HeaderLogo = () => {
     navigate(Routes.mainLanding);
   }, [navigate]);
 
-  return <StyledLink onClick={onLogoClick}>Kozox</StyledLink>;
+  return <StyledLink onClick={onLogoClick}>K0Z0X</StyledLink>;
 };
 
 export default HeaderLogo;
