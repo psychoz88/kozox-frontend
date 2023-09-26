@@ -5,6 +5,7 @@ import {Layout} from 'antd';
 import {useLocation} from 'react-router-dom';
 
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 const AppContainer = styled(Div100vh)`
   display: flex;
@@ -39,7 +40,7 @@ const MainLayout: FC<PropsWithChildren<any>> = (props) => {
     <AppContainer id='app'>
       <Header />
       <PageContentContainer id='main'>{props.children}</PageContentContainer>
-      {/* <Footer /> */}
+      <Footer />
     </AppContainer>
   );
 };

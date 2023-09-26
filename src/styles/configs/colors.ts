@@ -13,14 +13,14 @@ export const maxGreenTextColor = '#00d993'; // green as code
 export const greyTextColor = '#9a9e9f'; // on nav
 export const dirtyWhiteTextColor = '#e7e7e8'; // use for white text
 export const dirtyGreyTextColor = '#7d8385'; // grey text
+export const blueTextColor = '#40a9ff'; // on hover
 
 // Common colors
 export const maxGreenColor = maxGreenTextColor; // max green
 export const middleGreenColor = '#122322'; // middle green
-export const minGreenColor = mainColor; // min green, the darkest 
+export const minGreenColor = mainColor; // min green, the darkest
 export const yellowColor = '#ffb718'; // yellow
 export const pinkColor = '#ff6286'; // red or pink
-
 
 // Components like Typography or Icon handles colors from object below
 // so to add color to such components you just need to add color here
