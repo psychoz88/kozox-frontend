@@ -7,6 +7,8 @@ import {useLocation} from 'react-router-dom';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 
+import {useDeviceType} from 'hooks/useDeviceType';
+
 const AppContainer = styled(Div100vh)`
   display: flex;
   flex-direction: column;
@@ -20,6 +22,7 @@ const PageContentContainer = styled(Layout)`
 `;
 
 const MainLayout: FC<PropsWithChildren<any>> = (props) => {
+  useDeviceType();
   const location = useLocation();
 
   // Scroll to top on page change

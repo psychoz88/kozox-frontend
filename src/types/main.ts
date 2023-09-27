@@ -4,3 +4,11 @@ export enum ESpaceSelectedTab {
   ROOM = 'room',
   BEDROOM = 'bedroom',
 }
+
+export type TDeviceType = {
+  width?: number;
+  height?: number;
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
+};
