@@ -19,7 +19,7 @@ import {NavLink} from 'react-router-dom';
 
 const breakpoint = `${lgBp}px`;
 
-export const FooterContainer = styled.div<{bottomOffset?: string}>`
+export const FooterContainer = styled.footer<{bottomOffset?: string}>`
   width: 100%;
   text-transform: uppercase;
   background-color: ${mainColor};
