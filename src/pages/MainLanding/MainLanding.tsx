@@ -6,11 +6,11 @@ const MainLanding = () => {
   return (
     <div>
       <TwoColumnsBlock
-        title='Our best site'
+        title='Our first site'
         isShowed
-        colLeft={<div>KOZOX left side</div>}
+        colLeft={<div>Left side</div>}
         colRight={<div>Right side</div>}
-        footer={<div>Footer for main land</div>}
+        footer={<div>Footer block</div>}
       />
     </div>
   );

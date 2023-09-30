@@ -2,7 +2,6 @@ import styled, {css} from 'styled-components';
 
 import {
   xLgBp,
-  whiteColor,
   mdBp,
   offsetXLg,
   offsetXXLg,
@@ -18,11 +17,9 @@ import {
   NW2BackIconSize,
   modalTwoColumnFooterHeight,
   greyTextColor,
+  mainColor,
+  dirtyWhiteTextColor,
 } from 'constants/styleVars';
-
-const desktopLayoutBreakpoint = xLgBp;
-const containerSmPaddingLeftAndRight = offsetDef;
-const containerMdPaddingLeftAndRight = offsetXXLg;
 
 export const StyledWrapper = styled.div<{
   isHasFooter: boolean;
@@ -30,9 +27,7 @@ export const StyledWrapper = styled.div<{
   customPadding?: string;
   gridColumns?: string;
 }>(({customPadding, isHasFooter, isMobile, gridColumns}) => {
-  const horizontalPadding = isMobile
-    ? containerSmPaddingLeftAndRight
-    : containerMdPaddingLeftAndRight;
+  const horizontalPadding = isMobile ? offsetDef : offsetXXLg;
 
   const bottomPadding = isHasFooter
     ? `calc(${modalTwoColumnFooterHeight} + ${
@@ -45,7 +40,8 @@ export const StyledWrapper = styled.div<{
     flex-direction: column;
     height: 100%;
     width: 100%;
-    background-color: ${whiteColor};
+    color: ${dirtyWhiteTextColor};
+    background-color: ${mainColor};
 
     padding: ${customPadding ||
     `${offsetXXXXLg} ${horizontalPadding} ${bottomPadding}`};
@@ -55,7 +51,7 @@ export const StyledWrapper = styled.div<{
       padding-bottom: ${bottomPadding};
     `};
 
-    @media (min-width: ${desktopLayoutBreakpoint}px) {
+    @media (min-width: ${xLgBp}px) {
       display: grid;
       grid-template-columns: ${gridColumns || '1fr 2fr'};
     }
@@ -69,7 +65,7 @@ export const MobileContent = styled.div<{
   overflow-y: auto;
   overflow-x: hidden;
 
-  @media (min-width: ${desktopLayoutBreakpoint}px) {
+  @media (min-width: ${xLgBp}px) {
     overflow-y: initial;
     overflow-x: initial;
   }
@@ -86,7 +82,7 @@ export const StyledColLeft = styled.div`
   overflow-y: initial;
   overflow-x: initial;
 
-  @media (min-width: ${desktopLayoutBreakpoint}px) {
+  @media (min-width: ${xLgBp}px) {
     overflow-y: auto;
     overflow-x: hidden;
     margin-right: ${offsetXLg};
@@ -132,7 +128,7 @@ export const StyledSubtitle = styled.div`
 export const StyledColLeftMain = styled.div<{
   leftColumnStyles?: any;
 }>`
-  @media (min-width: ${desktopLayoutBreakpoint}px) {
+  @media (min-width: ${xLgBp}px) {
     padding-left: calc(${NW2BackIconSize} + ${offsetXXLg});
   }
   ${({leftColumnStyles}) => leftColumnStyles};
@@ -158,16 +154,17 @@ export const StyledColRight = styled.div<{
 
   ${({rightColumnStyles}) => rightColumnStyles};
 
-  @media (min-width: ${desktopLayoutBreakpoint}px) {
+  @media (min-width: ${xLgBp}px) {
     overflow-y: auto;
     overflow-x: hidden;
   }
 `;
 
 export const StyledFooter = styled.div`
-  padding: ${offsetSm} ${containerSmPaddingLeftAndRight};
+  padding: ${offsetSm} ${offsetDef};
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${whiteColor};
+  color: ${dirtyWhiteTextColor};
+  background-color: ${mainColor};
 `;
