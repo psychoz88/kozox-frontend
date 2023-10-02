@@ -1,8 +1,8 @@
 import React from 'react';
 
-import HeaderLogo from './HeaderLogo';
-import NavServices from './NavServices';
-import NavContacts from './NavContacts';
+import HeaderLogo from './NavLinks/HeaderLogo';
+import NavServices from './NavLinks/NavServices';
+import NavContacts from './NavLinks/NavContacts';
 
 import {ECommonHeaderItems} from './types';
 

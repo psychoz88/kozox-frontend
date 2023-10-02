@@ -39,7 +39,6 @@ export const StyledHeader = styled(Header)`
 `;
 
 export const HeaderContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
 `;

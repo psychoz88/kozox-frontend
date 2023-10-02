@@ -1,14 +1,9 @@
 import React, {useCallback} from 'react';
 import {useNavigate} from 'react-router';
-import styled from 'styled-components';
 
 import {Routes} from 'constants/routes';
 
-import {greyTextColor} from 'constants/styleVars';
-
-const StyledLink = styled.a`
-  color: ${greyTextColor};
-`;
+import {StyledLink} from './NavLinks.styles';
 
 const NavServices = () => {
   const navigate = useNavigate();
