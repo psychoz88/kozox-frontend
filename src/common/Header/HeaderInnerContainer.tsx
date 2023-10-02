@@ -5,6 +5,7 @@ import NavServices from './NavLinks/NavServices';
 import NavContacts from './NavLinks/NavContacts';
 
 import {ECommonHeaderItems} from './types';
+import NavPortfolio from './NavLinks/NavPortfolio';
 
 const containerComponents = (
   currentPath: string,
@@ -23,6 +24,7 @@ const containerComponents = (
   return {
     isLogo: <HeaderLogo />,
     isServices: <NavServices {...rest} />,
+    isPortfolio: <NavPortfolio />,
     isContacts: <NavContacts />,
   };
 };

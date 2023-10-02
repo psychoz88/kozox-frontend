@@ -32,6 +32,7 @@ export const commonMenu = () => {
       customRoutesLayout: {
         [Routes.mainLanding.toLowerCase()]: getCommonLayout(),
         [Routes.services.toLowerCase()]: getCommonLayout(),
+        [Routes.portfolio.toLowerCase()]: getCommonLayout(),
         [Routes.contacts.toLowerCase()]: getCommonLayout(),
       },
     },

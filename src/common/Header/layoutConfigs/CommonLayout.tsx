@@ -6,6 +6,7 @@ const getCommonLayout = (): TLayout => {
     components: [
       {component: 'isLogo'},
       {component: 'isServices'},
+      {component: 'isPortfolio'},
       {component: 'isContacts'},
     ],
   };

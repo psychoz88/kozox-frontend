@@ -40,5 +40,5 @@ export const StyledHeader = styled(Header)`
 
 export const HeaderContainer = styled(Container)`
   display: grid;
-  grid-template-columns: 1fr 100px 100px;
+  grid-template-columns: 1fr 100px 100px 100px;
 `;
