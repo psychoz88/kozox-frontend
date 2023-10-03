@@ -40,5 +40,6 @@ export const StyledHeader = styled(Header)`
 
 export const HeaderContainer = styled(Container)`
   display: grid;
-  grid-template-columns: 1fr 100px 100px 100px;
+  grid-template-columns: 1fr 80px 80px 80px;
+  grid-gap: 10px;
 `;
