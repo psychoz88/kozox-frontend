@@ -1,5 +1,8 @@
 import React from 'react';
 
+import linkedin from 'images/icons/linkedin.svg';
+import youtube  from 'images/icons/youtube.svg';
+
 import {
   FooterRow,
   FooterBlock,
@@ -47,12 +50,12 @@ const Footer = () => {
 
             {/* Right block */}
             <FooterBlock>
-              {/* <a
+              <a
                 href='https://www.linkedin.com/'
                 target='_blank'
                 rel='noreferrer noopener'
               >
-                <img alt='LinkedIn' />
+                <img src={linkedin} alt='LinkedIn' />
               </a>
 
               <a
@@ -60,8 +63,8 @@ const Footer = () => {
                 target='_blank'
                 rel='noreferrer noopener'
               >
-                <img alt='YouTube' />
-              </a> */}
+                <img src={youtube} alt='YouTube' />
+              </a>
             </FooterBlock>
           </FooterRow>
         </Container>
