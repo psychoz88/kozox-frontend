@@ -15,7 +15,6 @@ const AppContainer = styled(Div100vh)`
 `;
 
 const PageContentContainer = styled(Layout)`
-  background: ${(props) => props.theme.bodyBackground};
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;

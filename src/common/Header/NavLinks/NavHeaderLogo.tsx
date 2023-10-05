@@ -11,7 +11,7 @@ const StyledLink = styled.a`
   font-size: 25px;
 `;
 
-const HeaderLogo = () => {
+const NavHeaderLogo = () => {
   const navigate = useNavigate();
 
   const onLogoClick = useCallback(() => {
@@ -21,4 +21,4 @@ const HeaderLogo = () => {
   return <StyledLink onClick={onLogoClick}>K0Z0X</StyledLink>;
 };
 
-export default HeaderLogo;
+export default NavHeaderLogo;

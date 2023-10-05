@@ -38,7 +38,6 @@ export const StyledWrapper = styled.div<{
   return css`
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
     color: ${dirtyWhiteTextColor};
     background-color: ${mainColor};

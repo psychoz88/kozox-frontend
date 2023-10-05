@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HeaderLogo from './NavLinks/HeaderLogo';
+import NavHeaderLogo from './NavLinks/NavHeaderLogo';
 import NavServices from './NavLinks/NavServices';
 import NavContacts from './NavLinks/NavContacts';
 
@@ -22,7 +22,7 @@ const containerComponents = (
   // };
 
   return {
-    isLogo: <HeaderLogo />,
+    isLogo: <NavHeaderLogo />,
     isServices: <NavServices {...rest} />,
     isPortfolio: <NavPortfolio />,
     isContacts: <NavContacts />,
