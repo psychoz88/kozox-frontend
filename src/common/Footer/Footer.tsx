@@ -1,7 +1,7 @@
 import React from 'react';
 
 import linkedin from 'images/icons/linkedin.svg';
-import youtube  from 'images/icons/youtube.svg';
+import youtube from 'images/icons/youtube.svg';
 
 import {
   FooterRow,
@@ -11,7 +11,7 @@ import {
   StyledNavLink,
   Container,
 } from './Footer.styles';
-import {fontWeightBold, fontWeightExtraBold} from 'constants/styleVars';
+import {fontWeightNormal} from 'constants/styleVars';
 
 const Footer = () => {
   return (
@@ -25,7 +25,7 @@ const Footer = () => {
                 to='https://www.google.com.ua/'
                 target='_blank'
                 rel='noreferrer noopener'
-                fontWeight={fontWeightBold}
+                fontWeight={fontWeightNormal}
               >
                 <span>© Kozox {new Date().getFullYear()}</span>
               </StyledNavLink>
@@ -35,14 +35,14 @@ const Footer = () => {
             <FooterLinkBlock>
               <StyledNavLink
                 to='https://www.google.com.ua/'
-                fontWeight={fontWeightExtraBold}
+                fontWeight={fontWeightNormal}
               >
                 Privacy Policy
               </StyledNavLink>
 
               <StyledNavLink
                 to='https://www.google.com.ua/'
-                fontWeight={fontWeightExtraBold}
+                fontWeight={fontWeightNormal}
               >
                 Terms and conditions
               </StyledNavLink>

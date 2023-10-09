@@ -28,10 +28,11 @@ body {
   line-height: ${lineHeightDefault};
 }
 
-header {
+header,
+footer {
   font-family: 'GT America Mono Trial', monospace;
 }
-  
+
 .ant-steps-item-content > .ant-steps-item-title {
   font-size: 15px;
 }
