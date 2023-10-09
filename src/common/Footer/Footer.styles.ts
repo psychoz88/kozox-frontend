@@ -14,8 +14,8 @@ import {
   mainColor,
   blueTextColor,
   dirtyGreyTextColor,
+  fontWeightNormal,
 } from 'constants/styleVars';
-import {NavLink} from 'react-router-dom';
 
 const breakpoint = `${lgBp}px`;
 
@@ -103,15 +103,12 @@ export const Link = styled.a`
   line-height: inherit;
 `;
 
-export const StyledNavLink = styled(NavLink)<{
-  fontWeight?: string;
-  textDecoration?: string;
-}>`
+export const StyledNavLink = styled.a`
   color: inherit;
   font-size: inherit;
   line-height: inherit;
-  font-weight: ${({fontWeight}) => fontWeight || '400'};
-  text-decoration: ${({textDecoration}) => textDecoration || 'none'};
+  font-weight: ${fontWeightNormal};
+  text-decoration: none;
 
   &:hover {
     color: ${blueTextColor};

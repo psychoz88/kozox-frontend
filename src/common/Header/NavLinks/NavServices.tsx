@@ -8,11 +8,11 @@ import {StyledLink} from './NavLinks.styles';
 const NavServices = () => {
   const navigate = useNavigate();
 
-  const onLogoClick = useCallback(() => {
+  const onClick = useCallback(() => {
     navigate(Routes.services);
   }, [navigate]);
 
-  return <StyledLink onClick={onLogoClick}>SERVICES</StyledLink>;
+  return <StyledLink onClick={onClick}>SERVICES</StyledLink>;
 };
 
 export default NavServices;

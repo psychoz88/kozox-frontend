@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import {useNavigate} from 'react-router';
+
+import {Routes} from 'constants/routes';
 
 import linkedin from 'images/icons/linkedin.svg';
 import youtube from 'images/icons/youtube.svg';
-
 import {
   FooterRow,
   FooterBlock,
@@ -11,9 +13,18 @@ import {
   StyledNavLink,
   Container,
 } from './Footer.styles';
-import {fontWeightNormal} from 'constants/styleVars';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const onMainClick = useCallback(() => {
+    navigate(Routes.mainLanding);
+  }, [navigate]);
+
+  const onPrivacyPolicyClick = useCallback(() => {
+    navigate(Routes.privacyPolicy);
+  }, [navigate]);
+
   return (
     <>
       <FooterContainer bottomOffset='40px' id='footer'>
@@ -22,10 +33,9 @@ const Footer = () => {
             {/* Left block */}
             <FooterBlock>
               <StyledNavLink
-                to='https://www.google.com.ua/'
+                onClick={onMainClick}
                 target='_blank'
                 rel='noreferrer noopener'
-                fontWeight={fontWeightNormal}
               >
                 <span>© Kozox {new Date().getFullYear()}</span>
               </StyledNavLink>
@@ -33,18 +43,8 @@ const Footer = () => {
 
             {/* Center block */}
             <FooterLinkBlock>
-              <StyledNavLink
-                to='https://www.google.com.ua/'
-                fontWeight={fontWeightNormal}
-              >
+              <StyledNavLink onClick={onPrivacyPolicyClick}>
                 Privacy Policy
-              </StyledNavLink>
-
-              <StyledNavLink
-                to='https://www.google.com.ua/'
-                fontWeight={fontWeightNormal}
-              >
-                Terms and conditions
               </StyledNavLink>
             </FooterLinkBlock>
 

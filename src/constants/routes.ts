@@ -3,5 +3,6 @@ export const Routes = {
   services: '/services',
   contacts: '/contacts',
   portfolio: '/portfolio',
+  privacyPolicy: '/privacyPolicy',
   page404: '/404',
 };

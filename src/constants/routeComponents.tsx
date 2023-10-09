@@ -1,11 +1,10 @@
-// import React from 'react';
-
-import MainLanding from 'pages/MainLanding/MainLanding';
+import MainLanding from 'pages/MainLandingPage/MainLanding';
 import ContactsPage from 'pages/ContactsPage/ContactsPage';
 import ServicesPage from 'pages/ServicesPage/ServicesPage';
+import PortfolioPage from 'pages/PortfolioPage/PortfolioPage';
+import PrivacyPolicyPage from 'pages/PrivacyPolicyPage/PrivacyPolicyPage';
 
 import {Routes} from './routes';
-import PortfolioPage from 'pages/PortfolioPage/PortfolioPage';
 
 const RouteComponents = [
   {
@@ -32,7 +31,13 @@ const RouteComponents = [
     component: PortfolioPage,
     pageTitle: 'Portfolio',
   },
-  // need to add page404
+  {
+    exact: true,
+    path: Routes.privacyPolicy,
+    component: PrivacyPolicyPage,
+    pageTitle: 'Privacy policy',
+  },
+  // TODO: need to add page404
 ].map((item, index) => ({...item, key: index}));
 
 export {RouteComponents};

@@ -3,6 +3,7 @@ import {getCommonLayout} from '../layoutConfigs/CommonLayout';
 
 import {ECommonHeaderItems} from '../types';
 
+// TODO
 const getUserMenuDropdownItems = () => {
   return [
     {
@@ -15,6 +16,7 @@ const getUserMenuDropdownItems = () => {
   ];
 };
 
+// TODO
 const userMenuList = () => [
   {
     id: ECommonHeaderItems.Contacts,
@@ -34,6 +36,7 @@ export const commonMenu = () => {
         [Routes.services.toLowerCase()]: getCommonLayout(),
         [Routes.portfolio.toLowerCase()]: getCommonLayout(),
         [Routes.contacts.toLowerCase()]: getCommonLayout(),
+        [Routes.privacyPolicy.toLowerCase()]: getCommonLayout(),
       },
     },
     userMenuList: userMenuList(),

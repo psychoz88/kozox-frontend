@@ -8,11 +8,11 @@ import {StyledLink} from './NavLinks.styles';
 const NavPortfolio = () => {
   const navigate = useNavigate();
 
-  const onLogoClick = useCallback(() => {
+  const onClick = useCallback(() => {
     navigate(Routes.portfolio);
   }, [navigate]);
 
-  return <StyledLink onClick={onLogoClick}>PORTFOLIO</StyledLink>;
+  return <StyledLink onClick={onClick}>PORTFOLIO</StyledLink>;
 };
 
 export default NavPortfolio;

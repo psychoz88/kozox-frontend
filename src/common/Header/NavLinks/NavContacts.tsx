@@ -8,11 +8,11 @@ import {StyledLink} from './NavLinks.styles';
 const NavContacts = () => {
   const navigate = useNavigate();
 
-  const onLogoClick = useCallback(() => {
+  const onClick = useCallback(() => {
     navigate(Routes.contacts);
   }, [navigate]);
 
-  return <StyledLink onClick={onLogoClick}>CONTACTS</StyledLink>;
+  return <StyledLink onClick={onClick}>CONTACTS</StyledLink>;
 };
 
 export default NavContacts;
