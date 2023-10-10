@@ -1,6 +1,9 @@
 import React from 'react';
 
 import TwoColumnsBlock from 'components/TwoColumnsBlock';
+import PrivacyPolicyContent from './components/PrivacyPolicyContent';
+import PrivacyPolicyImage from './components/PrivacyPolicyImage';
+import image from '../../images/privacyPolicy.jpg';
 
 const PrivacyPolicyPage = () => {
   return (
@@ -8,9 +11,8 @@ const PrivacyPolicyPage = () => {
       <TwoColumnsBlock
         title='Privacy policy'
         isShowed
-        colLeft={<div>Left side</div>}
-        colRight={<div>Right side</div>}
-        footer={<div>Footer block</div>}
+        colLeft={<PrivacyPolicyImage src={image} />}
+        colRight={<PrivacyPolicyContent />}
       />
     </div>
   );
