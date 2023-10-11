@@ -10,7 +10,7 @@ import {
 } from './Button.styles';
 import {TButtonBaseProps} from './types';
 
-function NW2Button({
+function Button({
   buttonType,
   type = 'button',
   iconPlace = 'left',
@@ -54,4 +54,4 @@ function NW2Button({
   }
 }
 
-export default NW2Button;
+export default Button;

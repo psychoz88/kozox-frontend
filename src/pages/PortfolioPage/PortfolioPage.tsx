@@ -10,6 +10,7 @@ const PortfolioPage = () => {
         isShowed
         colLeft={<div>Left side</div>}
         colRight={<div>Right side</div>}
+        customPadding='0'
       />
     </div>
   );

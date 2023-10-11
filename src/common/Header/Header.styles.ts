@@ -4,7 +4,6 @@ import {Layout} from 'antd';
 import {
   contentMaxWidthLg,
   lgBp,
-  mainColor,
   mdBp,
   offsetDef,
   offsetXXLg,
@@ -29,17 +28,19 @@ export const Container = styled.div<{offset?: string}>`
 `;
 
 export const StyledHeader = styled(Header)`
-  display: flex;
-  align-items: center;
-  height: 64px;
   width: 100%;
   padding: 0;
-  background: ${mainColor};
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  background: #060f11;
+  border-bottom: 1px solid #1a2225;
 `;
 
 export const HeaderContainer = styled(Container)`
   display: grid;
   grid-template-columns: 1fr 80px 80px 80px;
   grid-gap: 10px;
+
+
 `;

@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
+
+import {StyledDiv} from 'pages/Pages.styles';
 
 const ContactsPage = () => {
-  return <div>Contacts page</div>;
+  return <StyledDiv>Contacts page</StyledDiv>;
 };
 
 export default ContactsPage;

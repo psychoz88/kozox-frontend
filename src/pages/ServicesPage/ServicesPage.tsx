@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
+
+import {StyledDiv} from 'pages/Pages.styles';
 
 const ServicesPage = () => {
-  return <div>Services page</div>;
+  return <StyledDiv>Services page</StyledDiv>;
 };
 
 export default ServicesPage;

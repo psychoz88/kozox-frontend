@@ -7,7 +7,6 @@ import {
   offsetXXLg,
   offsetXXXLg,
   offsetXXXXLg,
-  offsetXSm,
   fontWeightExtraBold,
   fontSizeSm,
   lineHeightMd,
@@ -89,18 +88,11 @@ export const StyledColLeft = styled.div`
 `;
 
 export const StyledColLeftHeader = styled.div`
-  display: grid;
-  grid-template-columns: ${NW2BackIconSize} 1fr;
-  grid-column-gap: ${offsetXXLg};
-  align-items: start;
   margin-bottom: 40px;
 `;
 
 export const StyledTitleBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${offsetXSm};
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid ${dirtyWhiteTextColor};
   padding-bottom: ${offsetXLg};
 `;
 
@@ -127,9 +119,9 @@ export const StyledSubtitle = styled.div`
 export const StyledColLeftMain = styled.div<{
   leftColumnStyles?: any;
 }>`
-  @media (min-width: ${xLgBp}px) {
-    padding-left: calc(${NW2BackIconSize} + ${offsetXXLg});
-  }
+  // @media (min-width: ${xLgBp}px) {
+  //   padding-left: calc(${NW2BackIconSize} + ${offsetXXLg});
+  // }
   ${({leftColumnStyles}) => leftColumnStyles};
 `;
 

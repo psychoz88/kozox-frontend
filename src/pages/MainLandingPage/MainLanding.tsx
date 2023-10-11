@@ -11,6 +11,7 @@ const MainLanding = () => {
         colLeft={<div>Left side</div>}
         colRight={<div>Right side</div>}
         footer={<div>Footer block</div>}
+        customPadding='0'
       />
       <TwoColumnsBlock
         title='Second info block'
@@ -18,6 +19,7 @@ const MainLanding = () => {
         colLeft={<div>Left side</div>}
         colRight={<div>Right side</div>}
         footer={<div>Footer block</div>}
+        customPadding='0'
       />
       <TwoColumnsBlock
         title='Third info block'
@@ -25,6 +27,7 @@ const MainLanding = () => {
         colLeft={<div>Left side</div>}
         colRight={<div>Right side</div>}
         footer={<div>Footer block</div>}
+        customPadding='0'
       />
     </div>
   );

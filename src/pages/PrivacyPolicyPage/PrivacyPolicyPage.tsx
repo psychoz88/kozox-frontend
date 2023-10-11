@@ -13,6 +13,7 @@ const PrivacyPolicyPage = () => {
         isShowed
         colLeft={<PrivacyPolicyImage src={image} />}
         colRight={<PrivacyPolicyContent />}
+        customPadding='0'
       />
     </div>
   );

@@ -9,6 +9,8 @@ import Footer from './Footer/Footer';
 
 import {useDeviceType} from 'hooks/useDeviceType';
 
+import {mainColor} from 'constants/styleVars';
+
 const AppContainer = styled(Div100vh)`
   display: flex;
   flex-direction: column;
@@ -18,6 +20,11 @@ const PageContentContainer = styled(Layout)`
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
+`;
+
+const ContentContainer = styled.div`
+  padding: 100px 32px;
+  background-color: ${mainColor};
 `;
 
 const MainLayout: FC<PropsWithChildren<any>> = (props) => {
@@ -41,7 +48,9 @@ const MainLayout: FC<PropsWithChildren<any>> = (props) => {
   return (
     <AppContainer id='app'>
       <Header />
-      <PageContentContainer id='main'>{props.children}</PageContentContainer>
+      <PageContentContainer id='main'>
+        <ContentContainer>{props.children}</ContentContainer>
+      </PageContentContainer>
       <Footer />
     </AppContainer>
   );
