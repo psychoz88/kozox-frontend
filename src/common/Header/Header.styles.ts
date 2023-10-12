@@ -30,17 +30,18 @@ export const Container = styled.div<{offset?: string}>`
 export const StyledHeader = styled(Header)`
   width: 100%;
   padding: 0;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   position: fixed;
   top: 0;
-  background: #060f11;
   border-bottom: 1px solid #1a2225;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+  // Blur on background
+  background: #060f11d6; // with opacity
+  backdrop-filter: blur(5px);
 `;
 
 export const HeaderContainer = styled(Container)`
   display: grid;
   grid-template-columns: 1fr 80px 80px 80px;
   grid-gap: 10px;
-
-
 `;
