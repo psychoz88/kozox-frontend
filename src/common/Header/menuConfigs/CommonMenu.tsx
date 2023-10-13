@@ -37,6 +37,7 @@ export const commonMenu = () => {
         [Routes.portfolio.toLowerCase()]: getCommonLayout(),
         [Routes.contacts.toLowerCase()]: getCommonLayout(),
         [Routes.privacyPolicy.toLowerCase()]: getCommonLayout(),
+        [Routes.contactForm.toLowerCase()]: getCommonLayout(), // TODO may be need smaller menu
       },
     },
     userMenuList: userMenuList(),

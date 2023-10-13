@@ -4,5 +4,6 @@ export const Routes = {
   contacts: '/contacts',
   portfolio: '/portfolio',
   privacyPolicy: '/privacyPolicy',
+  contactForm: '/contactForm',
   page404: '/404',
 };

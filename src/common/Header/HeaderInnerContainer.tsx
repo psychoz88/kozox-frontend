@@ -3,9 +3,10 @@ import React from 'react';
 import NavHeaderLogo from './NavLinks/NavHeaderLogo';
 import NavServices from './NavLinks/NavServices';
 import NavContacts from './NavLinks/NavContacts';
+import NavPortfolio from './NavLinks/NavPortfolio';
+import NavContactButton from './NavLinks/NavContactButton';
 
 import {ECommonHeaderItems} from './types';
-import NavPortfolio from './NavLinks/NavPortfolio';
 
 const containerComponents = (
   currentPath: string,
@@ -26,6 +27,7 @@ const containerComponents = (
     isServices: <NavServices {...rest} />,
     isPortfolio: <NavPortfolio />,
     isContacts: <NavContacts />,
+    isContactButton: <NavContactButton />,
   };
 };
 

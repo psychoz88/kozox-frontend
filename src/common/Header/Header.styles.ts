@@ -5,6 +5,7 @@ import {
   contentMaxWidthLg,
   lgBp,
   mdBp,
+  offset80,
   offsetDef,
   offsetXXLg,
 } from 'constants/styleVars';
@@ -42,6 +43,6 @@ export const StyledHeader = styled(Header)`
 
 export const HeaderContainer = styled(Container)`
   display: grid;
-  grid-template-columns: 1fr 80px 80px 80px;
+  grid-template-columns: 1fr ${offset80} ${offset80} ${offset80} ${offset80};
   grid-gap: 10px;
 `;

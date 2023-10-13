@@ -6,6 +6,7 @@ import {commonMenu} from './menuConfigs/CommonMenu';
 import {ECommonHeaderItems, TLayout} from './types';
 
 const getCurrentMenu = (): any => {
+  // case it need another menu
   return commonMenu();
 };
 
@@ -41,6 +42,7 @@ export const setHeaderStyle = (currentPath: string): TLayout => {
   };
 };
 
+// TODO
 export const getActiveItemFromRoute = (
   pathname: string,
 ): ECommonHeaderItems => {
