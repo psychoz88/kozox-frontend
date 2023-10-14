@@ -3,16 +3,25 @@ import {useNavigate} from 'react-router';
 
 import {Routes} from 'constants/routes';
 
-import {StyledLink} from './NavLinks.styles';
+import {StyledButton} from './NavLinks.styles';
 
 const NavContactButton = () => {
   const navigate = useNavigate();
 
-  const onClick = useCallback(() => {
+  const openContactForm = useCallback(() => {
     navigate(Routes.contactForm);
   }, [navigate]);
 
-  return <StyledLink onClick={onClick}>Contact US</StyledLink>;
+  return (
+    <StyledButton
+      onClick={openContactForm}
+      buttonType='primary'
+      size='small'
+      fullWidth
+    >
+      Contact us
+    </StyledButton>
+  );
 };
 
 export default NavContactButton;

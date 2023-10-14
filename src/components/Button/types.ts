@@ -3,10 +3,8 @@ import {ButtonHTMLAttributes, ReactNode} from 'react';
 type TButtonType =
   | 'primary'
   | 'secondary'
-  | 'tertiary'
-  | 'link'
-  | 'chip'
-  | 'badge';
+  | 'link';
+
 export type TButtonSize =
   | 'extraSmall'
   | 'small'

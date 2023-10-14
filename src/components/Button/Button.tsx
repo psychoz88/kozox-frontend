@@ -1,13 +1,6 @@
 import React from 'react';
 
-import {
-  ChipNW2Button,
-  LinkNW2Button,
-  PrimaryNW2Button,
-  SecondaryNW2Button,
-  TertiaryNW2Button,
-  BadgeNW2Button,
-} from './Button.styles';
+import {LinkButton, PrimaryButton, SecondaryButton} from './Button.styles';
 import {TButtonBaseProps} from './types';
 
 function Button({
@@ -37,20 +30,12 @@ function Button({
   };
 
   switch (buttonType) {
-    case 'tertiary':
-      return <TertiaryNW2Button {...commonProps}>{content}</TertiaryNW2Button>;
     case 'primary':
-      return <PrimaryNW2Button {...commonProps}>{content}</PrimaryNW2Button>;
+      return <PrimaryButton {...commonProps}>{content}</PrimaryButton>;
     case 'link':
-      return <LinkNW2Button {...commonProps}>{content}</LinkNW2Button>;
-    case 'chip':
-      return <ChipNW2Button {...commonProps}>{content}</ChipNW2Button>;
-    case 'badge':
-      return <BadgeNW2Button {...commonProps}>{content}</BadgeNW2Button>;
+      return <LinkButton {...commonProps}>{content}</LinkButton>;
     default:
-      return (
-        <SecondaryNW2Button {...commonProps}>{content}</SecondaryNW2Button>
-      );
+      return <SecondaryButton {...commonProps}>{content}</SecondaryButton>;
   }
 }
 

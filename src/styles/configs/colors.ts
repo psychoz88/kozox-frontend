@@ -22,6 +22,10 @@ export const minGreenColor = mainColor; // min green, the darkest
 export const yellowColor = '#ffb718'; // yellow
 export const pinkColor = '#ff6286'; // red or pink
 
+// Background colors
+export const buttonBackgroundColor = '#122322';
+export const buttonHoverColor = '#0f382e';
+
 // Components like Typography or Icon handles colors from object below
 // so to add color to such components you just need to add color here
 export const app_colors = {
