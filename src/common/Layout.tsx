@@ -20,11 +20,14 @@ const PageContentContainer = styled(Layout)`
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: auto;
+  background-color: ${mainColor};
 `;
 
 const ContentContainer = styled.div`
   padding: 100px 32px;
   background-color: ${mainColor};
+  max-width: 1168px;
+  margin: 0 auto;
 `;
 
 const MainLayout: FC<PropsWithChildren<any>> = (props) => {
