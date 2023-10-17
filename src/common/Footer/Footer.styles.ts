@@ -13,8 +13,9 @@ import {
   contentMaxWidthLg,
   mainColor,
   blueTextColor,
-  dirtyGreyTextColor,
+  greyTextColor,
   fontWeightNormal,
+  elementsGreyColor,
 } from 'constants/styleVars';
 
 const breakpoint = `${lgBp}px`;
@@ -23,7 +24,8 @@ export const FooterContainer = styled.footer<{bottomOffset?: string}>`
   width: 100%;
   text-transform: uppercase;
   background-color: ${mainColor};
-  color: ${dirtyGreyTextColor};
+  border-top: 1px solid ${elementsGreyColor};
+  color: ${greyTextColor};
   font-size: ${fontSizeXSm};
   line-height: ${lineHeightSm};
   padding: ${sectionInsetXs} ${offsetXLg}

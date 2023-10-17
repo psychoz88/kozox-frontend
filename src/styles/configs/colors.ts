@@ -10,9 +10,9 @@ export const disabledColor = 'rgba(0, 0, 0, 0.25)';
 
 // Text colors
 export const maxGreenTextColor = '#00d993'; // green as code
-export const greyTextColor = '#9a9e9f'; // on nav
+export const greyTextColor = '#9a9e9f'; // on nav and footer
 export const dirtyWhiteTextColor = '#e7e7e8'; // use for white text
-export const dirtyGreyTextColor = '#7d8385'; // grey text
+export const dirtyGreyTextColor = '#7d8385'; // use for grey text
 export const blueTextColor = '#40a9ff'; // on hover
 
 // Common colors
@@ -21,6 +21,7 @@ export const middleGreenColor = '#122322'; // middle green
 export const minGreenColor = mainColor; // min green, the darkest
 export const yellowColor = '#ffb718'; // yellow
 export const pinkColor = '#ff6286'; // red or pink
+export const elementsGreyColor = '#1b2225'; // grey for elements of design: borders
 
 // Background colors
 export const buttonBackgroundColor = '#122322';
