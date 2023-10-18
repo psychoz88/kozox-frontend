@@ -2,11 +2,13 @@ import {matchPath} from 'react-router';
 
 import {Routes} from 'constants/routes';
 import {commonMenu} from './menuConfigs/CommonMenu';
+import {mobileMenu} from './menuConfigs/MobileMenu';
 
 import {ECommonHeaderItems, TLayout} from './types';
 
-const getCurrentMenu = (): any => {
-  // case it need another menu
+const getCurrentMenu = (isMobile: boolean): any => {
+  // case if need another menu
+  if (isMobile) return mobileMenu();
   return commonMenu();
 };
 
@@ -15,10 +17,10 @@ const getIsExactPath = (customRoutes: string[], currentPath: string) =>
     return matchPath(route, currentPath);
   }) || '';
 
-export const setHeaderStyle = (currentPath: string): TLayout => {
+export const setHeaderStyle = (currentPath: string, isMobile: boolean): TLayout => {
   const {
     layout: {defaultLayoutType, customRoutesLayout = {}},
-  } = getCurrentMenu();
+  } = getCurrentMenu(isMobile);
 
   let menuComponents = defaultLayoutType.components;
   let layoutType = defaultLayoutType.type;

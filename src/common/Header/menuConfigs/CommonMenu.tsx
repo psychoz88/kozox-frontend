@@ -31,14 +31,15 @@ export const commonMenu = () => {
   return {
     layout: {
       defaultLayoutType: getCommonLayout(),
-      customRoutesLayout: {
-        [Routes.mainLanding.toLowerCase()]: getCommonLayout(),
-        [Routes.services.toLowerCase()]: getCommonLayout(),
-        [Routes.portfolio.toLowerCase()]: getCommonLayout(),
-        [Routes.contacts.toLowerCase()]: getCommonLayout(),
-        [Routes.privacyPolicy.toLowerCase()]: getCommonLayout(),
-        [Routes.contactForm.toLowerCase()]: getCommonLayout(), // TODO may be need smaller menu
-      },
+      // TODO: may be not needed
+      // customRoutesLayout: {
+      //   [Routes.mainLanding.toLowerCase()]: getCommonLayout(),
+      //   [Routes.services.toLowerCase()]: getCommonLayout(),
+      //   [Routes.portfolio.toLowerCase()]: getCommonLayout(),
+      //   [Routes.contacts.toLowerCase()]: getCommonLayout(),
+      //   [Routes.privacyPolicy.toLowerCase()]: getCommonLayout(),
+      //   [Routes.contactForm.toLowerCase()]: getCommonLayout(), // TODO may be need smaller menu
+      // },
     },
     userMenuList: userMenuList(),
   };
