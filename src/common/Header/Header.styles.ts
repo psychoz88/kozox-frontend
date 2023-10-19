@@ -9,6 +9,7 @@ import {
   offset80,
   offsetDef,
   offsetXXLg,
+  xxs,
 } from 'constants/styleVars';
 
 const {Header} = Layout;
@@ -42,9 +43,23 @@ export const StyledHeader = styled(Header)`
   backdrop-filter: blur(5px);
 `;
 
-export const HeaderContainer = styled(Container)`
+export const HeaderContainer = styled(Container)<{isMobile: boolean}>`
   display: grid;
-  grid-template-columns: 1fr ${offset80} ${offset80} ${offset80} ${offset120};
+  grid-template-columns: ${({isMobile}) =>
+    isMobile
+      ? `${offset120} 1fr ${offset120}`
+      : `1fr ${offset80} ${offset80} ${offset80} ${offset120}`};
   align-items: center;
   grid-gap: 10px;
+
+  ${({isMobile}) =>
+    isMobile &&
+    `
+    justify-items: center;
+    grid-gap: 0px;
+  `}
+
+  @media (max-width: ${xxs}) {
+    grid-template-columns: 70px 1fr 70px;
+  }
 `;

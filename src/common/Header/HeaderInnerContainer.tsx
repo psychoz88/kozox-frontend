@@ -5,6 +5,7 @@ import NavServices from './NavLinks/NavServices';
 import NavContacts from './NavLinks/NavContacts';
 import NavPortfolio from './NavLinks/NavPortfolio';
 import NavContactButton from './NavLinks/NavContactButton';
+import NavMenuButton from './NavLinks/NavMenuButton';
 
 import {ECommonHeaderItems} from './types';
 
@@ -28,6 +29,7 @@ const containerComponents = (
     isPortfolio: <NavPortfolio />,
     isContacts: <NavContacts />,
     isContactButton: <NavContactButton />,
+    isMenuButton: <NavMenuButton />,
   };
 };
 

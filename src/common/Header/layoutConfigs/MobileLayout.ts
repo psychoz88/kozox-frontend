@@ -4,6 +4,7 @@ const getMobileLayout = (): TLayout => {
   return {
     type: 'commonLayout',
     components: [
+      {component: 'isMenuButton'},
       {component: 'isLogo'},
       {component: 'isContactButton'},
     ],

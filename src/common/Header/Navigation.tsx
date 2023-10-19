@@ -16,12 +16,11 @@ type TProps = {
 const Navigation = ({location}: TProps) => {
   const {pathname} = location;
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
-
-  const {components} = setHeaderStyle(pathname, isMobile);
-
   const [activeItem, setActiveItem] = useState<ECommonHeaderItems | ''>(
     getActiveItemFromRoute(pathname),
   );
+
+  const {components} = setHeaderStyle(pathname, isMobile);
 
   const selectMenuItem = useCallback((item: ECommonHeaderItems) => {
     const excludedButtons = [ECommonHeaderItems.Contacts].includes(item);
@@ -37,7 +36,7 @@ const Navigation = ({location}: TProps) => {
 
   return (
     <StyledHeader>
-      <HeaderContainer>
+      <HeaderContainer isMobile={isMobile}>
         {components.map((item) => (
           <HeaderInnerContainer
             key={item.component}
