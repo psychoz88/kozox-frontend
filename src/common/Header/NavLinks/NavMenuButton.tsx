@@ -1,27 +1,47 @@
 import React, {useCallback} from 'react';
-import {useNavigate} from 'react-router';
+import styled from 'styled-components';
 
-import {Routes} from 'constants/routes';
+import useToggle from 'hooks/useToggle';
 
-import {StyledButton} from './NavLinks.styles';
+import {StyledMobileMenuButton} from './NavLinks.styles';
+
+export const Container = styled.div`
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: bisque;
+`;
+
+export const MobileMenu = () => {
+  return (
+    <Container>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </Container>
+  );
+};
 
 const NavMenuButton = () => {
-  const navigate = useNavigate();
+  const [isMenuShowed, setMenuShowed] = useToggle(false);
 
-  // TODO
-  const openContactForm = useCallback(() => {
-    navigate(Routes.contactForm);
-  }, [navigate]);
+  const openMobileMenu = useCallback(() => {
+    setMenuShowed();
+  }, [setMenuShowed]);
 
   return (
-    <StyledButton
-      onClick={openContactForm}
-      buttonType='primary'
-      size='small'
-      fullWidth
-    >
-      Menu
-    </StyledButton>
+    <>
+      <StyledMobileMenuButton
+        onClick={openMobileMenu}
+        buttonType='primary'
+        size='small'
+        fullWidth
+      >
+        Menu
+      </StyledMobileMenuButton>
+      {isMenuShowed && <MobileMenu />}
+    </>
   );
 };
 

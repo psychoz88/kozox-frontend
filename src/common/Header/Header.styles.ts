@@ -51,6 +51,7 @@ export const HeaderContainer = styled(Container)<{isMobile: boolean}>`
       : `1fr ${offset80} ${offset80} ${offset80} ${offset120}`};
   align-items: center;
   grid-gap: 10px;
+  position: relative;
 
   ${({isMobile}) =>
     isMobile &&

@@ -13,3 +13,7 @@ export const StyledLink = styled.a`
 export const StyledButton = styled(Button)`
   height: 35px;
 `;
+
+export const StyledMobileMenuButton = styled(Button)`
+height: 35px;
+`;
