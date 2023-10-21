@@ -1,47 +1,39 @@
-import React, {useCallback} from 'react';
-import styled from 'styled-components';
+import React, {useCallback, useRef} from 'react';
 
 import useToggle from 'hooks/useToggle';
 
+import {MobileMenu} from '../MobileMenu/MobileMenu';
+import {useClickOutside} from 'hooks/useClickOutside';
+
 import {StyledMobileMenuButton} from './NavLinks.styles';
-
-export const Container = styled.div`
-  position: absolute;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  background: bisque;
-`;
-
-export const MobileMenu = () => {
-  return (
-    <Container>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-    </Container>
-  );
-};
 
 const NavMenuButton = () => {
   const [isMenuShowed, setMenuShowed] = useToggle(false);
 
-  const openMobileMenu = useCallback(() => {
+  const handleMobileMenu = useCallback(() => {
     setMenuShowed();
   }, [setMenuShowed]);
 
+  // Closing logic when click outside
+  const containerRef = useRef(null);
+  useClickOutside(containerRef, isMenuShowed, () => {
+      setMenuShowed();
+  });
+
   return (
-    <>
+    <div ref={containerRef}>
       <StyledMobileMenuButton
-        onClick={openMobileMenu}
+        onClick={handleMobileMenu}
         buttonType='primary'
         size='small'
         fullWidth
       >
         Menu
       </StyledMobileMenuButton>
-      {isMenuShowed && <MobileMenu />}
-    </>
+      {isMenuShowed && (
+        <MobileMenu setMenuShowed={setMenuShowed} />
+      )}
+    </div>
   );
 };
 

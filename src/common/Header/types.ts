@@ -45,3 +45,7 @@ export type TDropdownItem = {
   customComponent?: JSX.Element;
   onClick?: (() => void) | ((e: SyntheticEvent) => void);
 };
+
+export type TNavProps = {
+  setMenuShowed?: () => void;
+};

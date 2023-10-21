@@ -15,5 +15,5 @@ export const StyledButton = styled(Button)`
 `;
 
 export const StyledMobileMenuButton = styled(Button)`
-height: 35px;
+  height: 35px;
 `;
