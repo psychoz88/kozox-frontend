@@ -17,7 +17,7 @@ const NavMenuButton = () => {
   // Closing logic when click outside
   const containerRef = useRef(null);
   useClickOutside(containerRef, isMenuShowed, () => {
-      setMenuShowed();
+    setMenuShowed();
   });
 
   return (
@@ -30,9 +30,7 @@ const NavMenuButton = () => {
       >
         Menu
       </StyledMobileMenuButton>
-      {isMenuShowed && (
-        <MobileMenu setMenuShowed={setMenuShowed} />
-      )}
+      {isMenuShowed && <MobileMenu setMenuShowed={setMenuShowed} />}
     </div>
   );
 };
