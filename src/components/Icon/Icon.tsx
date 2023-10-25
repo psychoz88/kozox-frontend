@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ICON_MAP from '../../../constants/iconMap';
-
-import {getColorFromProps} from '../Typography/Typography';
 import {TIconPropsType} from './types';
+import {getColorFromProps} from 'components/Typography/Typography';
+import ICON_MAP from 'constants/iconMap';
 
 const Container = styled.div<TIconPropsType>`
   display: inline-flex;
@@ -37,7 +36,6 @@ const Container = styled.div<TIconPropsType>`
 
 const Icon = ({
   icon,
-  iconColor = true,
   className,
   onClick,
   onMouseEnter,
@@ -64,7 +62,6 @@ const Icon = ({
       size={size}
       data-test-class={dataTestClass}
       {...restColors}
-      iconColor={iconColor}
       justify={justify}
     >
       <IconImg id={id} />

@@ -10,7 +10,7 @@ export type TInputSize = 'small' | 'medium' | 'large';
 
 interface IBaseProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  type: 'password' | 'email' | 'text' | 'checkbox' | 'number';
+  type: 'email' | 'text' | 'number';
   label?: string;
   labelColor?: string;
   placeholderIcon?: string;

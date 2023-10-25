@@ -1,4 +1,4 @@
-import {TColorProps} from 'view/components/Typography/Typography';
+import {TColorProps} from 'components/Typography/Typography';
 
 export type TIconPropsType = {
   icon: string;

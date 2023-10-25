@@ -1,23 +1,15 @@
 import React, {useState} from 'react';
 
-import {
-  PlaceholderIcon,
-  StyledInputContainer,
-  StyledLabel,
-  StyledLabelContainer,
-} from '../../FormItem.styles';
+import InputText from './InputText';
+
+import {PlaceholderIcon, StyledInputContainer} from '../../FormItem.styles';
 
 import {IPasswordProps} from '../../types';
-import InputPassword from './InputPassword';
-import InputText from './InputText';
-import InputCheckbox from './InputCheckbox';
 
 const COMPONENTS_MAP = {
-  password: InputPassword,
   email: InputText,
   text: InputText,
   number: InputText,
-  checkbox: InputCheckbox,
 };
 
 const Input = ({
@@ -27,12 +19,8 @@ const Input = ({
   placeholderIcon,
   hasError,
   inputProps,
-  disabled,
-  label,
-  labelColor,
   variant = 'primary',
   inputSize = 'medium',
-  isLabelActive,
   ...restInputProps
 }: IPasswordProps) => {
   const [focused, setFocused] = useState(false);
@@ -45,23 +33,6 @@ const Input = ({
 
   return (
     <StyledInputContainer onFocus={onFocusHandler} onBlur={onBlurHandler}>
-      {type !== 'checkbox' &&
-        label &&
-        (!!inputProps.value || focused || isLabelActive) && (
-          <StyledLabelContainer hasError={hasError} focused={focused}>
-            <StyledLabel
-              labelColor={labelColor}
-              hasError={hasError}
-              variant={variant}
-              inputSize={inputSize}
-              focused={focused}
-              disabled={disabled}
-            >
-              {label}
-            </StyledLabel>
-          </StyledLabelContainer>
-        )}
-
       {placeholderIcon && (
         <PlaceholderIcon icon={placeholderIcon} transparent />
       )}

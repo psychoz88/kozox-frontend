@@ -1,82 +1,43 @@
-import React, {useState} from 'react';
-import getUnicodeFlagIcon from 'country-flag-icons/unicode';
+import React from 'react';
 import {
-  getCountryCallingCode,
   parsePhoneNumber,
-  Country,
+  formatPhoneNumberIntl,
 } from 'react-phone-number-input';
-import {getCountries} from 'react-phone-number-input/input';
-import en from 'react-phone-number-input/locale/en.json';
 
-import NW2Dropdown from 'view/components/NW2Dropdown';
-import Icon from 'view/components/Icon';
+import ErrorMessage from '../ErrorMessage';
+import Input from '../Input/Input';
 
-import {
-  ErrorMessage,
-  Input,
-} from 'view/components/NW2FormItem/components/index';
-import {IInputFieldProps} from 'view/components/NW2FormItem/types';
-import {trimPhoneNumber} from 'view/components/FormItemPhoneNumber/FormItemPhoneNumber';
+import {PhoneNumberContainer} from './PhoneNumber.styles';
+import {IInputFieldProps} from 'components/FormItem/types';
 
-import {
-  StyledGroup,
-  CountryIcon,
-  RotatedIcon,
-  CountrySelectDropdown,
-  CountryListItem,
-  PhoneNumberContainer,
-} from './PhoneNumber.styles';
-import {offsetXXSm} from 'styles/configs/offset';
+export interface ILegalPhone {
+  phoneCountryCode?: string;
+  phone?: string;
+  phoneCountry?: string;
+  fullPhoneNumber?: string;
+}
+
+const replaceNonNumberValue = (value: string) => value.replace(/[^\d]+/g, '');
+
+const trimPhoneNumber = (value: ILegalPhone): ILegalPhone => {
+  const nonNumberValue = replaceNonNumberValue(value.fullPhoneNumber || '');
+  if ('phoneCountryCode' in value) {
+    return {
+      ...value,
+      fullPhoneNumber: formatPhoneNumberIntl(`+${nonNumberValue}`),
+    };
+  }
+
+  return {
+    ...value,
+    fullPhoneNumber: nonNumberValue ? `+${nonNumberValue}` : '',
+  };
+};
 
 type TPhoneNumber = IInputFieldProps & {
   input: any;
   meta: any;
   isCountrySelect?: boolean;
-};
-
-type TCountrySelect = {
-  value?: string;
-  onChange: (countryCode: Country) => void;
-  labels: Record<string, string>;
-  isCountrySelect?: boolean;
-};
-
-const CountrySelect = ({
-  value,
-  onChange,
-  labels,
-  isCountrySelect,
-}: TCountrySelect) => {
-  if (!isCountrySelect) return null;
-
-  const triggerItem = value ? (
-    <StyledGroup gap={offsetXXSm} align='center'>
-      <CountryIcon>{getUnicodeFlagIcon(value)}</CountryIcon>
-      <RotatedIcon icon='ARROW_UP_FILLED' size={10} />
-    </StyledGroup>
-  ) : (
-    <StyledGroup gap={offsetXXSm} align='center'>
-      <Icon icon='NW2_PHONE_COUNTRY' size={20} />
-      <RotatedIcon icon='ARROW_UP_FILLED' size={10} />
-    </StyledGroup>
-  );
-
-  const handleOnClick = (country: Country) => () => onChange(country);
-
-  return (
-    <CountrySelectDropdown>
-      <NW2Dropdown triggerItem={triggerItem} maxHeight='200px'>
-        {getCountries()
-          .map((country) => ({country, label: labels[country]}))
-          .sort((a, b) => a.label.localeCompare(b.label))
-          .map(({country, label}) => (
-            <CountryListItem key={country} onClick={handleOnClick(country)}>
-              {label}
-            </CountryListItem>
-          ))}
-      </NW2Dropdown>
-    </CountrySelectDropdown>
-  );
 };
 
 function PhoneNumber({
@@ -93,7 +54,6 @@ function PhoneNumber({
   className,
   isCountrySelect,
 }: TPhoneNumber) {
-  const [country, setCountry] = useState<Country>();
   const hasError = highlightAsError || (meta.error && meta.touched);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -110,12 +70,6 @@ function PhoneNumber({
         };
     const trimmedValue = trimPhoneNumber(value);
     input.onChange(trimmedValue.fullPhoneNumber);
-    if (parsedPhone?.country) setCountry(parsedPhone.country);
-  };
-
-  const handleCountryChange = (countryCode: Country) => {
-    input.onChange(`+${getCountryCallingCode(countryCode)}`);
-    setCountry(countryCode);
   };
 
   return (
@@ -123,13 +77,6 @@ function PhoneNumber({
       className={className}
       isCountrySelect={isCountrySelect}
     >
-      <CountrySelect
-        labels={en}
-        value={country}
-        onChange={handleCountryChange}
-        isCountrySelect={isCountrySelect}
-      />
-
       <Input
         {...input}
         name={name}
