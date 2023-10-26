@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {TIconPropsType} from './types';
-import {getColorFromProps} from 'components/Typography/Typography';
 import ICON_MAP from 'constants/iconMap';
+
+import {getColorFromProps} from 'components/Typography/Typography';
+
+import {TIconPropsType} from './types';
 
 const Container = styled.div<TIconPropsType>`
   display: inline-flex;
