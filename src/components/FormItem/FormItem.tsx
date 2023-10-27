@@ -15,7 +15,6 @@ export const FormItemInput = ({
   rules,
   highlightAsError = false,
   showAllValidationErrors = false,
-  variant = 'primary',
   inputSize = 'medium',
   disabled,
   className,
@@ -50,7 +49,6 @@ export const FormItemInput = ({
               onBlur={onBlur || input.onBlur}
               inputProps={{...input, disabled}}
               disabled={disabled}
-              variant={variant}
               inputSize={inputSize}
               {...restInputProps}
             />
@@ -58,7 +56,6 @@ export const FormItemInput = ({
               hasError={hasError}
               errorData={meta.error}
               showAllValidationErrors={showAllValidationErrors}
-              variant={variant}
               inputSize={inputSize}
               margin={errorMessageMargin}
             />

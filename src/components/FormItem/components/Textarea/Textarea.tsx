@@ -16,7 +16,6 @@ const NW2FormTextarea = ({
   minLength = 150,
   maxLength = 1000,
   minHeight,
-  variant = 'primary',
   inputSize = 'medium',
   rules,
 }: IProps) => {
@@ -37,7 +36,6 @@ const NW2FormTextarea = ({
                 <StyledLabel
                   labelColor={labelColor}
                   hasError={hasError}
-                  variant={variant}
                   inputSize={inputSize}
                   focused={focused}
                 >
@@ -56,7 +54,6 @@ const NW2FormTextarea = ({
               hasError={hasError}
               disabled={disabled}
               placeholder={placeholderText}
-              variant={variant}
               inputSize={inputSize}
               focused={focused}
             />

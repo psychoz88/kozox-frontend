@@ -5,7 +5,7 @@ import {Form} from 'react-final-form';
 import Button from 'components/Button';
 
 import {FormItemInput} from 'components/FormItem/FormItem';
-import {emailFieldRules} from 'utils/finalFormFieldRules';
+import {emailFieldRules, firstNameFieldRules} from 'utils/finalFormFieldRules';
 
 import {xlg} from 'constants/styleVars';
 
@@ -39,38 +39,44 @@ const ContactForm = () => {
   const isSubmitFailed = false;
 
   return (
-    <>
-      {/* {isSubmitFailed && <SubmitErrorCard text={submitErrorText} />} */}
-      <Form onSubmit={loginInSystem}>
-        {({handleSubmit}) => {
-          return (
-            <form onSubmit={handleSubmit} noValidate>
-              <FormGroup columnNumber={1} gap={16}>
-                <FormItemInput
-                  name='email'
-                  type='email'
-                  label='Email address'
-                  placeholder='Email address'
-                  rules={emailFieldRules}
-                  highlightAsError={isSubmitFailed}
-                  showAllValidationErrors
-                />
-                <Button
-                  loading={isLoading}
-                  type='submit'
-                  buttonType='primary'
-                  fullWidth
-                >
-                  {isLoading ? 'Loading...' : 'Log in'}
-                </Button>
-              </FormGroup>
-              {/* TODO: directly on email */}
-              <a onClick={openForgotPassword}>Forgot your password?</a>
-            </form>
-          );
-        }}
-      </Form>
-    </>
+    <Form onSubmit={loginInSystem}>
+      {({handleSubmit}) => {
+        return (
+          <form onSubmit={handleSubmit} noValidate>
+            <FormGroup columnNumber={1} gap={16}>
+              <FormItemInput
+                name='name'
+                type='text'
+                label='Your name'
+                placeholder='Your name'
+                rules={firstNameFieldRules}
+                highlightAsError={isSubmitFailed}
+                showAllValidationErrors
+              />
+              <FormItemInput
+                name='email'
+                type='email'
+                label='Email address'
+                placeholder='Email address'
+                rules={emailFieldRules}
+                highlightAsError={isSubmitFailed}
+                showAllValidationErrors
+              />
+              <Button
+                loading={isLoading}
+                type='submit'
+                buttonType='primary'
+                fullWidth
+              >
+                {isLoading ? 'Loading...' : 'Log in'}
+              </Button>
+            </FormGroup>
+            {/* TODO: directly on email */}
+            <a onClick={openForgotPassword}>Concat us on email</a>
+          </form>
+        );
+      }}
+    </Form>
   );
 };
 

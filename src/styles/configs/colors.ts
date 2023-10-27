@@ -22,8 +22,10 @@ export const minGreenColor = mainColor; // min green, the darkest
 export const yellowColor = '#ffb718'; // yellow
 export const pinkColor = '#ff6286'; // red or pink
 export const elementsGreyColor = '#1b2225'; // grey for elements of design: borders
+export const inputDarkGreyColor = '#2c3335'; // dark grey-green color for input
+export const inputFocusedGreenColor = '#008c5b'; // light greeen color input:focus
 
-// Background colors
+// Button colors
 export const buttonBackgroundColor = '#122322';
 export const buttonHoverColor = '#0f382e';
 

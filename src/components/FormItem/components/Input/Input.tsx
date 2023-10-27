@@ -19,7 +19,6 @@ const Input = ({
   placeholderIcon,
   hasError,
   inputProps,
-  variant = 'primary',
   inputSize = 'medium',
   ...restInputProps
 }: IPasswordProps) => {
@@ -47,7 +46,6 @@ const Input = ({
         hasError={hasError}
         focused={focused}
         inputSize={inputSize}
-        variant={variant}
         {...restInputProps}
       />
     </StyledInputContainer>

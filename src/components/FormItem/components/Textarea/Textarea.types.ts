@@ -1,4 +1,4 @@
-import {TInputSize, TInputVariant} from '../../types';
+import {TInputSize} from '../../types';
 
 export interface IProps {
   name: string;
@@ -11,7 +11,6 @@ export interface IProps {
   maxLength?: number;
   minHeight?: number;
   rules?: (values: any) => any;
-  variant?: TInputVariant;
   inputSize?: TInputSize;
 }
 
@@ -20,6 +19,5 @@ export interface ITextAreaProps {
   disabled?: boolean;
   focused?: boolean;
   minHeight?: number;
-  variant: TInputVariant;
   inputSize: TInputSize;
 }

@@ -11,8 +11,8 @@ export const TextAreaContainer = styled.div`
 `;
 
 export const TextArea = styled.textarea<ITextAreaProps>`
-  ${({hasError, focused, variant, inputSize}) =>
-    getInputStyles({hasError, focused, variant, inputSize})};
+  ${({hasError, focused, inputSize}) =>
+    getInputStyles({hasError, focused, inputSize})};
   padding: ${offsetSm};
   min-height: ${({minHeight}) => minHeight || 216}px;
 `;

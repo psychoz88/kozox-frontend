@@ -5,7 +5,7 @@ import {
   SelectHTMLAttributes,
 } from 'react';
 
-export type TInputVariant = 'primary' | 'secondary';
+
 export type TInputSize = 'small' | 'medium' | 'large';
 
 interface IBaseProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -15,7 +15,6 @@ interface IBaseProps extends InputHTMLAttributes<HTMLInputElement> {
   labelColor?: string;
   placeholderIcon?: string;
   focused?: boolean;
-  variant?: TInputVariant;
   inputSize?: TInputSize;
 }
 
@@ -88,7 +87,6 @@ export interface IErrorMessage {
   errorData: string;
   hasError: THasError;
   showAllValidationErrors: boolean;
-  variant?: TInputVariant;
   inputSize?: TInputSize;
   margin?: string;
 }
@@ -115,7 +113,6 @@ export interface ISelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   hasError?: THasError;
   options: IDropdownListOption[];
   readonly?: boolean;
-  variant?: TInputVariant;
   inputSize?: TInputSize;
   maxHeight?: string;
   isCapitalLetterInOptions?: boolean;

@@ -7,7 +7,6 @@ const ErrorMessage = ({
   hasError,
   errorData,
   showAllValidationErrors,
-  variant = 'primary',
   inputSize = 'medium',
   margin,
 }: IErrorMessage) => {
@@ -23,7 +22,7 @@ const ErrorMessage = ({
     : null;
 
   return (
-    <StyledErrorMessage variant={variant} inputSize={inputSize} margin={margin}>
+    <StyledErrorMessage  inputSize={inputSize} margin={margin}>
       {errorList}
     </StyledErrorMessage>
   );
