@@ -8,6 +8,10 @@ export const fontSizeXLg = '20px';
 export const fontSizeXXLg = '22px';
 export const fontSizeXXXLg = '24px';
 
+export const fontSizeXXXXLg = '32px'; // subtitle
+export const fontSizeXXXXXLg = '36px'; // title
+
+// TODO: remove
 export const NW2FontSizeH1Xs = '60px';
 export const NW2FontSizeH1Md = '84px';
 export const NW2FontSizeH1Lg = '100px';
@@ -51,4 +55,3 @@ export const fontWeightExtraBold = '900';
 // DEFAULTS
 export const fontSizeDefault = fontSizeSm;
 export const lineHeightDefault = lineHeightMd;
-export const moreOutlinedIconFontSize = '1.5rem';
