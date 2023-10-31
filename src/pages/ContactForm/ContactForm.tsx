@@ -7,16 +7,19 @@ import Title from 'components/Title/Title';
 
 import {FormItemInput} from 'components/FormItem/FormItem';
 import {emailFieldRules, firstNameFieldRules} from 'utils/finalFormFieldRules';
+import {useAppSelector} from 'store/hooks';
 
-import {FormGroup} from './ContactForm.styles';
+import {Container, FormGroup} from './ContactForm.styles';
 
 const ContactForm = () => {
+  const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
+
   const onSubmit = () => {};
   const isLoading = false;
   const isSubmitFailed = false;
 
   return (
-    <div>
+    <Container isMobile={isMobile}>
       <Title title='Contact us' subTitle='Get in touch' />
       <Form onSubmit={onSubmit}>
         {({handleSubmit}) => {
@@ -26,8 +29,7 @@ const ContactForm = () => {
                 <FormItemInput
                   name='name'
                   type='text'
-                  label='Your name'
-                  placeholder='Your name'
+                  placeholder='Name'
                   rules={firstNameFieldRules}
                   highlightAsError={isSubmitFailed}
                   showAllValidationErrors
@@ -35,8 +37,7 @@ const ContactForm = () => {
                 <FormItemInput
                   name='email'
                   type='email'
-                  label='Email address'
-                  placeholder='Email address'
+                  placeholder='Email'
                   rules={emailFieldRules}
                   highlightAsError={isSubmitFailed}
                   showAllValidationErrors
@@ -55,7 +56,7 @@ const ContactForm = () => {
           );
         }}
       </Form>
-    </div>
+    </Container>
   );
 };
 

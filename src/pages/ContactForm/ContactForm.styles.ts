@@ -8,6 +8,10 @@ import {
   xlg,
 } from 'constants/styleVars';
 
+export const Container = styled.div<{isMobile?: boolean}>`
+  width: ${({isMobile}) => (isMobile ? 'inherit' : '500px')};
+`;
+
 export const FormGroup = styled.div<{
   columnNumber: number;
   columnNumberXLg?: number;

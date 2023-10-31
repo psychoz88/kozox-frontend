@@ -114,7 +114,7 @@ const getInputSizes = (inputSize: TInputSize) => {
 export const InputStyles = css`
   position: relative;
   background: ${mainColor};
-  color: ${greyTextColor};
+  color: ${dirtyWhiteTextColor};
   border-radius: 5px;
   border: 1px solid;
 `;
@@ -228,6 +228,9 @@ export const getInputStyles = ({
 
     &::placeholder {
       color: ${inputStylesMap.placeholderColor};
+      font-family: 'GT America Mono Trial',monospace;
+      text-transform: uppercase;
+      font-size: ${fontSizeSm};
     }
 
     ${inputSize !== 'large' &&
