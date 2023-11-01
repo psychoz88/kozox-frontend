@@ -6,7 +6,7 @@ import ErrorMessage from '../ErrorMessage';
 import {TextAreaContainer, TextArea} from './Textarea.styles';
 import {StyledLabel, StyledLabelContainer} from '../../FormItem.styles';
 
-const NW2FormTextarea = ({
+const FormTextarea = ({
   name,
   label,
   labelColor,
@@ -70,4 +70,4 @@ const NW2FormTextarea = ({
   );
 };
 
-export default NW2FormTextarea;
+export default FormTextarea;

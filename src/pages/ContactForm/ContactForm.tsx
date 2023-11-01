@@ -4,9 +4,9 @@ import {Form} from 'react-final-form';
 import Button from 'components/Button';
 import DirectlyOnEmail from './components/DirectlyOnEmail';
 import Title from 'components/Title/Title';
+import FormTextarea from 'components/FormItem/components/Textarea/Textarea';
 
 import {FormItemInput} from 'components/FormItem/FormItem';
-import {emailFieldRules, firstNameFieldRules} from 'utils/finalFormFieldRules';
 import {useAppSelector} from 'store/hooks';
 
 import {Container, FormGroup} from './ContactForm.styles';
@@ -16,7 +16,6 @@ const ContactForm = () => {
 
   const onSubmit = () => {};
   const isLoading = false;
-  const isSubmitFailed = false;
 
   return (
     <Container isMobile={isMobile}>
@@ -26,21 +25,12 @@ const ContactForm = () => {
           return (
             <form onSubmit={handleSubmit} noValidate>
               <FormGroup columnNumber={1} gap={16}>
-                <FormItemInput
-                  name='name'
-                  type='text'
-                  placeholder='Name'
-                  rules={firstNameFieldRules}
-                  highlightAsError={isSubmitFailed}
-                  showAllValidationErrors
-                />
-                <FormItemInput
-                  name='email'
-                  type='email'
-                  placeholder='Email'
-                  rules={emailFieldRules}
-                  highlightAsError={isSubmitFailed}
-                  showAllValidationErrors
+                <FormItemInput name='name' type='text' placeholder='Name' />
+                <FormItemInput name='email' type='email' placeholder='Email' />
+                <FormTextarea
+                  name='description'
+                  placeholder='Description'
+                  minHeight={180}
                 />
                 <Button
                   loading={isLoading}
