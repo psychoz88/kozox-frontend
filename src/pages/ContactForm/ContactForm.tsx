@@ -14,7 +14,9 @@ import {Container, FormGroup} from './ContactForm.styles';
 const ContactForm = () => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
-  const onSubmit = () => {};
+  const onSubmit = (formData: any) => {
+    console.log(formData, 'formData');
+  };
   const isLoading = false;
 
   return (
@@ -25,13 +27,9 @@ const ContactForm = () => {
           return (
             <form onSubmit={handleSubmit} noValidate>
               <FormGroup columnNumber={1} gap={16}>
-                <FormItemInput name='name' type='text' placeholder='Name' />
-                <FormItemInput name='email' type='email' placeholder='Email' />
-                <FormTextarea
-                  name='description'
-                  placeholder='Description'
-                  minHeight={180}
-                />
+                <FormItemInput name='name' type='text' placeholder='name' />
+                <FormItemInput name='email' type='email' placeholder='email' />
+                <FormTextarea name='note' placeholder='note' minHeight={180} />
                 <Button
                   loading={isLoading}
                   type='submit'

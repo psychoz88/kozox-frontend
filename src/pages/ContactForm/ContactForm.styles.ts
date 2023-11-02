@@ -39,6 +39,7 @@ export const StyledDiv = styled.div`
   color: ${greyTextColor};
   font-size: ${fontSizeMd};
   margin-top: ${offsetDef};
+  text-align: center;
 `;
 
 export const StyledLink = styled.a`
