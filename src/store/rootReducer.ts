@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import appSlice from './app/appSlice';
+import appSlice from './app/reducer';
 
 const rootReducer = combineReducers({
   app: appSlice,

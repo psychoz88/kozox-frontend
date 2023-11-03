@@ -19,14 +19,4 @@ const store = configureStore({
 
 export const serverAgent = axios.create();
 
-// serverAgent.interceptors.request.use(
-//   requestInterceptor(store),
-//   requestErrorInterceptor(store),
-// );
-
-// serverAgent.interceptors.response.use(
-//   responseInterceptor(store.dispatch),
-//   errorInterceptor(store.dispatch),
-// );
-
 export default store;

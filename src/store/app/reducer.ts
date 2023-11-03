@@ -4,8 +4,6 @@ import {IAppReducer} from './types';
 import {TDeviceType} from 'types/main';
 
 const initialState: IAppReducer = {
-  environment: '123',
-  openRegisterPopup: false,
   deviceType: {
     width: 0,
     height: 0,
@@ -13,17 +11,15 @@ const initialState: IAppReducer = {
     isTablet: false,
     isDesktop: false,
   },
+  contactFormData: {},
 };
 
 export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setAppEnvironment(state, action: PayloadAction<string>) {
-      state.environment = action.payload;
-    },
-    setOpenRegisterPopup(state, action: PayloadAction<boolean>) {
-      state.openRegisterPopup = action.payload;
+    setContactFormData(state, action: PayloadAction<Record<string, string>>) {
+      state.contactFormData = action.payload;
     },
     setDeviceType(state, action: PayloadAction<TDeviceType>) {
       state.deviceType = action.payload;
@@ -31,7 +27,6 @@ export const appSlice = createSlice({
   },
 });
 
-export const {setAppEnvironment, setOpenRegisterPopup, setDeviceType} =
-  appSlice.actions;
+export const {setContactFormData, setDeviceType} = appSlice.actions;
 
 export default appSlice.reducer;

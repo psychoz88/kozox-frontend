@@ -1,17 +1,17 @@
 import api from 'infrastructure/common/apiService';
 import apiContainerBuilder from 'app/apiContainerBuilder';
-import offersRepository from 'infrastructure/repository/OffersRepository';
+import appRepository from 'infrastructure/repository/AppRepository';
 
-type TOffersContainer = ReturnType<typeof offersRepository>;
+type TAppContainer = ReturnType<typeof appRepository>;
 
 const container = {
-  offersContainer: apiContainerBuilder<TOffersContainer>({
-    repository: offersRepository(api),
+  appContainer: apiContainerBuilder<TAppContainer>({
+    repository: appRepository(api),
   }),
 };
 
 export type TContainer = typeof container;
 
-export const {offersContainer} = container;
+export const {appContainer} = container;
 
 export default container;

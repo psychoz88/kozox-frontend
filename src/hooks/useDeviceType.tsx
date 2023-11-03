@@ -2,7 +2,7 @@ import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {debounce} from 'lodash';
 
-import {setDeviceType} from 'store/app/appSlice';
+import {setDeviceType} from 'store/app/reducer';
 import {mdBp, xLgBp} from 'constants/styleVars';
 
 /* eslint-disable */
