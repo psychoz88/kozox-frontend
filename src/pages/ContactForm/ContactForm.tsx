@@ -7,15 +7,18 @@ import Title from 'components/Title/Title';
 import FormTextarea from 'components/FormItem/components/Textarea/Textarea';
 
 import {FormItemInput} from 'components/FormItem/FormItem';
-import {useAppSelector} from 'store/hooks';
+import {useAppDispatch, useAppSelector} from 'store/hooks';
+import {getContactFormData} from 'store/app/actions';
 
 import {Container, FormGroup} from './ContactForm.styles';
 
 const ContactForm = () => {
+  const dispatch = useAppDispatch();
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   const onSubmit = (formData: any) => {
     console.log(formData, 'formData');
+    dispatch(getContactFormData(formData));
   };
   const isLoading = false;
 

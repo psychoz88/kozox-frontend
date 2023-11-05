@@ -16,7 +16,12 @@ const OFFERS = () => {
   return `${GATEWAY_BASE()}/offers/`;
 };
 
+const TELEGRAM = () => {
+  return `https://api.telegram.org/`;
+};
+
 export {
   ConfigService,
   OFFERS,
+  TELEGRAM,
 };

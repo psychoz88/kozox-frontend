@@ -1,20 +1,25 @@
 import {AxiosResponse} from 'axios';
 
 import {serverAgent} from 'store/config';
-import {OFFERS} from './config.service';
+import {OFFERS, TELEGRAM} from './config.service';
 import {objectToQueryString} from 'utils/queryUtils';
 
 export enum ApiType {
   Offers,
+  Telegram,
 }
 
 export const createBaseUrl = (type: ApiType, url: string): string => {
   let baseURL: string;
   const Offers: string = OFFERS();
+  const Tellegram: string = TELEGRAM();
 
   switch (type) {
     case ApiType.Offers:
       baseURL = `${Offers}`;
+      break;
+    case ApiType.Telegram:
+      baseURL = `${Tellegram}`;
       break;
   }
   return baseURL + url;

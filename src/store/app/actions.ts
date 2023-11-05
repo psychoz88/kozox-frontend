@@ -1,5 +1,6 @@
-import {AppDispatch} from 'store/types';
 import {setContactFormData} from './reducer';
+
+import {AppDispatch} from 'store/types';
 import {TContainer} from '../../app/';
 
 export const getContactFormData =
@@ -8,10 +9,12 @@ export const getContactFormData =
     appContainer.getOfferRequestById({
       payload: formData,
       onSuccess: (data: any) => {
+        console.log(data, 'data in action getContactFormData');
         dispatch(setContactFormData(data));
       },
-      // onError: (error: any) => {
-      //   dispatch(getSupplierOrdersError(error));
-      // },
+      onError: (error: any) => {
+        console.log(error, 'error');
+        // dispatch(getSupplierOrdersError(error));
+      },
     });
   };
