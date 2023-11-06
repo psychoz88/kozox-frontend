@@ -19,7 +19,7 @@ export const numbersOneToThousand = (value: string) =>
 
 export const firstNameFieldRules = (value: any) => {
   const errors: string[] = [];
-  if (required(value)) errors.push(`Please enter your first name`);
+  if (required(value)) errors.push(`Please enter your name`);
   if (!required(value) && minChar(value, 2))
     errors.push(`Minimum number of symbols 2`);
   if (consistOnlySpaces(value)) errors.push(`Can't consist only from spaces`);
@@ -82,13 +82,13 @@ export const notRequiredStringFieldRules = (value: any) => {
   return errors.join('--');
 };
 
-export const descriptionFieldRules = (value: any) => {
+export const noteFieldRules = (value: any) => {
   const errors: string[] = [];
 
   if (required(value)) {
-    errors.push('Description is required');
-  } else if (minChar(value, 50)) {
-    errors.push('Description needs to have at least 50 characters.');
+    errors.push('Note is required');
+  } else if (minChar(value, 10)) {
+    errors.push('Note needs to have at least 10 characters.');
   }
 
   return errors.join('--');

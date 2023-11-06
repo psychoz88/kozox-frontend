@@ -11,6 +11,11 @@ import {useAppDispatch, useAppSelector} from 'store/hooks';
 import {getContactFormData} from 'store/app/actions';
 
 import {Container, FormGroup} from './ContactForm.styles';
+import {
+  emailFieldRules,
+  firstNameFieldRules,
+  noteFieldRules,
+} from 'utils/finalFormFieldRules';
 
 const ContactForm = () => {
   const dispatch = useAppDispatch();
@@ -30,9 +35,24 @@ const ContactForm = () => {
           return (
             <form onSubmit={handleSubmit} noValidate>
               <FormGroup columnNumber={1} gap={16}>
-                <FormItemInput name='name' type='text' placeholder='name' />
-                <FormItemInput name='email' type='email' placeholder='email' />
-                <FormTextarea name='note' placeholder='note' minHeight={180} />
+                <FormItemInput
+                  name='name'
+                  type='text'
+                  placeholder='name'
+                  rules={firstNameFieldRules}
+                />
+                <FormItemInput
+                  name='email'
+                  type='email'
+                  placeholder='email'
+                  rules={emailFieldRules}
+                />
+                <FormTextarea
+                  name='note'
+                  placeholder='note'
+                  minHeight={180}
+                  rules={noteFieldRules}
+                />
                 <Button
                   loading={isLoading}
                   type='submit'

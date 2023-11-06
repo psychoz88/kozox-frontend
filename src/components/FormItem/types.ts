@@ -35,7 +35,6 @@ export interface IInputFieldProps extends IBaseProps {
   hasValidation?: boolean;
   isCountrySelect?: boolean;
   errorMessageMargin?: string;
-  hasAdditionalError?: boolean;
 }
 
 export interface ICheckboxProps {
