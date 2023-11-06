@@ -12,14 +12,14 @@ export enum ApiType {
 export const createBaseUrl = (type: ApiType, url: string): string => {
   let baseURL: string;
   const Offers: string = OFFERS();
-  const Tellegram: string = TELEGRAM();
+  const Telegram: string = TELEGRAM();
 
   switch (type) {
     case ApiType.Offers:
       baseURL = `${Offers}`;
       break;
     case ApiType.Telegram:
-      baseURL = `${Tellegram}`;
+      baseURL = `${Telegram}`;
       break;
   }
   return baseURL + url;

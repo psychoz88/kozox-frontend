@@ -1,15 +1,12 @@
+import {BOT_TOKEN, CHAT_ID} from 'constants/telegramBot';
 import {ApiType, IApi} from 'infrastructure/common/apiService';
 
 const appRepository = (api: IApi) => ({
-  getOfferRequestById: async (id: string) =>
-    // await api.get(ApiType.Offers, `requests/${id}`),
+  sentContactFormToTelegramBot: async (data: any) =>
     await api.get(
       ApiType.Telegram,
-      `bot6354779574:AAG2mRG9tIzXG3qv2oHHFcgDA-9521qqxvM/sendMessage?chat_id=190781466&text=Hello%20from%20KOZOX${
-        id ? '123' : '345'
-      }`,
+      `bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=Name%3A+${data.name}%2E+Email%3A+${data.email}%2E+Note%3A+${data.note}%2E`,
     ),
-  // https://api.telegram.org/bot6354779574:AAG2mRG9tIzXG3qv2oHHFcgDA-9521qqxvM/sendMessage?chat_id=190781466&text=Hello%20world
 });
 
 export default appRepository;

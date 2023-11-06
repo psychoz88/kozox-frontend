@@ -4,13 +4,14 @@ import {AppDispatch} from 'store/types';
 import {TContainer} from '../../app/';
 
 export const getContactFormData =
-  ({formData}: any) =>
+  (formData: any) =>
   (dispatch: AppDispatch, _: any, {appContainer}: TContainer) => {
-    appContainer.getOfferRequestById({
+    appContainer.sentContactFormToTelegramBot({
       payload: formData,
-      onSuccess: (data: any) => {
-        console.log(data, 'data in action getContactFormData');
-        dispatch(setContactFormData(data));
+      onSuccess: () => {
+        // (data: any)
+        // if need response - use (data: any) instead of formData
+        dispatch(setContactFormData(formData));
       },
       onError: (error: any) => {
         console.log(error, 'error');
