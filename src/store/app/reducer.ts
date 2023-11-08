@@ -11,14 +11,14 @@ const initialState: IAppReducer = {
     isTablet: false,
     isDesktop: false,
   },
-  contactFormData: {},
+  contactFormData: [],
 };
 
 export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setContactFormData(state, action: PayloadAction<Record<string, string>>) {
+    setContactFormData(state, action: PayloadAction<any[]>) {
       state.contactFormData = action.payload;
     },
     setDeviceType(state, action: PayloadAction<TDeviceType>) {

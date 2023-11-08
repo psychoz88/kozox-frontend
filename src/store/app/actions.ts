@@ -8,11 +8,16 @@ export const getContactFormData =
   (dispatch: AppDispatch, _: any, {appContainer}: TContainer) => {
     appContainer.sentContactFormToTelegramBot({
       payload: formData,
-      onSuccess: (data: any) => {
-        // (data: any)
+      onSuccess: async (data: any) => {
         // if need response - use (data: any) instead of formData
         // if need data from input - use formData instead of data
-        dispatch(setContactFormData(data));
+
+        const responseData = [
+          await data[0].then((response: any) => response),
+          await data[1].then((response: any) => response),
+        ];
+
+        dispatch(setContactFormData(responseData));
       },
       onError: (error: any) => {
         console.log(error, 'error');
