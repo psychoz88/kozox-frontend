@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-import {IAppReducer} from './types';
+import {IAppReducer, TContactFormData} from './types';
 import {TDeviceType} from 'types/main';
 
 const initialState: IAppReducer = {
@@ -18,7 +18,7 @@ export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setContactFormData(state, action: PayloadAction<any[]>) {
+    setContactFormData(state, action: PayloadAction<TContactFormData>) {
       state.contactFormData = action.payload;
     },
     setDeviceType(state, action: PayloadAction<TDeviceType>) {
