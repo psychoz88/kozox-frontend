@@ -25,15 +25,31 @@ const ContactForm = () => {
   const onSubmit = (formData: any) => {
     dispatch(getContactFormData(formData));
   };
+
+  const onSendAgain = (formData: any) => {
+    console.log(formData, 'formData');
+  };
+
   const isLoading = false;
 
   return (
     <Container isMobile={isMobile}>
       {status === true ? (
-        <Title
-          title='Congratulations!'
-          subTitle='Your information has been sent. We will contact with You as soon as possible.'
-        />
+        <>
+          <Title
+            title='Congratulations!'
+            subTitle='Your information has been sent. We will contact with You as soon as possible.'
+          />
+          <Button
+            onClick={onSendAgain}
+            loading={isLoading}
+            type='submit'
+            buttonType='primary'
+            fullWidth
+          >
+            Send again!
+          </Button>
+        </>
       ) : (
         <>
           <Title title='Contact us' subTitle='Get in touch' />
