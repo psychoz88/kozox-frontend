@@ -6,6 +6,7 @@ import DirectlyOnEmail from './components/DirectlyOnEmail';
 import Title from 'components/Title/Title';
 import FormTextarea from 'components/FormItem/components/Textarea/Textarea';
 
+import {setContactFormData} from 'store/app/reducer';
 import {FormItemInput} from 'components/FormItem/FormItem';
 import {useAppDispatch, useAppSelector} from 'store/hooks';
 import {getContactFormData} from 'store/app/actions';
@@ -15,7 +16,7 @@ import {
   noteFieldRules,
 } from 'utils/finalFormFieldRules';
 
-import {Container, FormGroup} from './ContactForm.styles';
+import {Container, FormGroup, Wrapper} from './ContactForm.styles';
 
 const ContactForm = () => {
   const dispatch = useAppDispatch();
@@ -26,16 +27,16 @@ const ContactForm = () => {
     dispatch(getContactFormData(formData));
   };
 
-  const onSendAgain = (formData: any) => {
-    console.log(formData, 'formData');
+  const onSendAgain = () => {
+    dispatch(setContactFormData([]));
   };
 
   const isLoading = false;
 
   return (
     <Container isMobile={isMobile}>
-      {status === true ? (
-        <>
+      {status ? (
+        <Wrapper>
           <Title
             title='Congratulations!'
             subTitle='Your information has been sent. We will contact with You as soon as possible.'
@@ -45,11 +46,10 @@ const ContactForm = () => {
             loading={isLoading}
             type='submit'
             buttonType='primary'
-            fullWidth
           >
-            Send again!
+            Send again
           </Button>
-        </>
+        </Wrapper>
       ) : (
         <>
           <Title title='Contact us' subTitle='Get in touch' />

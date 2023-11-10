@@ -45,3 +45,8 @@ export const StyledDiv = styled.div`
 export const StyledLink = styled.a`
   color: ${maxGreenTextColor};
 `;
+
+export const Wrapper = styled.div`
+  text-align: center;
+  text-align: -webkit-center;
+`;
