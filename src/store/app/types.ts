@@ -32,4 +32,5 @@ export type TContactFormData = TTelegramResponse[];
 export type IAppReducer = {
   deviceType: TDeviceType;
   contactFormData: TContactFormData;
+  error: any;
 };

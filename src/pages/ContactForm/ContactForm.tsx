@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Form} from 'react-final-form';
 
 import Button from 'components/Button';
@@ -20,10 +20,12 @@ import {Container, FormGroup, Wrapper} from './ContactForm.styles';
 
 const ContactForm = () => {
   const dispatch = useAppDispatch();
+  const [isLoading, setLoading] = useState(false);
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
   const status = useAppSelector(({app}) => app.contactFormData[0]?.ok);
 
   const onSubmit = (formData: any) => {
+    setLoading(true);
     dispatch(getContactFormData(formData));
   };
 
@@ -31,7 +33,9 @@ const ContactForm = () => {
     dispatch(setContactFormData([]));
   };
 
-  const isLoading = false;
+  useEffect(() => {
+    if (status) return setLoading(false);
+  }, [status]);
 
   return (
     <Container isMobile={isMobile}>
@@ -42,10 +46,8 @@ const ContactForm = () => {
             subTitle='Your information has been sent. We will contact with You as soon as possible.'
           />
           <Button
-            onClick={onSendAgain}
-            loading={isLoading}
-            type='submit'
             buttonType='primary'
+            onClick={onSendAgain}
           >
             Send again
           </Button>
@@ -77,9 +79,9 @@ const ContactForm = () => {
                       rules={noteFieldRules}
                     />
                     <Button
-                      loading={isLoading}
-                      type='submit'
                       buttonType='primary'
+                      type='submit'
+                      loading={isLoading}
                       fullWidth
                     >
                       Submit

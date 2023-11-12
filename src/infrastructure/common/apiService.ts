@@ -39,6 +39,7 @@ export const getRequest = async (
     return await response.data;
   } catch (error: unknown) {
     return Promise.reject(error);
+    // return error;
   }
 };
 

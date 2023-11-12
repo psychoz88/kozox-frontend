@@ -7,10 +7,14 @@ const appRepository = (api: IApi) => ({
   sentContactFormToTelegramBot: (data: any) =>
     chatIds.map(
       async (id) =>
-        await api.get(
-          ApiType.Telegram,
-          `bot${BOT_TOKEN}/sendMessage?chat_id=${id}&text=Name%3A+${data.name}%2E+Email%3A+${data.email}%2E+Note%3A+${data.note}%2E`,
-        ),
+        await api
+          .get(
+            ApiType.Telegram,
+            `bot${BOT_TOKEN}/sendMessage?chat_id=${id}&text=Name%3A+${data.name}%2E+Email%3A+${data.email}%2E+Note%3A+${data.note}%2E`,
+          )
+          .catch(() => {
+            return {error: true};
+          }),
     ),
 });
 

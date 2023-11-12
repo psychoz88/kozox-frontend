@@ -142,7 +142,7 @@ const BaseButton = styled.button<TButtonBaseProps>(
       css`
         background-color: ${whiteColor};
         border-color: ${dirtyGreyTextColor};
-        color: ${dirtyGreyTextColor};
+        color: ${blackColor};
         pointer-events: none;
         cursor: not-allowed;
 
@@ -182,7 +182,7 @@ export const PrimaryButton = styled(BaseButton)<{
   &.disabled {
     background-color: ${dirtyGreyTextColor};
     border-color: ${dirtyGreyTextColor};
-    color: ${dirtyGreyTextColor};
+    color: ${blackColor};
   }
 
   ${({inverted}) =>
@@ -270,7 +270,7 @@ export const SecondaryButton = styled(BaseButton)<{
   &.disabled {
     background-color: ${disabledColor};
     border-color: ${disabledColor};
-    color: ${dirtyGreyTextColor};
+    color: ${blackColor};
   }
 
   ${({inverted}) =>
