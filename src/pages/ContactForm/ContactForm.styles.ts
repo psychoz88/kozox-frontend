@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 import {
+  dirtyWhiteTextColor,
   fontSizeMd,
+  fontSizeXXXLg,
   greyTextColor,
+  lineHeightXXLg,
   maxGreenTextColor,
   offsetDef,
   xlg,
@@ -49,4 +52,13 @@ export const StyledLink = styled.a`
 export const Wrapper = styled.div`
   text-align: center;
   text-align: -webkit-center;
+`;
+
+export const StyledErrorDiv = styled.div`
+  color: ${dirtyWhiteTextColor};
+  text-align: center;
+  font-size: ${fontSizeXXXLg};
+  text-align: center;
+  line-height: ${lineHeightXXLg};
+  margin-bottom: 60px;
 `;

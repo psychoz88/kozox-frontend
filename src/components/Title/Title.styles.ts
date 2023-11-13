@@ -6,6 +6,7 @@ import {
   fontSizeXXXXLg,
   fontSizeXXXXXLg,
   lineHeightXXLg,
+  lineHeightXXXXLg,
   offset80,
   offsetXLg,
 } from 'constants/styleVars';
@@ -19,6 +20,7 @@ export const Container = styled.div`
 export const TitleParagraph = styled.p`
   color: ${dirtyWhiteTextColor};
   font-size: ${fontSizeXXXXXLg};
+  line-height: ${lineHeightXXXXLg};
   margin: 0 0 ${offsetXLg};
 `;
 

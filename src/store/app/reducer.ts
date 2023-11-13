@@ -12,7 +12,6 @@ const initialState: IAppReducer = {
     isDesktop: false,
   },
   contactFormData: [],
-  error: null,
 };
 
 export const appSlice = createSlice({
