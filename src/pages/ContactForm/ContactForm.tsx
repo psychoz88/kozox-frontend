@@ -18,6 +18,7 @@ import {
 } from 'utils/finalFormFieldRules';
 
 import {Container, FormGroup, Wrapper} from './ContactForm.styles';
+import {TFormData} from 'types/main';
 
 const ContactForm = () => {
   const dispatch = useAppDispatch();
@@ -34,7 +35,8 @@ const ContactForm = () => {
   });
   const error = arrayOfErrors.includes(true);
 
-  const onSubmit = (formData: any) => {
+  const onSubmit = (formData: TFormData) => {
+    console.log(formData, 'formData');
     setLoading(true);
     dispatch(getContactFormData(formData));
   };

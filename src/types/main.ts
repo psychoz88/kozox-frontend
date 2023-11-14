@@ -12,3 +12,10 @@ export type TDeviceType = {
   isTablet: boolean;
   isDesktop: boolean;
 };
+
+export type TFormData = {
+  name: string;
+  email: string;
+  note: string;
+  phone?: string;
+};

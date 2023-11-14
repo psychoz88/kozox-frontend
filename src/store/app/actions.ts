@@ -2,9 +2,10 @@ import {setContactFormData} from './reducer';
 
 import {AppDispatch} from 'store/types';
 import {TContainer} from '../../app/';
+import {TFormData} from 'types/main';
 
 export const getContactFormData =
-  (formData: any) =>
+  (formData: TFormData) =>
   (dispatch: AppDispatch, _: any, {appContainer}: TContainer) => {
     appContainer.sentContactFormToTelegramBot({
       payload: formData,
