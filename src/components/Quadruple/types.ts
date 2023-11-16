@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 
-export interface TrippleContentProps {
+export interface QuadrupleContentProps {
   title: string;
   websiteLink?: string;
   firstBlock: ReactNode;
@@ -9,6 +9,6 @@ export interface TrippleContentProps {
   foursBlock: ReactNode;
 }
 
-export interface TrippleBlockProps extends TrippleContentProps {
+export interface QuadrupleBlockProps extends QuadrupleContentProps {
   isShowed: boolean;
 }

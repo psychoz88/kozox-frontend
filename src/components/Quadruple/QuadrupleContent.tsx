@@ -2,23 +2,23 @@ import React from 'react';
 
 // import {useAppSelector} from 'store/hooks';
 
-import {TrippleContentProps} from './types';
+import {QuadrupleContentProps} from './types';
 import {
   Container,
   FirstBlock,
   SecondBlock,
   ThirdBlock,
   FoursBlock,
-} from './Tripple.styles';
+} from './Quadruple.styles';
 
-const TrippleContent = ({
+const QuadrupleContent = ({
   title,
   websiteLink,
   firstBlock,
   secondBlock,
   thirdBlock,
   foursBlock,
-}: TrippleContentProps) => {
+}: QuadrupleContentProps) => {
   // const isDesktop = useAppSelector(({app}) => app.deviceType.isDesktop);
   // const isTablet = useAppSelector(({app}) => app.deviceType.isTablet);
   // const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
@@ -39,4 +39,4 @@ const TrippleContent = ({
   );
 };
 
-export default TrippleContent;
+export default QuadrupleContent;

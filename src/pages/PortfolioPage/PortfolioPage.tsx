@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TrippleBlock from 'components/Tripple/TrippleBlock';
+import QuadrupleBlock from 'components/Quadruple/QuadrupleBlock';
 
 const PortfolioPage = () => {
   const title = 'Our work';
@@ -20,7 +20,7 @@ const PortfolioPage = () => {
 
   return (
     <div>
-      <TrippleBlock
+      <QuadrupleBlock
         title={title}
         websiteLink={websiteLink}
         firstBlock={firstBlock}
