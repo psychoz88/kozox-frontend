@@ -3,7 +3,7 @@ import {ReactNode} from 'react';
 export interface QuadrupleContentProps {
   title: string;
   websiteLink?: string;
-  firstBlock: ReactNode;
+  firstBlock?: ReactNode;
   secondBlock: ReactNode;
   thirdBlock: ReactNode;
   foursBlock: ReactNode;

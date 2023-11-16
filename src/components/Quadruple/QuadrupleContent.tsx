@@ -9,6 +9,8 @@ import {
   SecondBlock,
   ThirdBlock,
   FoursBlock,
+  Title,
+  FirstBlockDiv,
 } from './Quadruple.styles';
 
 const QuadrupleContent = ({
@@ -26,11 +28,11 @@ const QuadrupleContent = ({
   return (
     <Container>
       <FirstBlock>
-        <div>{title}</div>
+        <Title>{title}</Title>
         <a href={`${websiteLink}`} target='_blank' rel='noreferrer'>
           {websiteLink}
         </a>
-        <div>{firstBlock}</div>
+        <FirstBlockDiv>{firstBlock}</FirstBlockDiv>
       </FirstBlock>
       <SecondBlock>{secondBlock}</SecondBlock>
       <ThirdBlock>{thirdBlock}</ThirdBlock>
