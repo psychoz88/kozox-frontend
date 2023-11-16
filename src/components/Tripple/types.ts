@@ -3,9 +3,10 @@ import {ReactNode} from 'react';
 export interface TrippleContentProps {
   title: string;
   websiteLink?: string;
-  leftSide: ReactNode;
-  rightSide: ReactNode;
-  bottomSide: ReactNode;
+  firstBlock: ReactNode;
+  secondBlock: ReactNode;
+  thirdBlock: ReactNode;
+  foursBlock: ReactNode;
 }
 
 export interface TrippleBlockProps extends TrippleContentProps {

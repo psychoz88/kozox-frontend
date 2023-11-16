@@ -3,26 +3,38 @@ import React from 'react';
 // import {useAppSelector} from 'store/hooks';
 
 import {TrippleContentProps} from './types';
-import {BottomSide, Container, LeftSide, RightSide} from './Tripple.styles';
+import {
+  Container,
+  FirstBlock,
+  SecondBlock,
+  ThirdBlock,
+  FoursBlock,
+} from './Tripple.styles';
 
 const TrippleContent = ({
   title,
   websiteLink,
-  leftSide,
-  rightSide,
-  bottomSide
+  firstBlock,
+  secondBlock,
+  thirdBlock,
+  foursBlock,
 }: TrippleContentProps) => {
   // const isDesktop = useAppSelector(({app}) => app.deviceType.isDesktop);
   // const isTablet = useAppSelector(({app}) => app.deviceType.isTablet);
   // const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
-  console.log(title, 'title');
-  console.log(websiteLink, 'websiteLink');
 
   return (
     <Container>
-      <LeftSide>{leftSide}</LeftSide>
-      <RightSide>{rightSide}</RightSide>
-      <BottomSide>{bottomSide}</BottomSide>
+      <FirstBlock>
+        <div>{title}</div>
+        <a href={`${websiteLink}`} target='_blank' rel='noreferrer'>
+          {websiteLink}
+        </a>
+        <div>{firstBlock}</div>
+      </FirstBlock>
+      <SecondBlock>{secondBlock}</SecondBlock>
+      <ThirdBlock>{thirdBlock}</ThirdBlock>
+      <FoursBlock>{foursBlock}</FoursBlock>
     </Container>
   );
 };
