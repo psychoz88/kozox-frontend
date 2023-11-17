@@ -2,20 +2,21 @@ import React from 'react';
 
 import QuadrupleBlock from 'components/Quadruple/QuadrupleBlock';
 
+import mainImage from 'images/portfolio/nwMainPage.png';
+
 const PortfolioPage = () => {
-  const title = 'Our work';
-  const websiteLink = 'https://www.google.com.ua/?hl=ru';
-  // const firstBlock = <div>First side</div>;
+  const title = 'HRS: NewWork';
+  const websiteLink = 'https://newwork.hrs.com/';
   const secondBlock = (
     <div>
-      The following assets are available in AI, PNG, and SVG formats. If you
-      need guidance on the optimal format for your needs or require a different
-      format, please do not hesitate to contact us. When referencing "Oxide",
-      always use our logo. Ensure the usage of our logo retains appropriate
-      contrast for the best visibility.
+      Our meeting room providers are there to help you and your team to get the
+      business done whichever way suits best your team and your task. NewWork
+      helps you to book a meeting room space within the venues where you already
+      have a work desk booked or venture out to one of our hotel providers who
+      can cater for larger get togethers with plentiful of extras to choose from
+      making sure your team is well catered for.
     </div>
   );
-  const thirdBlock = <div>Third side</div>;
   const foursBlock = <div>Fours side</div>;
 
   return (
@@ -23,9 +24,8 @@ const PortfolioPage = () => {
       <QuadrupleBlock
         title={title}
         websiteLink={websiteLink}
-        // firstBlock={firstBlock}
         secondBlock={secondBlock}
-        thirdBlock={thirdBlock}
+        thirdBlock={mainImage}
         foursBlock={foursBlock}
         isShowed
       />

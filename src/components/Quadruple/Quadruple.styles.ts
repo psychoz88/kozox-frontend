@@ -35,6 +35,12 @@ export const ThirdBlock = styled.div`
   padding: 20px;
 `;
 
+export const Image = styled.img`
+  width: 100%;
+  object-fit: contain;
+  height: 520px;
+`;
+
 export const FoursBlock = styled.div`
   grid-column: span 4 / span 4;
 `;

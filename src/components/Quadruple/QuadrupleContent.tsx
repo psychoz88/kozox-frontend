@@ -11,6 +11,7 @@ import {
   FoursBlock,
   Title,
   FirstBlockDiv,
+  Image,
 } from './Quadruple.styles';
 
 const QuadrupleContent = ({
@@ -35,7 +36,9 @@ const QuadrupleContent = ({
         <FirstBlockDiv>{firstBlock}</FirstBlockDiv>
       </FirstBlock>
       <SecondBlock>{secondBlock}</SecondBlock>
-      <ThirdBlock>{thirdBlock}</ThirdBlock>
+      <ThirdBlock>
+        <Image src={`${thirdBlock}`} alt='image' />
+      </ThirdBlock>
       <FoursBlock>{foursBlock}</FoursBlock>
     </Container>
   );

@@ -5,7 +5,7 @@ export interface QuadrupleContentProps {
   websiteLink?: string;
   firstBlock?: ReactNode;
   secondBlock: ReactNode;
-  thirdBlock: ReactNode;
+  thirdBlock: string;
   foursBlock: ReactNode;
 }
 
