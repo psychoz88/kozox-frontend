@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 import {
-  dirtyWhiteTextColor,
+  backgroundImagesColor,
+  dirtyGreyTextColor,
   elementsGreyColor,
   fontSizeXXXXXLg,
   lineHeightXXXXLg,
@@ -14,7 +15,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: ${offsetXXLg};
-  color: ${dirtyWhiteTextColor};
+  color: ${dirtyGreyTextColor};
 `;
 
 export const FirstBlock = styled.div`
@@ -29,20 +30,30 @@ export const SecondBlock = styled.div`
 
 export const ThirdBlock = styled.div`
   grid-column: span 8 / span 8;
-  background: #0e1618;
+  background: ${backgroundImagesColor};
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
   padding: 20px;
 `;
 
-export const Image = styled.img`
+export const Image = styled.img<{height?: string}>`
   width: 100%;
   object-fit: contain;
-  height: 520px;
+  height: ${({height}) => height || 'auto'};
 `;
 
 export const FoursBlock = styled.div`
   grid-column: span 4 / span 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const FoursBlockItem = styled.div`
+  background: #0e1618;
+  border: 1px solid ${elementsGreyColor};
+  border-radius: 10px;
+  padding: 20px;
 `;
 
 export const Title = styled.p`

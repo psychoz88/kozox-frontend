@@ -24,6 +24,7 @@ export const pinkColor = '#ff6286'; // red or pink
 export const elementsGreyColor = '#1b2225'; // grey for elements of design: borders
 export const inputDarkGreyColor = '#2c3335'; // dark grey-green color for input
 export const inputFocusedGreenColor = '#008c5b'; // light greeen color input:focus
+export const backgroundImagesColor = '#0e1618'; // background for images
 
 // Button colors
 export const buttonBackgroundColor = '#122322';

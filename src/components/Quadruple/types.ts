@@ -6,7 +6,7 @@ export interface QuadrupleContentProps {
   firstBlock?: ReactNode;
   secondBlock: ReactNode;
   thirdBlock: string;
-  foursBlock: ReactNode;
+  foursBlock: string[];
 }
 
 export interface QuadrupleBlockProps extends QuadrupleContentProps {

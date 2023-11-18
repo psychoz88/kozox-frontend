@@ -9,6 +9,7 @@ import {
   SecondBlock,
   ThirdBlock,
   FoursBlock,
+  FoursBlockItem,
   Title,
   FirstBlockDiv,
   Image,
@@ -37,9 +38,15 @@ const QuadrupleContent = ({
       </FirstBlock>
       <SecondBlock>{secondBlock}</SecondBlock>
       <ThirdBlock>
-        <Image src={`${thirdBlock}`} alt='image' />
+        <Image src={`${thirdBlock}`} height='360px' alt='image' />
       </ThirdBlock>
-      <FoursBlock>{foursBlock}</FoursBlock>
+      <FoursBlock>
+        {foursBlock.map((img, index) => (
+          <FoursBlockItem key={index}>
+            <Image src={`${img}`} alt='image' />
+          </FoursBlockItem>
+        ))}
+      </FoursBlock>
     </Container>
   );
 };
