@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import {useAppSelector} from 'store/hooks';
+import {useAppSelector} from 'store/hooks';
 
 import {QuadrupleContentProps} from './types';
 import {
@@ -23,24 +23,22 @@ const QuadrupleContent = ({
   thirdBlock,
   foursBlock,
 }: QuadrupleContentProps) => {
-  // const isDesktop = useAppSelector(({app}) => app.deviceType.isDesktop);
-  // const isTablet = useAppSelector(({app}) => app.deviceType.isTablet);
-  // const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
+  const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   return (
     <Container>
-      <FirstBlock>
+      <FirstBlock isMobile={isMobile}>
         <Title>{title}</Title>
         <a href={`${websiteLink}`} target='_blank' rel='noreferrer'>
           {websiteLink}
         </a>
         <FirstBlockDiv>{firstBlock}</FirstBlockDiv>
       </FirstBlock>
-      <SecondBlock>{secondBlock}</SecondBlock>
-      <ThirdBlock>
-        <Image src={`${thirdBlock}`} height='360px' alt='image' />
+      <SecondBlock isMobile={isMobile}>{secondBlock}</SecondBlock>
+      <ThirdBlock isMobile={isMobile}>
+        <Image src={`${thirdBlock}`} alt='image' />
       </ThirdBlock>
-      <FoursBlock>
+      <FoursBlock isMobile={isMobile}>
         {foursBlock.map((img, index) => (
           <FoursBlockItem key={index}>
             <Image src={`${img}`} alt='image' />

@@ -18,18 +18,21 @@ export const Container = styled.div`
   color: ${dirtyGreyTextColor};
 `;
 
-export const FirstBlock = styled.div`
-  grid-column: span 6 / span 6;
+export const FirstBlock = styled.div<{isMobile?: boolean}>`
+  grid-column: ${({isMobile}) =>
+    isMobile ? 'span 12 / span 12' : 'span 6 / span 6'};
 `;
 
-export const SecondBlock = styled.div`
-  grid-column: span 6 / span 6;
+export const SecondBlock = styled.div<{isMobile?: boolean}>`
+  grid-column: ${({isMobile}) =>
+    isMobile ? 'span 12 / span 12' : 'span 6 / span 6'};
   font-size: 18px;
   line-height: 26px;
 `;
 
-export const ThirdBlock = styled.div`
-  grid-column: span 8 / span 8;
+export const ThirdBlock = styled.div<{isMobile?: boolean}>`
+  grid-column: ${({isMobile}) =>
+    isMobile ? 'span 12 / span 12' : 'span 8 / span 8'};
   background: ${backgroundImagesColor};
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
@@ -40,13 +43,16 @@ export const Image = styled.img<{height?: string}>`
   width: 100%;
   object-fit: contain;
   height: ${({height}) => height || 'auto'};
+  max-height: 550px;
 `;
 
-export const FoursBlock = styled.div`
-  grid-column: span 4 / span 4;
+export const FoursBlock = styled.div<{isMobile?: boolean}>`
+  grid-column: ${({isMobile}) =>
+    isMobile ? 'span 12 / span 12' : 'span 4 / span 4'};
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({isMobile}) => (isMobile ? 'row' : 'column')};
   justify-content: space-between;
+  gap: 20px;
 `;
 
 export const FoursBlockItem = styled.div`
