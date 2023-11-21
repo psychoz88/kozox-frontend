@@ -14,6 +14,7 @@ import {
   FirstBlockDiv,
   Image,
 } from './Quadruple.styles';
+import {xxsBp} from 'constants/styleVars';
 
 const QuadrupleContent = ({
   title,
@@ -24,9 +25,10 @@ const QuadrupleContent = ({
   foursBlock,
 }: QuadrupleContentProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
+  const deviceWidth = useAppSelector(({app}) => app.deviceType.width);
 
   return (
-    <Container>
+    <Container isMiniMobile={!!(deviceWidth && deviceWidth < xxsBp)}>
       <FirstBlock isMobile={isMobile}>
         <Title>{title}</Title>
         <a href={`${websiteLink}`} target='_blank' rel='noreferrer'>

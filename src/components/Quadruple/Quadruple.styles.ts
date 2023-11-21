@@ -11,9 +11,17 @@ import {
   whiteColor,
 } from 'constants/styleVars';
 
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+export const Container = styled.div<{isMiniMobile?: boolean}>`
+  ${({isMiniMobile}) =>
+    isMiniMobile
+      ? `
+        display: flex;
+        flex-direction: column;
+        `
+      : `
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+  `}
   gap: ${offsetXXLg};
   color: ${dirtyGreyTextColor};
 `;

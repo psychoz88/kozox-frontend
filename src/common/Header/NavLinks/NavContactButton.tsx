@@ -5,7 +5,7 @@ import {Routes} from 'constants/routes';
 import {useAppSelector} from 'store/hooks';
 
 import {StyledButton} from './NavLinks.styles';
-import {xxsBp} from 'constants/styleVars';
+import {xxxsBp} from 'constants/styleVars';
 
 const NavContactButton = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const NavContactButton = () => {
       size='small'
       fullWidth
     >
-      {deviceWidth && deviceWidth < xxsBp ? 'Contact' : 'Contact us'}
+      {deviceWidth && deviceWidth <= xxxsBp ? 'Contact' : 'Contact us'}
     </StyledButton>
   );
 };
