@@ -2,6 +2,7 @@ import React, {useCallback} from 'react';
 import {useNavigate} from 'react-router';
 
 import {Routes} from 'constants/routes';
+import {useAppSelector} from 'store/hooks';
 
 import linkedin from 'images/icons/linkedin.svg';
 import youtube from 'images/icons/youtube.svg';
@@ -12,17 +13,21 @@ import {
   FooterLinkBlock,
   StyledNavLink,
   Container,
+  CentralBlock,
 } from './Footer.styles';
 
 const Footer = () => {
   const navigate = useNavigate();
+  const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
-  const onMainClick = useCallback(() => {
+  const onMain = useCallback(() => {
     navigate(Routes.mainLanding);
   }, [navigate]);
-
-  const onPrivacyPolicyClick = useCallback(() => {
+  const onPrivacyPolicy = useCallback(() => {
     navigate(Routes.privacyPolicy);
+  }, [navigate]);
+  const onCookiePolicy = useCallback(() => {
+    navigate(Routes.cookiePolicy);
   }, [navigate]);
 
   return (
@@ -33,7 +38,7 @@ const Footer = () => {
             {/* Left block */}
             <FooterBlock>
               <StyledNavLink
-                onClick={onMainClick}
+                onClick={onMain}
                 target='_blank'
                 rel='noreferrer noopener'
               >
@@ -42,11 +47,18 @@ const Footer = () => {
             </FooterBlock>
 
             {/* Center block */}
-            <FooterLinkBlock>
-              <StyledNavLink onClick={onPrivacyPolicyClick}>
-                Privacy Policy
-              </StyledNavLink>
-            </FooterLinkBlock>
+            <CentralBlock isMobile={isMobile}>
+              <FooterLinkBlock>
+                <StyledNavLink onClick={onPrivacyPolicy}>
+                  Privacy Policy
+                </StyledNavLink>
+              </FooterLinkBlock>
+              <FooterLinkBlock>
+                <StyledNavLink onClick={onCookiePolicy}>
+                  Cookie Policy
+                </StyledNavLink>
+              </FooterLinkBlock>
+            </CentralBlock>
 
             {/* Right block */}
             <FooterBlock>

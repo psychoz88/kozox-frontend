@@ -16,6 +16,8 @@ import {
   greyTextColor,
   fontWeightNormal,
   elementsGreyColor,
+  offsetSm,
+  offsetLg,
 } from 'constants/styleVars';
 
 const breakpoint = `${lgBp}px`;
@@ -129,4 +131,16 @@ export const Text = styled.span`
 
 export const WithMarginLeftNoWrap = styled.span`
   margin-left: ${offsetXLg};
+`;
+
+export const CentralBlock = styled.div<{isMobile?: boolean}>`
+  display: flex;
+  gap: ${({isMobile}) => (isMobile ? offsetSm : offsetLg)};
+
+  ${({isMobile}) =>
+    isMobile &&
+    `
+    justify-content: center;
+    flex-direction: column;
+  `}
 `;

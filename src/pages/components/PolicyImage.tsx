@@ -23,6 +23,6 @@ const StyledImg = styled.img`
   }
 `;
 
-const PrivacyPolicyImage = ({src}: TProps) => <StyledImg src={src} />;
+const PolicyImage = ({src}: TProps) => <StyledImg src={src} />;
 
-export default PrivacyPolicyImage;
+export default PolicyImage;

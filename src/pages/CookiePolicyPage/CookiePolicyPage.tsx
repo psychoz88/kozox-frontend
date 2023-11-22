@@ -1,22 +1,22 @@
 import React from 'react';
 
 import TwoColumnsBlock from 'components/TwoColumnsBlock';
-import PolicyImage from '../components/PolicyImage';
-import PrivacyPolicyContent from './components/PrivacyPolicyContent';
+import PolicyImage from 'pages/components/PolicyImage';
+import CookiePolicyContent from './components/CookiePolicyContent';
 import image from '../../images/privacyPolicy.jpg';
 
-const PrivacyPolicyPage = () => {
+const CookiePolicyPage = () => {
   return (
     <div>
       <TwoColumnsBlock
-        title='Privacy policy'
+        title='Cookie policy'
         isShowed
         colLeft={<PolicyImage src={image} />}
-        colRight={<PrivacyPolicyContent />}
+        colRight={<CookiePolicyContent />}
         customPadding='0'
       />
     </div>
   );
 };
 
-export default PrivacyPolicyPage;
+export default CookiePolicyPage;

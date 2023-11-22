@@ -9,7 +9,7 @@ import {
   Paragraph,
 } from '../../components/PolicyTypography';
 
-const PrivacyPolicyContent = () => {
+const CookiePolicyContent = () => {
   return (
     <Content>
       <Section>
@@ -245,4 +245,4 @@ const PrivacyPolicyContent = () => {
   );
 };
 
-export default PrivacyPolicyContent;
+export default CookiePolicyContent;

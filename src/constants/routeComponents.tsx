@@ -4,6 +4,7 @@ import ServicesPage from 'pages/ServicesPage/ServicesPage';
 import PortfolioPage from 'pages/PortfolioPage/PortfolioPage';
 import PrivacyPolicyPage from 'pages/PrivacyPolicyPage/PrivacyPolicyPage';
 import ContactForm from 'pages/ContactForm/ContactForm';
+import CookiePolicyPage from 'pages/CookiePolicyPage/CookiePolicyPage';
 
 import {Routes} from './routes';
 
@@ -37,6 +38,12 @@ const RouteComponents = [
     path: Routes.privacyPolicy,
     component: PrivacyPolicyPage,
     pageTitle: 'Privacy policy',
+  },
+  {
+    exact: true,
+    path: Routes.cookiePolicy,
+    component: CookiePolicyPage,
+    pageTitle: 'Cookie policy',
   },
   {
     exact: true,
