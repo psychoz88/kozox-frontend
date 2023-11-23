@@ -7,6 +7,7 @@ export interface QuadrupleContentProps {
   secondBlock: ReactNode;
   thirdBlock: string;
   foursBlock: string[];
+  isReverse?: boolean;
 }
 
 export interface QuadrupleBlockProps extends QuadrupleContentProps {

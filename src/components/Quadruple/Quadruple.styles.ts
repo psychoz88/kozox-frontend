@@ -11,7 +11,9 @@ import {
   whiteColor,
 } from 'constants/styleVars';
 
-export const Container = styled.div<{isMiniMobile?: boolean}>`
+export const Container = styled.div<{
+  isMiniMobile?: boolean;
+}>`
   ${({isMiniMobile}) =>
     isMiniMobile
       ? `
@@ -24,27 +26,52 @@ export const Container = styled.div<{isMiniMobile?: boolean}>`
   `}
   gap: ${offsetXXLg};
   color: ${dirtyGreyTextColor};
+  margin-bottom: 120px;
 `;
 
-export const FirstBlock = styled.div<{isMobile?: boolean}>`
+export const FirstBlock = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
   grid-column: ${({isMobile}) =>
     isMobile ? 'span 12 / span 12' : 'span 6 / span 6'};
+
+  ${({isReverse, isMobile}) =>
+    isReverse &&
+    !isMobile &&
+    `
+      order: 1;
+      text-align: end;
+    `}
 `;
 
-export const SecondBlock = styled.div<{isMobile?: boolean}>`
+export const SecondBlock = styled.div<{
+  isMobile?: boolean;
+  isReverse?: boolean;
+}>`
   grid-column: ${({isMobile}) =>
     isMobile ? 'span 12 / span 12' : 'span 6 / span 6'};
   font-size: 18px;
   line-height: 26px;
+
+  ${({isReverse, isMobile}) =>
+    isReverse &&
+    !isMobile &&
+    `
+    order: 0;
+  `}
 `;
 
-export const ThirdBlock = styled.div<{isMobile?: boolean}>`
+export const ThirdBlock = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
   grid-column: ${({isMobile}) =>
     isMobile ? 'span 12 / span 12' : 'span 8 / span 8'};
   background: ${backgroundImagesColor};
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
   padding: 20px;
+
+  ${({isReverse}) =>
+    isReverse &&
+    `
+      order: 3;
+    `}
 `;
 
 export const Image = styled.img<{height?: string}>`
@@ -54,13 +81,19 @@ export const Image = styled.img<{height?: string}>`
   max-height: 550px;
 `;
 
-export const FoursBlock = styled.div<{isMobile?: boolean}>`
+export const FoursBlock = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
   grid-column: ${({isMobile}) =>
     isMobile ? 'span 12 / span 12' : 'span 4 / span 4'};
   display: flex;
   flex-direction: ${({isMobile}) => (isMobile ? 'row' : 'column')};
   justify-content: space-between;
   gap: 20px;
+
+  ${({isReverse}) =>
+    isReverse &&
+    `
+    order: 2;
+  `}
 `;
 
 export const FoursBlockItem = styled.div`
