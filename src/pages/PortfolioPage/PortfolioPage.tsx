@@ -2,6 +2,7 @@ import React from 'react';
 
 import QuadrupleBlock from 'components/Quadruple/QuadrupleBlock';
 
+import Title from 'components/Title/Title';
 import nwMainPage from 'images/portfolio/nwMainPage.png';
 import nwVenueProfile from 'images/portfolio/nwVenueProfile.png';
 import nwOfferCreation from 'images/portfolio/nwOfferCreation.png';
@@ -17,6 +18,7 @@ import {Devider} from 'components/Devider/Devider.styles';
 const PortfolioPage = () => {
   return (
     <div>
+      <Title title='Our Projects' isPageTitle />
       <QuadrupleBlock
         title='HRS: NewWork'
         websiteLink='https://newwork.hrs.com/'

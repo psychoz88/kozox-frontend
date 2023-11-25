@@ -5,13 +5,14 @@ import {TitleParagraph, SubTitleParagraph, Container} from './Title.styles';
 type TProps = {
   title: string;
   subTitle?: string;
+  isPageTitle?: boolean;
 };
 
-const Title = ({title, subTitle}: TProps) => {
+const Title = ({title, subTitle, isPageTitle}: TProps) => {
   return (
-    <Container>
-      <TitleParagraph>{title}</TitleParagraph>
-      <SubTitleParagraph>{subTitle}</SubTitleParagraph>
+    <Container isPageTitle={isPageTitle}>
+      <TitleParagraph isPageTitle={isPageTitle}>{title}</TitleParagraph>
+      {subTitle && <SubTitleParagraph>{subTitle}</SubTitleParagraph>}
     </Container>
   );
 };

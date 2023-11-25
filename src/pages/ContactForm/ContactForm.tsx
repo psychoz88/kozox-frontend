@@ -36,7 +36,6 @@ const ContactForm = () => {
   const error = arrayOfErrors.includes(true);
 
   const onSubmit = (formData: TFormData) => {
-    console.log(formData, 'formData');
     setLoading(true);
     dispatch(getContactFormData(formData));
   };

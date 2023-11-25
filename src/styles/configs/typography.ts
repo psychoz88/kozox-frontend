@@ -10,6 +10,7 @@ export const fontSizeXXXLg = '24px';
 
 export const fontSizeXXXXLg = '32px'; // subtitle
 export const fontSizeXXXXXLg = '36px'; // title
+export const fontSizeXXXXXXLg = '50px'; // title for pages
 
 // TODO: remove
 export const NW2FontSizeH1Xs = '60px';
@@ -44,6 +45,7 @@ export const lineHeightXLg = '28px';
 export const lineHeightXXLg = '32px';
 export const lineHeightXXXLg = '40px';
 export const lineHeightXXXXLg = '42px';
+export const lineHeightXXXXXLg = '60px';
 
 // FONT WEIGHT
 export const fontWeightSemiThin = '200';
