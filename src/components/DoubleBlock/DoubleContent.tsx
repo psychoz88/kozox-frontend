@@ -1,9 +1,8 @@
 import React from 'react';
 
-// import {useAppSelector} from 'store/hooks';
+import {useAppSelector} from 'store/hooks';
 
 import {DoubleContentProps} from './types';
-
 import {
   BlockItem,
   Container,
@@ -14,7 +13,6 @@ import {
   ItemTitle,
   ItemLink,
 } from './DoubleBlock.styles';
-// import {xxsBp} from 'constants/styleVars';
 
 const DoubleContent = ({
   title,
@@ -25,27 +23,28 @@ const DoubleContent = ({
   facebook,
   instagram,
 }: DoubleContentProps) => {
-  //   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
-  //   const deviceWidth = useAppSelector(({app}) => app.deviceType.width);
+  const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   return (
-    <Container>
+    <Container isMobile={isMobile}>
       <FirstBlock>
         <Title>{title}</Title>
         <Text>{text}</Text>
       </FirstBlock>
       <SecondBlock>
-      <BlockItem>
+        <BlockItem>
           <ItemTitle>Email</ItemTitle>
-          <ItemLink>{email}</ItemLink>
+          <ItemLink href={`mailto:${email}`}>{email}</ItemLink>
         </BlockItem>
         <BlockItem>
           <ItemTitle>Phone</ItemTitle>
-          <ItemLink>{phone}</ItemLink>
+          <ItemLink href={`tel:${phone}`}>{phone}</ItemLink>
         </BlockItem>
         <BlockItem>
           <ItemTitle>Social media</ItemTitle>
-          <ItemLink>{linkedIn} {facebook} {instagram}</ItemLink>
+          <ItemLink>
+            {linkedIn} {facebook} {instagram}
+          </ItemLink>
         </BlockItem>
       </SecondBlock>
     </Container>

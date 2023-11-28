@@ -10,7 +10,7 @@ const ContactsPage = () => {
     <StyledDiv>
       <Title title='Contacts' isPageTitle />
       <DoubleBlock
-        title='About Kozox'
+        title='About KOZOX'
         text='Our meeting room providers are there to help you and your team to
             get the business done whichever way suits best your team and your
             task. NewWork helps you to book a meeting room space within the

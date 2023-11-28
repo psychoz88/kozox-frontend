@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import {
-  backgroundImagesColor,
+  backgroundElementColor,
   dirtyGreyTextColor,
   elementsGreyColor,
   fontSizeXXXXXLg,
@@ -62,7 +62,7 @@ export const SecondBlock = styled.div<{
 export const ThirdBlock = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
   grid-column: ${({isMobile}) =>
     isMobile ? 'span 12 / span 12' : 'span 8 / span 8'};
-  background: ${backgroundImagesColor};
+  background: ${backgroundElementColor};
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
   padding: 20px;

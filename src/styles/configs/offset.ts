@@ -18,6 +18,7 @@ export const offset36 = '36px';
 export const offset50 = '50px';
 export const offset64 = '64px';
 export const offset80 = '80px';
+export const offset100 = '100px';
 export const offset120 = '120px';
 
 export const sectionInsetXs = offsetXXXLg;
