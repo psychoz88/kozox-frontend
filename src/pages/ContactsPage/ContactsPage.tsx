@@ -20,7 +20,6 @@ const ContactsPage = () => {
             well catered for.'
         email='klinoktop@gmail.com'
         phone='+380666803003'
-        linkedIn='https://www.google.com.ua'
         isShowed
       ></DoubleBlock>
     </StyledDiv>

@@ -13,16 +13,9 @@ import {
   ItemTitle,
   ItemLink,
 } from './DoubleBlock.styles';
+import SocialLinks from 'components/SocialLinks/SocialLinks';
 
-const DoubleContent = ({
-  title,
-  text,
-  email,
-  phone,
-  linkedIn,
-  facebook,
-  instagram,
-}: DoubleContentProps) => {
+const DoubleContent = ({title, text, email, phone}: DoubleContentProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   return (
@@ -42,9 +35,7 @@ const DoubleContent = ({
         </BlockItem>
         <BlockItem>
           <ItemTitle>Social media</ItemTitle>
-          <ItemLink>
-            {linkedIn} {facebook} {instagram}
-          </ItemLink>
+          <SocialLinks />
         </BlockItem>
       </SecondBlock>
     </Container>

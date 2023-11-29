@@ -15,6 +15,7 @@ import {
   lineHeightXL,
   lineHeightLg,
   fontSizeMd,
+  offsetXXSm,
 } from 'constants/styleVars';
 
 export const Container = styled.div<{isMobile?: boolean}>`
@@ -50,13 +51,9 @@ export const SecondBlock = styled.div`
   background: ${backgroundElementColor};
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
-  height: 300px;
+  height: 310px;
 
   div:nth-child(1) {
-    border-bottom: 1px solid ${elementsGreyColor};
-  }
-  div:nth-child(2) {
-    border-top: 1px solid ${elementsGreyColor};
     border-bottom: 1px solid ${elementsGreyColor};
   }
   div:nth-child(3) {
@@ -73,7 +70,7 @@ export const BlockItem = styled.div`
 
 export const ItemTitle = styled.p`
   color: ${whiteColor};
-  margin: 0;
+  margin: 0 0 ${offsetXXSm};
 `;
 
 export const ItemLink = styled.a`
