@@ -29,7 +29,7 @@ export const Container = styled.div<{isMobile?: boolean}>`
         gap: ${offset50};`
       : `
         display: grid;
-        grid-template-columns: 1fr 300px;
+        grid-template-columns: 1fr 320px;
         gap: ${offset100};`}
 `;
 
@@ -68,9 +68,9 @@ export const BlockItem = styled.div`
   padding: ${offsetXLg};
 `;
 
-export const ItemTitle = styled.p`
+export const ItemTitle = styled.p<{margin?: string}>`
   color: ${whiteColor};
-  margin: 0 0 ${offsetXXSm};
+  margin: ${({margin}) => margin || `0 0 ${offsetXXSm}`};
 `;
 
 export const ItemLink = styled.a`

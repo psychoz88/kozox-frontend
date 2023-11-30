@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SocialLinks from 'components/SocialLinks/SocialLinks';
+
 import {useAppSelector} from 'store/hooks';
 
 import {DoubleContentProps} from './types';
@@ -13,7 +15,6 @@ import {
   ItemTitle,
   ItemLink,
 } from './DoubleBlock.styles';
-import SocialLinks from 'components/SocialLinks/SocialLinks';
 
 const DoubleContent = ({title, text, email, phone}: DoubleContentProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
@@ -34,8 +35,8 @@ const DoubleContent = ({title, text, email, phone}: DoubleContentProps) => {
           <ItemLink href={`tel:${phone}`}>{phone}</ItemLink>
         </BlockItem>
         <BlockItem>
-          <ItemTitle>Social media</ItemTitle>
-          <SocialLinks />
+          <ItemTitle margin='0 0 10px' >Social media</ItemTitle>
+          <SocialLinks green />
         </BlockItem>
       </SecondBlock>
     </Container>

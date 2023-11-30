@@ -1,11 +1,11 @@
 import React, {useCallback} from 'react';
 import {useNavigate} from 'react-router';
 
+import SocialLinks from 'components/SocialLinks/SocialLinks';
+
 import {Routes} from 'constants/routes';
 import {useAppSelector} from 'store/hooks';
 
-import linkedin from 'images/icons/linkedin.svg';
-import youtube from 'images/icons/youtube.svg';
 import {
   FooterRow,
   FooterBlock,
@@ -61,23 +61,7 @@ const Footer = () => {
             </CentralBlock>
 
             {/* Right block */}
-            <FooterBlock>
-              <a
-                href='https://www.linkedin.com/'
-                target='_blank'
-                rel='noreferrer noopener'
-              >
-                <img src={linkedin} alt='LinkedIn' />
-              </a>
-
-              <a
-                href='https://www.youtube.com'
-                target='_blank'
-                rel='noreferrer noopener'
-              >
-                <img src={youtube} alt='YouTube' />
-              </a>
-            </FooterBlock>
+            <SocialLinks white />
           </FooterRow>
         </Container>
       </FooterContainer>

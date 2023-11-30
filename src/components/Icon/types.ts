@@ -11,4 +11,9 @@ export type TIconPropsType = {
   size?: number;
   dataTestClass?: string;
   justify?: string;
+
+  // For Anchor 
+  href?: string;
+  target?: string;
+  rel?: string;
 } & TColorProps;

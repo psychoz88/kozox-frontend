@@ -43,4 +43,5 @@ export const app_colors = {
   info: infoColor,
   transparent: 'inherit',
   lightGreenTextColor: maxGreenTextColor,
+  green: maxGreenTextColor,
 };

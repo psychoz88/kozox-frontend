@@ -36,6 +36,35 @@ const Container = styled.div<TIconPropsType>`
   }
 `;
 
+const ContainerAnchor = styled.a<TIconPropsType>`
+  display: inline-flex;
+  color: ${(props) => getColorFromProps(props)};
+  ${({justify}) => justify && `justify-content: ${justify}`}} 
+
+  ${({onClick, clickable}) =>
+    onClick || clickable
+      ? `
+    &:hover {
+      cursor: pointer;
+    }
+  `
+      : ''}
+
+  & svg {
+    ${({size}) => size && `width: ${size}px`};
+    ${({size}) => size && `height: ${size}px`};
+    & path.styled-stroke,
+    & circle.styled-stroke {
+      stroke: ${(props) => getColorFromProps(props)};
+    }
+
+    & path.styled-fill,
+    & circle.styled-fill {
+      fill: ${(props) => getColorFromProps(props)};
+    }
+  }
+`;
+
 const Icon = ({
   icon,
   className,
@@ -47,27 +76,49 @@ const Icon = ({
   size,
   dataTestClass = 'icon',
   justify,
+  href,
+  target,
+  rel,
   ...restColors
 }: TIconPropsType) => {
   const IconImg = (ICON_MAP as any)[icon];
 
   if (!IconImg) return null;
 
+  const commonProps = {
+    className,
+    onClick,
+    onMouseEnter,
+    onMouseLeave,
+    clickable,
+    icon,
+    size,
+    justify,
+  };
+
   return (
-    <Container
-      className={className} // needed by styled-components!
-      onClick={onClick}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      clickable={clickable}
-      icon={icon}
-      size={size}
-      data-test-class={dataTestClass}
-      {...restColors}
-      justify={justify}
-    >
-      <IconImg id={id} />
-    </Container>
+    <>
+      {href ? (
+        <ContainerAnchor
+          {...commonProps}
+          data-test-class={dataTestClass}
+          {...restColors}
+          href={href}
+          target={target}
+          rel={rel}
+        >
+          <IconImg id={id} />
+        </ContainerAnchor>
+      ) : (
+        <Container
+          {...commonProps}
+          data-test-class={dataTestClass}
+          {...restColors}
+        >
+          <IconImg id={id} />
+        </Container>
+      )}
+    </>
   );
 };
 

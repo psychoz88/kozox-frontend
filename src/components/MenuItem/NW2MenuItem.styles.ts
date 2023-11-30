@@ -20,8 +20,7 @@ import {
   infoColor,
   lineHeightXL,
 } from 'constants/styleVars';
-import { TArrowBlockProps, TItemStyle, TPosition } from './types';
-// import Icon from 'components/Icon';
+import {TArrowBlockProps, TItemStyle, TPosition} from './types';
 
 const OFFSET_6 = '6px';
 const OFFSET_10 = '10px';
@@ -37,12 +36,18 @@ export const OuterWrapper = styled.div<{position: TPosition}>`
   margin: 0 ${offsetXXSm};
   min-width: ${BUTTON_WIDTH};
   cursor: pointer;
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+  transition:
+    color 0.15s,
+    background-color 0.15s,
+    border-color 0.15s,
     stroke 0.15s;
 
   &:hover * {
     color: ${warnColor};
-    transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+    transition:
+      color 0.15s,
+      background-color 0.15s,
+      border-color 0.15s,
       stroke 0.15s;
 
     & > :after {
@@ -147,7 +152,10 @@ export const SimpleMenuItem = styled.div<
   font-size: ${fontSizeXSm};
   line-height: ${lineHeightSm};
   font-weight: ${fontWeightBold};
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+  transition:
+    color 0.15s,
+    background-color 0.15s,
+    border-color 0.15s,
     stroke 0.15s;
 
   ${({itemstyle}) =>
@@ -167,7 +175,10 @@ export const SimpleMenuItem = styled.div<
 `;
 
 export const StyledDropdown = styled(Dropdown)<{$itemstyle?: TItemStyle}>`
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s,
+  transition:
+    color 0.15s,
+    background-color 0.15s,
+    border-color 0.15s,
     stroke 0.15s;
 
   &.ant-dropdown-trigger {
@@ -199,13 +210,17 @@ export const StyledMenu = styled(Menu)<{
   border-radius: ${borderRadiusDef};
   width: ${({width}) => width ?? DROPDOWN_WIDTH};
   overflow: hidden;
-  transition: background-color 0.15s, color 0.15s;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
   top: ${({itemstyle}) =>
     itemstyle === 'inline' ? `${INLINE_OFFSET}` : `${OFFSET_6}`};
 
   li {
     position: relative;
-    transition: background-color 0.15s, color 0.15s;
+    transition:
+      background-color 0.15s,
+      color 0.15s;
 
     &:before {
       content: '';
@@ -341,7 +356,3 @@ export const ArrowBlock = styled(AvatarInnerBlock)<TArrowBlockProps>`
     }
   }
 `;
-
-// export const StyledIcon = styled(Icon)`
-//   margin-right: ${offsetXXSm};
-// `;
