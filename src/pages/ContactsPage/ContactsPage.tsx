@@ -4,6 +4,7 @@ import Title from 'components/Title/Title';
 import DoubleBlock from 'components/DoubleBlock/DoubleBlock';
 
 import {StyledDiv} from 'pages/Pages.styles';
+import {CONTACT_EMAIL, CONTACT_PHONE} from 'constants/appConst';
 
 const ContactsPage = () => {
   return (
@@ -18,8 +19,8 @@ const ContactsPage = () => {
             one of our hotel providers who can cater for larger get togethers
             with plentiful of extras to choose from making sure your team is
             well catered for.'
-        email='klinoktop@gmail.com'
-        phone='+380666803003'
+        email={CONTACT_EMAIL}
+        phone={CONTACT_PHONE}
         isShowed
       ></DoubleBlock>
     </StyledDiv>

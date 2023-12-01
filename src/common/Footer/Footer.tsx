@@ -61,7 +61,7 @@ const Footer = () => {
             </CentralBlock>
 
             {/* Right block */}
-            <SocialLinks white />
+            <SocialLinks white center={isMobile} />
           </FooterRow>
         </Container>
       </FooterContainer>

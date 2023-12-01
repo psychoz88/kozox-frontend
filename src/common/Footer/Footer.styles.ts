@@ -58,6 +58,7 @@ export const Container = styled.div<{offset?: string}>`
 export const FooterRow = styled.div`
   display: grid;
   grid-gap: ${sectionInsetXs};
+  justify-content: center;
 
   @media (min-width: ${mdBp}px) {
     display: flex;

@@ -5,13 +5,19 @@ import Icon from 'components/Icon';
 
 import {offsetSm} from 'constants/styleVars';
 import {TColorProps} from 'components/Typography/Typography';
+import {LINKEDIN_LINK, INSTAGRAM_LINK, FACEBOOK_LINK} from 'constants/appConst';
 
-const Container = styled.div`
+const Container = styled.div<{center?: boolean}>`
   display: flex;
   gap: ${offsetSm};
+  ${({center}) => center && `justify-content: center;`}
 `;
 
-const SocialLinks = ({...restColors}: TColorProps) => {
+export type TProps = {
+  center?: boolean;
+} & TColorProps;
+
+const SocialLinks = ({center, ...restColors}: TProps) => {
   const commonProps = {
     size: 20,
     target: '_blank',
@@ -20,14 +26,10 @@ const SocialLinks = ({...restColors}: TColorProps) => {
   };
 
   return (
-    <Container>
-      <Icon {...commonProps} icon='LINKEDIN' href='https://www.linkedin.com/' />
-      <Icon
-        {...commonProps}
-        icon='INSTAGRAM'
-        href='https://www.instagram.com/'
-      />
-      <Icon {...commonProps} icon='FACEBOOK' href='https://facebook.com/' />
+    <Container center={center}>
+      <Icon {...commonProps} icon='LINKEDIN' href={`${LINKEDIN_LINK}`} />
+      <Icon {...commonProps} icon='INSTAGRAM' href={`${INSTAGRAM_LINK}`} />
+      <Icon {...commonProps} icon='FACEBOOK' href={`${FACEBOOK_LINK}`} />
     </Container>
   );
 };
