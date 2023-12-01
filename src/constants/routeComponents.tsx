@@ -7,6 +7,7 @@ import ContactForm from 'pages/ContactForm/ContactForm';
 import CookiePolicyPage from 'pages/CookiePolicyPage/CookiePolicyPage';
 
 import {Routes} from './routes';
+import TermsAndConditionsPage from 'pages/TermsAndConditions/TermsAndConditionsPage';
 
 const RouteComponents = [
   {
@@ -35,6 +36,12 @@ const RouteComponents = [
   },
   {
     exact: true,
+    path: Routes.contactForm,
+    component: ContactForm,
+    pageTitle: 'Contact us',
+  },
+  {
+    exact: true,
     path: Routes.privacyPolicy,
     component: PrivacyPolicyPage,
     pageTitle: 'Privacy policy',
@@ -47,9 +54,9 @@ const RouteComponents = [
   },
   {
     exact: true,
-    path: Routes.contactForm,
-    component: ContactForm,
-    pageTitle: 'Contact us',
+    path: Routes.termsAndConditions,
+    component: TermsAndConditionsPage,
+    pageTitle: 'Terms & Conditions',
   },
   // TODO: need to add page404
 ].map((item, index) => ({...item, key: index}));

@@ -20,15 +20,12 @@ const Footer = () => {
   const navigate = useNavigate();
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
-  const onMain = useCallback(() => {
-    navigate(Routes.mainLanding);
-  }, [navigate]);
-  const onPrivacyPolicy = useCallback(() => {
-    navigate(Routes.privacyPolicy);
-  }, [navigate]);
-  const onCookiePolicy = useCallback(() => {
-    navigate(Routes.cookiePolicy);
-  }, [navigate]);
+  const navigateTo = useCallback(
+    (route: string) => {
+      navigate(route);
+    },
+    [navigate],
+  );
 
   return (
     <>
@@ -38,7 +35,7 @@ const Footer = () => {
             {/* Left block */}
             <FooterBlock>
               <StyledNavLink
-                onClick={onMain}
+                onClick={() => navigateTo(Routes.mainLanding)}
                 target='_blank'
                 rel='noreferrer noopener'
               >
@@ -49,13 +46,20 @@ const Footer = () => {
             {/* Center block */}
             <CentralBlock isMobile={isMobile}>
               <FooterLinkBlock>
-                <StyledNavLink onClick={onPrivacyPolicy}>
+                <StyledNavLink onClick={() => navigateTo(Routes.privacyPolicy)}>
                   Privacy Policy
                 </StyledNavLink>
               </FooterLinkBlock>
               <FooterLinkBlock>
-                <StyledNavLink onClick={onCookiePolicy}>
+                <StyledNavLink onClick={() => navigateTo(Routes.cookiePolicy)}>
                   Cookie Policy
+                </StyledNavLink>
+              </FooterLinkBlock>
+              <FooterLinkBlock>
+                <StyledNavLink
+                  onClick={() => navigateTo(Routes.termsAndConditions)}
+                >
+                  Terms & Conditions
                 </StyledNavLink>
               </FooterLinkBlock>
             </CentralBlock>

@@ -3,8 +3,9 @@ export const Routes = {
   services: '/services',
   contacts: '/contacts',
   portfolio: '/portfolio',
+  contactForm: '/contactForm',
   privacyPolicy: '/privacyPolicy',
   cookiePolicy: '/cookiePolicy',
-  contactForm: '/contactForm',
+  termsAndConditions: '/termsAndConditions',
   page404: '/404',
 };

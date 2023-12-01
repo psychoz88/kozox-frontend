@@ -3,7 +3,7 @@ import React from 'react';
 import TwoColumnsBlock from 'components/TwoColumnsBlock';
 import PolicyImage from 'pages/components/PolicyImage';
 import CookiePolicyContent from './components/CookiePolicyContent';
-import image from '../../images/termsAndConditions.png';
+import image from '../../images/cokiePolicy.png';
 
 const CookiePolicyPage = () => {
   return (
