@@ -11,6 +11,7 @@ function Button({
   icon,
   children,
   loading,
+  borderColor,
   ...restProps
 }: TButtonBaseProps) {
   const content = (
@@ -25,6 +26,7 @@ function Button({
     icon,
     iconPlace,
     size,
+    borderColor,
     loading: loading ? 1 : 0, // https://github.com/styled-components/styled-components/issues/1198
     ...restProps,
   };

@@ -24,4 +24,5 @@ export type TButtonBaseProps = {
   iconPlace?: 'left' | 'right';
   size?: TButtonSize;
   white?: boolean;
+  borderColor?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;

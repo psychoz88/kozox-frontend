@@ -3,6 +3,8 @@ import React from 'react';
 import QuadrupleBlock from 'components/Quadruple/QuadrupleBlock';
 
 import Title from 'components/Title/Title';
+import GetInTouchBlock from 'components/GetInTouch/GetInTouchBlock';
+
 import nwMainPage from 'images/portfolio/nwMainPage.png';
 import nwVenueProfile from 'images/portfolio/nwVenueProfile.png';
 import nwOfferCreation from 'images/portfolio/nwOfferCreation.png';
@@ -12,7 +14,6 @@ import avtorSolution from 'images/portfolio/avtorSolutions.png';
 import pointerMain from 'images/portfolio/pointerMain.png';
 import pointerMulti from 'images/portfolio/pointerMulti.png';
 import pointerSurvey from 'images/portfolio/pointerSurvey.png';
-
 import {Devider} from 'components/Devider/Devider.styles';
 
 const PortfolioPage = () => {
@@ -73,6 +74,7 @@ const PortfolioPage = () => {
         foursBlock={[pointerMulti, pointerSurvey]}
         isShowed
       />
+      <GetInTouchBlock />
     </div>
   );
 };

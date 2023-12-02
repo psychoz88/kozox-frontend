@@ -25,6 +25,7 @@ export const elementsGreyColor = '#1b2225'; // grey for elements of design: bord
 export const inputDarkGreyColor = '#2c3335'; // dark grey-green color for input
 export const inputFocusedGreenColor = '#008c5b'; // light greeen color input:focus
 export const backgroundElementColor = '#0e1618'; // background for images, blocks, elements
+export const getInTouchBlockBackgroundColor = '#1a2225'; // background for Get in touch block
 
 // Button colors
 export const buttonBackgroundColor = '#122322';

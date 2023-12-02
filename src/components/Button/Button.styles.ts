@@ -88,11 +88,13 @@ const BaseButton = styled.button<TButtonBaseProps>(
     loading,
     minimized,
     size,
+    borderColor,
   }) => {
     const offset = size === 'large' ? offsetSm : offsetXSm;
 
     return css`
       display: ${inline ? `inline-flex` : 'flex'};
+      font-family: 'GT America Mono Trial', monospace;
       align-items: center;
       justify-content: center;
       letter-spacing: 0.02em;
@@ -101,7 +103,7 @@ const BaseButton = styled.button<TButtonBaseProps>(
       padding: ${minimized ? offsetSm : `${offsetSm} ${offsetXLg}`};
       background-color: transparent;
       color: ${maxGreenTextColor};
-      border: 1px solid ${blackColor};
+      border: 1px solid ${borderColor || blackColor};
       transition:
         background-color 0.25s,
         border-color 0.25s,
@@ -154,7 +156,6 @@ const BaseButton = styled.button<TButtonBaseProps>(
   },
 );
 
-// TODO: props and styles that they effects
 export const PrimaryButton = styled(BaseButton)<{
   inverted?: boolean;
   active?: boolean;

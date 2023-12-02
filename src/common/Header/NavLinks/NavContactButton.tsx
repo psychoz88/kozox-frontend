@@ -7,7 +7,7 @@ import {useAppSelector} from 'store/hooks';
 import {StyledButton} from './NavLinks.styles';
 import {xxxsBp} from 'constants/styleVars';
 
-const NavContactButton = () => {
+const NavContactButton = ({borderColor}: {borderColor?: string}) => {
   const navigate = useNavigate();
   const deviceWidth = useAppSelector(({app}) => app.deviceType.width);
 
@@ -21,6 +21,7 @@ const NavContactButton = () => {
       buttonType='primary'
       size='small'
       fullWidth
+      borderColor={borderColor}
     >
       {deviceWidth && deviceWidth <= xxxsBp ? 'Contact' : 'Contact us'}
     </StyledButton>
