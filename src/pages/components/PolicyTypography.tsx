@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 import {
   offsetXSm,
   offsetDef,
-  offsetLg,
   offsetXXLg,
   fontSizeXSm,
   fontSizeMd,
@@ -71,6 +70,7 @@ export const SubSubTitle = styled.h5`
   font-size: ${fontSizeMd};
   line-height: ${lineHeightLg};
   margin-bottom: ${offsetXSm};
+  color: ${dirtyWhiteTextColor};
 `;
 
 export const StyledTitle = styled.div`
@@ -89,10 +89,19 @@ export const Paragraph = styled.p`
   ${sharedParagraphStyle}
 `;
 
+export const StyledParagraph = styled(Paragraph)`
+  font-weight: ${fontWeightBold};
+`;
+
 export const StyledUnorderedList = styled.ul`
   ${sharedParagraphStyle};
-  padding-left: ${offsetLg};
+  padding-left: ${offsetXXLg};
   list-style-type: disc;
+`;
+
+export const StyledOrderedList = styled.ol`
+  ${sharedParagraphStyle};
+  padding-left: ${offsetXXLg};
 `;
 
 export const StyledCircleUnorderedList = styled(StyledUnorderedList)`
