@@ -7,9 +7,9 @@ import {
   maxGreenTextColor,
 } from 'constants/styleVars';
 
-export const Block = styled.div`
+export const Block = styled.div<{isMobile: boolean}>`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: ${({isMobile}) => (isMobile ? '1fr' : '1fr 1fr 1fr')};
   gap: 20px;
 `;
 

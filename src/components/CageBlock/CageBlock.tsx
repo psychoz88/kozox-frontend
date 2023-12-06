@@ -1,49 +1,28 @@
 import React from 'react';
 
+import {useAppSelector} from 'store/hooks';
+
 import {Block, ItemBlock, Title, Content} from './CageBlock.styles';
 
-const CageBlock = () => {
+type TProps = {
+  data: {
+    title: string;
+    content: string;
+  }[];
+};
+
+const CageBlock = ({data}: TProps) => {
+  const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
   return (
-    <Block>
-      <ItemBlock>
-        <Title>Candor</Title>
-        <Content>
-          We believe in being forthright, even when that's difficult. We avoid
-          euphemism or otherwise cloaking our opinions or experience. We respect
-          those who speak candidly, even if we disagree with what they are
-          saying.
-        </Content>
-      </ItemBlock>
-
-      <ItemBlock>
-        <Title>Candor</Title>
-        <Content>
-          We believe in being forthright, even when that's difficult. We avoid
-          euphemism or otherwise cloaking our opinions or experience. We respect
-          those who speak candidly, even if we disagree with what they are
-          saying.
-        </Content>
-      </ItemBlock>
-
-      <ItemBlock>
-        <Title>Candor</Title>
-        <Content>
-          We believe in being forthright, even when that's difficult. We avoid
-          euphemism or otherwise cloaking our opinions or experience. We respect
-          those who speak candidly, even if we disagree with what they are
-          saying.
-        </Content>
-      </ItemBlock>
-
-      <ItemBlock>
-        <Title>Candor</Title>
-        <Content>
-          We believe in being forthright, even when that's difficult. We avoid
-          euphemism or otherwise cloaking our opinions or experience. We respect
-          those who speak candidly, even if we disagree with what they are
-          saying.
-        </Content>
-      </ItemBlock>
+    <Block isMobile={isMobile}>
+      {data.map((item, index) => {
+        return (
+          <ItemBlock key={index}>
+            <Title>{item.title}</Title>
+            <Content>{item.content}</Content>
+          </ItemBlock>
+        );
+      })}
     </Block>
   );
 };
