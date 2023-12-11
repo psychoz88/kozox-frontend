@@ -7,7 +7,7 @@ import image from '../../images/termsAndConditions.jpg';
 
 const TermsAndConditionsPage = () => {
   return (
-    <div>
+    <>
       <TwoColumnsBlock
         title='Terms & Conditions'
         colLeft={<PolicyImage src={image} />}
@@ -15,7 +15,7 @@ const TermsAndConditionsPage = () => {
         customPadding='0'
         isShowed
       />
-    </div>
+    </>
   );
 };
 

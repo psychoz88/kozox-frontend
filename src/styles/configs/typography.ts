@@ -49,6 +49,7 @@ export const lineHeightXXXXXLg = '60px';
 
 // FONT WEIGHT
 export const fontWeightSemiThin = '200';
+export const fontWeightThin = '200';
 export const fontWeightNormal = '400';
 export const fontWeightSemiBold = '500';
 export const fontWeightBold = '700';

@@ -7,7 +7,7 @@ import image from '../../images/cokiePolicy.png';
 
 const CookiePolicyPage = () => {
   return (
-    <div>
+    <>
       <TwoColumnsBlock
         title='Cookie policy'
         isShowed
@@ -15,7 +15,7 @@ const CookiePolicyPage = () => {
         colRight={<CookiePolicyContent />}
         customPadding='0'
       />
-    </div>
+    </>
   );
 };
 

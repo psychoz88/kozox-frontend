@@ -7,7 +7,7 @@ import image from '../../images/privacyPolicy.jpg';
 
 const PrivacyPolicyPage = () => {
   return (
-    <div>
+    <>
       <TwoColumnsBlock
         title='Privacy policy'
         isShowed
@@ -15,7 +15,7 @@ const PrivacyPolicyPage = () => {
         colRight={<PrivacyPolicyContent />}
         customPadding='0'
       />
-    </div>
+    </>
   );
 };
 

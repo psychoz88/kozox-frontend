@@ -18,7 +18,7 @@ import {Devider} from 'components/Devider/Devider.styles';
 
 const PortfolioPage = () => {
   return (
-    <div>
+    <>
       <Title title='Our Projects' isPageTitle />
       <QuadrupleBlock
         title='HRS: NewWork'
@@ -75,7 +75,7 @@ const PortfolioPage = () => {
         isShowed
       />
       <GetInTouchBlock />
-    </div>
+    </>
   );
 };
 

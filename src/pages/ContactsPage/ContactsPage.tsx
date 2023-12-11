@@ -1,10 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Title from 'components/Title/Title';
 import DoubleBlock from 'components/DoubleBlock/DoubleBlock';
 
-import {StyledDiv} from 'pages/Pages.styles';
+import {dirtyWhiteTextColor} from 'constants/styleVars';
 import {CONTACT_EMAIL, CONTACT_PHONE} from 'constants/appConst';
+
+const StyledDiv = styled.div`
+  color: ${dirtyWhiteTextColor};
+`;
 
 const ContactsPage = () => {
   return (

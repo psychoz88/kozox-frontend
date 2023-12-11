@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Title from 'components/Title/Title';
-
-import {StyledDiv} from 'pages/Pages.styles';
 import Blobs from 'components/Blobs/Blobs';
+
+import {dirtyWhiteTextColor} from 'constants/styleVars';
+
+const StyledDiv = styled.div`
+  color: ${dirtyWhiteTextColor};
+`;
 
 const ServicesPage = () => {
   const blobsData = [
@@ -14,7 +19,7 @@ const ServicesPage = () => {
     'QA & Testing',
     'UX/UI Design',
   ];
-  
+
   return (
     <StyledDiv>
       <Title title='Our Services' isPageTitle />

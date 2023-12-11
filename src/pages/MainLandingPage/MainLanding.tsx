@@ -12,14 +12,14 @@ const MainLanding = () => {
     trump prudence.`;
 
   return (
-    <div>
+    <>
       {/* <Devider /> */}
       <CageBlock
         data={dataWhyChooseUS}
         title='Why choose us'
         additionalText={additionalText}
       />
-    </div>
+    </>
   );
 };
 

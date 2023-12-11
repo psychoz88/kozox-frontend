@@ -5,6 +5,7 @@ import {
   dirtyGreyTextColor,
   elementsGreyColor,
   fontSizeXXXXXLg,
+  fontWeightThin,
   lineHeightXXXXLg,
   offsetXSm,
   offsetXXLg,
@@ -105,6 +106,7 @@ export const FoursBlockItem = styled.div`
 
 export const Title = styled.p`
   font-size: ${fontSizeXXXXXLg};
+  font-weight: ${fontWeightThin};
   line-height: ${lineHeightXXXXLg};
   color: ${whiteColor};
   margin: 0 0 ${offsetXSm};
