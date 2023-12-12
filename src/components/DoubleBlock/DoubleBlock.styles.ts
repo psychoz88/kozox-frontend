@@ -16,10 +16,12 @@ import {
   lineHeightLg,
   fontSizeMd,
   offsetXXSm,
+  offset80,
 } from 'constants/styleVars';
 
 export const Container = styled.div<{isMobile?: boolean}>`
   color: ${dirtyGreyTextColor};
+  margin: ${offset80} 0;
 
   ${({isMobile}) =>
     isMobile

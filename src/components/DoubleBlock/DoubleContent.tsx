@@ -1,22 +1,20 @@
 import React from 'react';
 
-import SocialLinks from 'components/SocialLinks/SocialLinks';
+import ContactBlock from './components/ContactBlock';
 
 import {useAppSelector} from 'store/hooks';
 
 import {DoubleContentProps} from './types';
-import {
-  BlockItem,
-  Container,
-  FirstBlock,
-  SecondBlock,
-  Text,
-  Title,
-  ItemTitle,
-  ItemLink,
-} from './DoubleBlock.styles';
+import {Container, FirstBlock, Text, Title} from './DoubleBlock.styles';
 
-const DoubleContent = ({title, text, email, phone}: DoubleContentProps) => {
+const DoubleContent = ({
+  title,
+  text,
+  email,
+  phone,
+  image,
+  isContacts,
+}: DoubleContentProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   return (
@@ -25,20 +23,7 @@ const DoubleContent = ({title, text, email, phone}: DoubleContentProps) => {
         <Title>{title}</Title>
         <Text>{text}</Text>
       </FirstBlock>
-      <SecondBlock>
-        <BlockItem>
-          <ItemTitle>Email</ItemTitle>
-          <ItemLink href={`mailto:${email}`}>{email}</ItemLink>
-        </BlockItem>
-        <BlockItem>
-          <ItemTitle>Phone</ItemTitle>
-          <ItemLink href={`tel:${phone}`}>{phone}</ItemLink>
-        </BlockItem>
-        <BlockItem>
-          <ItemTitle margin='0 0 10px' >Social media</ItemTitle>
-          <SocialLinks green />
-        </BlockItem>
-      </SecondBlock>
+      {isContacts ? <ContactBlock email={email} phone={phone} /> : <>{image}</>}
     </Container>
   );
 };
