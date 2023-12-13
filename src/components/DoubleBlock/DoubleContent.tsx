@@ -14,16 +14,21 @@ const DoubleContent = ({
   phone,
   image,
   isContacts,
+  isReverse,
 }: DoubleContentProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   return (
-    <Container isMobile={isMobile}>
-      <FirstBlock>
+    <Container isMobile={isMobile} isReverse={isReverse}>
+      <FirstBlock isReverse={isReverse}>
         <Title>{title}</Title>
         <Text>{text}</Text>
       </FirstBlock>
-      {isContacts ? <ContactBlock email={email} phone={phone} /> : <>{image}</>}
+      {isContacts ? (
+        <ContactBlock email={email} phone={phone} />
+      ) : (
+        <div>{image}</div>
+      )}
     </Container>
   );
 };

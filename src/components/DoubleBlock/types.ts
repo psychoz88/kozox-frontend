@@ -5,6 +5,7 @@ export interface DoubleContentProps {
   phone?: string;
   image?: string;
   isContacts?: boolean;
+  isReverse?: boolean;
 }
 
 export interface DoubleBlockProps extends DoubleContentProps {

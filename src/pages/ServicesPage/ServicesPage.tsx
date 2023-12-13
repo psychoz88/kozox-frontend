@@ -25,11 +25,11 @@ const ServicesPage = () => {
 
   const servicesBlocksData = [
     {title: EServices.WEB_AND_MOB_DEV, text: ABOUT_KOZOX},
-    {title: EServices.DEVOPS_SOLUTIONS, text: ABOUT_KOZOX},
+    {title: EServices.DEVOPS_SOLUTIONS, text: ABOUT_KOZOX, isReverse: true},
     {title: EServices.ARCHITECTURE_DESIGN, text: ABOUT_KOZOX},
-    {title: EServices.POC_PROT_MVP, text: ABOUT_KOZOX},
+    {title: EServices.POC_PROT_MVP, text: ABOUT_KOZOX, isReverse: true},
     {title: EServices.TESTIMG, text: ABOUT_KOZOX},
-    {title: EServices.DESIGN, text: ABOUT_KOZOX},
+    {title: EServices.DESIGN, text: ABOUT_KOZOX, isReverse: true},
   ];
 
   return (
@@ -37,8 +37,16 @@ const ServicesPage = () => {
       <Title title='Our Services' isPageTitle />
       <Blobs data={blobsData} />
       {servicesBlocksData.map((block, index) => {
-        const {title, text} = block;
-        return <DoubleBlock title={title} text={text} isShowed key={index} />;
+        const {title, text, isReverse} = block;
+        return (
+          <DoubleBlock
+            title={title}
+            text={text}
+            isShowed
+            isReverse={isReverse}
+            key={index}
+          />
+        );
       })}
     </StyledDiv>
   );

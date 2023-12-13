@@ -19,11 +19,11 @@ import {
   offset80,
 } from 'constants/styleVars';
 
-export const Container = styled.div<{isMobile?: boolean}>`
+export const Container = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
   color: ${dirtyGreyTextColor};
   margin: ${offset80} 0;
 
-  ${({isMobile}) =>
+  ${({isMobile, isReverse}) =>
     isMobile
       ? `
         display: flex;
@@ -31,11 +31,17 @@ export const Container = styled.div<{isMobile?: boolean}>`
         gap: ${offset50};`
       : `
         display: grid;
-        grid-template-columns: 1fr 320px;
+        grid-template-columns: ${isReverse ? '320px 1fr' : '1fr 320px'} ;
         gap: ${offset100};`}
 `;
 
-export const FirstBlock = styled.div``;
+export const FirstBlock = styled.div<{isReverse?: boolean}>`
+  ${({isReverse}) =>
+    isReverse &&
+    `
+    order: 1;
+  `}
+`;
 
 export const Title = styled.p`
   font-size: ${fontSizeXXXXXLg};
