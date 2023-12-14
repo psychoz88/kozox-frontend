@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ContactBlock from './components/ContactBlock';
+import Image from 'components/Image';
 
 import {useAppSelector} from 'store/hooks';
 
@@ -13,7 +14,6 @@ const DoubleContent = ({
   email,
   phone,
   image,
-  isContacts,
   isReverse,
 }: DoubleContentProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
@@ -24,10 +24,10 @@ const DoubleContent = ({
         <Title>{title}</Title>
         <Text>{text}</Text>
       </FirstBlock>
-      {isContacts ? (
-        <ContactBlock email={email} phone={phone} />
+      {image ? (
+        <Image src={image} alt={image} />
       ) : (
-        <div>{image}</div>
+        <ContactBlock email={email} phone={phone} />
       )}
     </Container>
   );

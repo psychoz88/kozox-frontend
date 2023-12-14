@@ -21,7 +21,6 @@ const ContactsPage = () => {
         email={CONTACT_EMAIL}
         phone={CONTACT_PHONE}
         isShowed
-        isContacts
       />
     </StyledDiv>
   );

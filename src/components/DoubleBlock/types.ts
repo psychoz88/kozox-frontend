@@ -4,7 +4,6 @@ export interface DoubleContentProps {
   email?: string;
   phone?: string;
   image?: string;
-  isContacts?: boolean;
   isReverse?: boolean;
 }
 
