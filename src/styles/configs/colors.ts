@@ -31,6 +31,10 @@ export const getInTouchBlockBackgroundColor = '#1a2225'; // background for Get i
 export const buttonBackgroundColor = '#122322';
 export const buttonHoverColor = '#0f382e';
 
+// Box-shadow
+export const navBoxShadow = `0px 2.188px 4.625px #00000021,0px 10px 13px #00000033,0px 25.313px 34.875px #00000045,0px 50px 80px #00000066`;
+export const quadrateBoxSadow = `0px 0px 20px 5px ${blackColor}`;
+
 // Components like Typography or Icon handles colors from object below
 // so to add color to such components you just need to add color here
 export const app_colors = {

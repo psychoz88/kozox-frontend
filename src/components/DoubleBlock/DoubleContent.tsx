@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContactBlock from './components/ContactBlock';
+import ContactsBlock from './components/ContactsBlock';
 import Image from 'components/Image';
 
 import {useAppSelector} from 'store/hooks';
@@ -27,7 +27,7 @@ const DoubleContent = ({
       {image ? (
         <Image src={image} alt={image} />
       ) : (
-        <ContactBlock email={email} phone={phone} />
+        <ContactsBlock email={email} phone={phone} />
       )}
     </Container>
   );

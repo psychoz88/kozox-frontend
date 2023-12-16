@@ -14,7 +14,7 @@ type TProps = {
   phone?: string;
 };
 
-const ContactBlock = ({email, phone}: TProps) => {
+const ContactsBlock = ({email, phone}: TProps) => {
   return (
     <SecondBlock>
       <BlockItem>
@@ -33,4 +33,4 @@ const ContactBlock = ({email, phone}: TProps) => {
   );
 };
 
-export default ContactBlock;
+export default ContactsBlock;

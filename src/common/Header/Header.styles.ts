@@ -5,6 +5,7 @@ import {
   contentMaxWidthLg,
   lgBp,
   mdBp,
+  navBoxShadow,
   offset120,
   offset80,
   offsetDef,
@@ -38,6 +39,7 @@ export const StyledHeader = styled(Header)`
   border-bottom: 1px solid #1a2225;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
+  box-shadow: ${navBoxShadow};
 
   // Blur on background
   background: #060f11d6; // with opacity
