@@ -21,7 +21,8 @@ export const ItemBlock = styled.div`
   border-radius: 10px;
 `;
 
-export const ItemContent = styled.div`
+export const ItemContent = styled.a`
+  display: block;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

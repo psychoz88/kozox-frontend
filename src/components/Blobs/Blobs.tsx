@@ -5,7 +5,7 @@ import {useAppSelector} from 'store/hooks';
 import {Block, ItemBlock, ItemContent, Container} from './Blobs.styles';
 
 type TProps = {
-  data: string[];
+  data: any[];
 };
 
 const Blobs = ({data}: TProps) => {
@@ -14,9 +14,10 @@ const Blobs = ({data}: TProps) => {
     <Container>
       <Block isMobile={isMobile}>
         {data.map((item, index) => {
+          const {content, anchor} = item;
           return (
             <ItemBlock key={index}>
-              <ItemContent>{item}</ItemContent>
+              <ItemContent href={`#${anchor}`}>{content}</ItemContent>
             </ItemBlock>
           );
         })}

@@ -11,6 +11,7 @@ import {Container, FirstBlock, Text, Title} from './DoubleBlock.styles';
 const DoubleContent = ({
   title,
   text,
+  anchor,
   email,
   phone,
   image,
@@ -19,7 +20,7 @@ const DoubleContent = ({
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
 
   return (
-    <Container isMobile={isMobile} isReverse={isReverse}>
+    <Container isMobile={isMobile} isReverse={isReverse} id={anchor}>
       <FirstBlock isReverse={isReverse}>
         <Title>{title}</Title>
         <Text>{text}</Text>

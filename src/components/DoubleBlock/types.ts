@@ -1,6 +1,7 @@
 export interface DoubleContentProps {
   title: string;
   text: string;
+  anchor?: string;
   email?: string;
   phone?: string;
   image?: string;

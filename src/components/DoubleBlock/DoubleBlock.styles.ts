@@ -17,7 +17,7 @@ import {
   fontSizeMd,
   offsetXXSm,
   offset80,
-  quadrateBoxSadow,
+  contactsBoxShadow,
 } from 'constants/styleVars';
 
 export const Container = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
@@ -61,7 +61,7 @@ export const SecondBlock = styled.div`
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
   height: 310px;
-  box-shadow: ${quadrateBoxSadow};
+  box-shadow: ${contactsBoxShadow};
 
   div:nth-child(1) {
     border-bottom: 1px solid ${elementsGreyColor};
