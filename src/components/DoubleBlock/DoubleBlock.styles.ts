@@ -18,7 +18,9 @@ import {
   offsetXXSm,
   offset80,
   contactsBoxShadow,
+  offsetXXLg,
 } from 'constants/styleVars';
+import Button from 'components/Button';
 
 export const Container = styled.div<{isMobile?: boolean; isReverse?: boolean}>`
   color: ${dirtyGreyTextColor};
@@ -54,6 +56,10 @@ export const Title = styled.p`
 export const Text = styled.div`
   font-size: ${fontSizeLg};
   line-height: ${lineHeightXL};
+`;
+
+export const AdditionalButton = styled(Button)`
+  margin-top: ${offsetXXLg};
 `;
 
 export const SecondBlock = styled.div`

@@ -13,6 +13,7 @@ type TProps = {
 
 const Blobs = ({data}: TProps) => {
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
+
   ScrollToAnchor();
 
   return (

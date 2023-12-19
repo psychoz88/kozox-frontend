@@ -74,9 +74,10 @@ const ServicesPage = () => {
               title={title}
               text={text}
               image={image}
-              isShowed
-              isReverse={isReverse}
               anchor={anchor}
+              isReverse={isReverse}
+              isShowed
+              withButton
             />
             <Devider />
           </div>

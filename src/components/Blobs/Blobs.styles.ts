@@ -17,6 +17,10 @@ export const Block = styled.div<{isMobile: boolean}>`
 `;
 
 export const ItemBlock = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
   background: ${backgroundElementColor};
   border: 1px solid ${elementsGreyColor};
   border-radius: 10px;
