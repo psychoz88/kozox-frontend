@@ -69,18 +69,17 @@ const ServicesPage = () => {
       {servicesBlocksData.map((block, index) => {
         const {title, text, image, isReverse, anchor} = block;
         return (
-          <>
+          <div key={index}>
             <DoubleBlock
               title={title}
               text={text}
               image={image}
               isShowed
               isReverse={isReverse}
-              key={index}
               anchor={anchor}
             />
             <Devider />
-          </>
+          </div>
         );
       })}
       <GetInTouchBlock />

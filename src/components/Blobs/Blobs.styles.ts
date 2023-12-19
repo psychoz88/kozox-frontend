@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 import {
   backgroundElementColor,
@@ -21,7 +22,7 @@ export const ItemBlock = styled.div`
   border-radius: 10px;
 `;
 
-export const ItemContent = styled.a`
+export const ItemContent = styled(Link)`
   display: block;
   font-size: 16px;
   font-weight: 400;
