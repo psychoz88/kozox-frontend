@@ -6,8 +6,8 @@ import Blobs from 'components/Blobs/Blobs';
 import DoubleBlock from 'components/DoubleBlock/DoubleBlock';
 import GetInTouchBlock from 'components/GetInTouch/GetInTouchBlock';
 
-import {Devider} from 'components/Devider/Devider.styles';
 import {servicesBlocksData, servicesList} from './helpers';
+import {Devider} from 'components/Devider/Devider.styles';
 
 import {dirtyWhiteTextColor} from 'constants/styleVars';
 
