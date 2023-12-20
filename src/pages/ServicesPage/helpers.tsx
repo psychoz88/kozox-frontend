@@ -1,11 +1,11 @@
 import React from 'react';
 
 import earth from '../../images/earth.jpeg';
-import mars from '../../images/mars.jpeg';
-import moon from '../../images/moon.jpeg';
-import neptune from '../../images/neptune.jpeg';
-import solar from '../../images/solar.jpeg';
-import uranus from '../../images/uranus.jpeg';
+// import mars from '../../images/mars.jpeg';
+// import moon from '../../images/moon.jpeg';
+// import neptune from '../../images/neptune.jpeg';
+// import solar from '../../images/solar.jpeg';
+// import uranus from '../../images/uranus.jpeg';
 
 import {ABOUT_KOZOX} from 'constants/appConst';
 import {EServices, EServicesIDs} from './types';
@@ -68,14 +68,14 @@ export const servicesBlocksData = [
     text: `Product planning at various stages of development: Planning, development, testing, implementation, 
       commissioning, compliance checks, operating system administration, and rapid customization of implemented solutions
     `,
-    image: mars,
+    image: earth,
     anchor: EServicesIDs.DEVOPS_SOLUTIONS,
     isReverse: true,
   },
   {
     title: EServices.ARCHITECTURE_DESIGN,
     text: ABOUT_KOZOX, // TODO: provide information
-    image: moon,
+    image: earth,
     anchor: EServicesIDs.ARCHITECTURE_DESIGN,
   },
   {
@@ -105,7 +105,7 @@ export const servicesBlocksData = [
         </p>
       </div>
     ),
-    image: neptune,
+    image: earth,
     anchor: EServicesIDs.POC_PROT_MVP,
     isReverse: true,
   },
@@ -140,7 +140,7 @@ export const servicesBlocksData = [
         </ul>
       </>
     ),
-    image: solar,
+    image: earth,
     anchor: EServicesIDs.TESTIMG,
   },
   {
@@ -162,7 +162,7 @@ export const servicesBlocksData = [
         </p>
       </div>
     ),
-    image: uranus,
+    image: earth,
     anchor: EServicesIDs.DESIGN,
     isReverse: true,
   },
