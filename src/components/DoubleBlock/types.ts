@@ -1,6 +1,8 @@
+import {ReactNode} from 'react';
+
 export interface DoubleContentProps {
   title: string;
-  text: string;
+  text: string | ReactNode;
   anchor?: string;
   email?: string;
   phone?: string;

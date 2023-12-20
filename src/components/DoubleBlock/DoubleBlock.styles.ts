@@ -19,6 +19,7 @@ import {
   offset80,
   contactsBoxShadow,
   offsetXXLg,
+  fontWeightThin,
 } from 'constants/styleVars';
 import Button from 'components/Button';
 
@@ -48,6 +49,7 @@ export const FirstBlock = styled.div<{isReverse?: boolean}>`
 
 export const Title = styled.p`
   font-size: ${fontSizeXXXXXLg};
+  font-weight: ${fontWeightThin};
   line-height: ${lineHeightXXXXLg};
   color: ${whiteColor};
   margin: 0 0 ${offsetXLg};

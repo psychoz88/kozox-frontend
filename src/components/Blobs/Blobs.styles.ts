@@ -29,7 +29,7 @@ export const ItemBlock = styled.div`
 export const ItemContent = styled(Link)`
   display: block;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 24px;
   color: ${dirtyWhiteTextColor};
   padding: 25px 20px;
