@@ -31,6 +31,7 @@ const ServicesPage = () => {
               image={image}
               anchor={anchor}
               isReverse={isReverse}
+              imageObjectfFit={'contain'}
               isShowed
               withButton
             />

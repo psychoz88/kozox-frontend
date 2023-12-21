@@ -33,6 +33,7 @@ const ImageContainer = styled.div<{
   width: number | string;
   height: number | string;
   borderRadius: string;
+  objectfFit?: string;
 }>`
   position: relative;
   overflow: ${({isExpandToLeft}) => (isExpandToLeft ? 'visible' : 'hidden')};
@@ -110,7 +111,7 @@ const ImageContainer = styled.div<{
   }
 
   img {
-    object-fit: cover;
+    object-fit: ${({objectfFit}) => objectfFit || 'cover'};
     width: 100%;
     height: 100%;
     border-radius: ${({borderRadius}) => borderRadius};
@@ -129,6 +130,7 @@ export type TImageProps = {
   width?: number | string;
   height?: number | string;
   borderRadius?: string;
+  objectfFit?: string;
 };
 
 function Image({
@@ -143,6 +145,7 @@ function Image({
   width = 'auto',
   height = 'auto',
   borderRadius = '0',
+  objectfFit = 'cover',
 }: TImageProps) {
   return (
     <ImageContainer
@@ -154,6 +157,7 @@ function Image({
       width={width}
       height={height}
       borderRadius={borderRadius}
+      objectfFit={objectfFit}
     >
       <AntdImage
         src={src}

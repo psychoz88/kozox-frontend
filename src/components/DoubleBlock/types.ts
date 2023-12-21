@@ -9,6 +9,7 @@ export interface DoubleContentProps {
   image?: string;
   isReverse?: boolean;
   withButton?: boolean;
+  imageObjectfFit?: string;
 }
 
 export interface DoubleBlockProps extends DoubleContentProps {

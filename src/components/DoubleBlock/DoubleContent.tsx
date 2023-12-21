@@ -26,6 +26,7 @@ const DoubleContent = ({
   image,
   isReverse,
   withButton,
+  imageObjectfFit,
 }: DoubleContentProps) => {
   const navigate = useNavigate();
   const isMobile = useAppSelector(({app}) => app.deviceType.isMobile);
@@ -51,7 +52,7 @@ const DoubleContent = ({
         )}
       </FirstBlock>
       {image ? (
-        <Image src={image} alt={image} />
+        <Image src={image} alt={image} objectfFit={imageObjectfFit} />
       ) : (
         <ContactsBlock email={email} phone={phone} />
       )}

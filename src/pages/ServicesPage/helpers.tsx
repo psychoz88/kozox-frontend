@@ -1,11 +1,11 @@
 import React from 'react';
 
-import earth from '../../images/earth.jpeg';
-import mars from '../../images/mars.jpeg';
-import moon from '../../images/moon.jpeg';
-import neptune from '../../images/neptune.jpeg';
-import solar from '../../images/solar.jpeg';
-import uranus from '../../images/uranus.jpeg';
+import earth from '../../images/earth.png';
+import mars from '../../images/mars.png';
+import moon from '../../images/moon.png';
+import neptune from '../../images/neptune.png';
+import solar from '../../images/solar.png';
+import uranus from '../../images/uranus.png';
 
 import {ABOUT_KOZOX} from 'constants/appConst';
 import {EServices, EServicesIDs} from './types';
