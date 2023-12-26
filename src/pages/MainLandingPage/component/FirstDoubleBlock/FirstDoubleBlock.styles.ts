@@ -35,7 +35,7 @@ export const Container = styled.div<{isMobile?: boolean}>`
         gap: ${offset50};`
       : `
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 270px 1fr;
         align-items: center;
         gap: ${offset100};`}
 `;

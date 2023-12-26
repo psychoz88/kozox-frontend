@@ -25,6 +25,7 @@ const MainLanding = () => {
         isShowed
         withButton
       />
+      <Devider />
       <CageBlock
         data={dataWhyChooseUS}
         title='Why choose us'
