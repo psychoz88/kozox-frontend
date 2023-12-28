@@ -44,6 +44,8 @@ export const ModalGlobalStyle = createGlobalStyle`
         text-align: left;
         border-radius: ${borderRadiusLg};
         background-color: ${whiteColor};
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }

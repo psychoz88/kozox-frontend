@@ -26,8 +26,8 @@ const CookiesModal = () => {
     },
   };
 
-  const [isAccepted, setAccepted] = useState(
-    cookieStorage.getItem(SITE_CONSENT) === 'true' ? true : false,
+  const [isOpen, setOpen] = useState(
+    !(cookieStorage.getItem(SITE_CONSENT) === 'true' ? true : false),
   );
 
   const toggleStorage = (prop: boolean) =>
@@ -35,7 +35,11 @@ const CookiesModal = () => {
 
   const onAccept = () => {
     toggleStorage(true);
-    setAccepted(true);
+    setOpen(false);
+  };
+
+  const onClose = () => {
+    setOpen(false);
   };
 
   const footer = (
@@ -52,8 +56,8 @@ const CookiesModal = () => {
         header='Cookies'
         body={`By using our website, you agree to our Privacy Policy and our cookies usage.`}
         footer={footer}
-        onClose={onAccept}
-        isShowed={!isAccepted}
+        onClose={onClose}
+        isShowed={isOpen}
       />
     </div>
   );

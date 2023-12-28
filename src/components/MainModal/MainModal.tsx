@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import {Modal} from 'antd';
 import {ModalProps} from 'antd/lib/modal/Modal';
 
-import Icon from '../Icon';
-
 import {modalDefaultWidth} from 'constants/styleVars';
 
 const StyledModalWrapper = styled(Modal)<{
@@ -43,7 +41,7 @@ const MainModal = (props: IProps) => {
   const modalConfig = {
     width: modalDefaultWidth,
     style: {top: !props.centered ? '54px' : ''},
-    closeIcon: <Icon icon='NW2_CLOSE' />,
+    // closeIcon: <Icon icon='NW2_CLOSE' />, // TODO: update close icon for modal
   };
 
   return <StyledModalWrapper {...modalConfig} {...props} />;
