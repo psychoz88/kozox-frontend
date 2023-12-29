@@ -5,6 +5,7 @@ import Button from 'components/Button';
 import DirectlyOnEmail from './components/DirectlyOnEmail';
 import Title from 'components/Title/Title';
 import FormTextarea from 'components/FormItem/components/Textarea/Textarea';
+import FormItemCheckbox from 'components/FormItem/components/Checkbox/FormItemCheckbox';
 import ErrorMessage from './components/ErrorMessage';
 
 import {setContactFormData} from 'store/app/reducer';
@@ -15,6 +16,7 @@ import {
   emailFieldRules,
   firstNameFieldRules,
   noteFieldRules,
+  termsConditionsFieldRules,
 } from 'utils/finalFormFieldRules';
 
 import {Container, FormGroup, Wrapper} from './ContactForm.styles';
@@ -96,6 +98,17 @@ const ContactForm = () => {
                           placeholder='note'
                           minHeight={180}
                           rules={noteFieldRules}
+                        />
+                        <FormItemCheckbox
+                          id='terms'
+                          name='terms'
+                          label={
+                            <span>
+                              I have read and agree to the terms & conditions
+                              and privacy policy.
+                            </span>
+                          }
+                          rules={termsConditionsFieldRules}
                         />
                         <Button
                           buttonType='primary'

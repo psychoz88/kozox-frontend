@@ -93,3 +93,12 @@ export const noteFieldRules = (value: any) => {
 
   return errors.join('--');
 };
+
+export const termsConditionsFieldRules = (value: any) => {
+  const errors: string[] = [];
+  if (required(value))
+    errors.push(
+      'Please agree to the terms & conditions and our privacy policy',
+    );
+  return errors.join('--');
+};

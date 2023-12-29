@@ -31,13 +31,6 @@ export const FormItemInput = ({
           ? highlightAsError || (meta.error && meta.touched)
           : false;
 
-        // console.log(hasValidation, 'hasValidation')
-        // console.log(hasAdditionalError, 'hasAdditionalError')
-        // console.log(highlightAsError, 'highlightAsError')
-        // console.log(meta.error, 'meta.error')
-        // console.log(meta.touched, 'meta.touched')
-        // console.log(hasError, 'hasError')
-
         return (
           <div className={className}>
             <Input
