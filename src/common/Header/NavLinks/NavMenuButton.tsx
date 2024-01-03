@@ -6,8 +6,9 @@ import {MobileMenu} from '../MobileMenu/MobileMenu';
 import {useClickOutside} from 'hooks/useClickOutside';
 
 import {StyledMobileMenuButton} from './NavLinks.styles';
+import {TMenuListProps} from '../types';
 
-const NavMenuButton = () => {
+const NavMenuButton = ({activeItem, selectMenuItem}: TMenuListProps) => {
   const [isMenuShowed, setMenuShowed] = useToggle(false);
 
   const handleMobileMenu = useCallback(() => {
@@ -30,7 +31,13 @@ const NavMenuButton = () => {
       >
         Menu
       </StyledMobileMenuButton>
-      {isMenuShowed && <MobileMenu setMenuShowed={setMenuShowed} />}
+      {isMenuShowed && (
+        <MobileMenu
+          activeItem={activeItem}
+          selectMenuItem={selectMenuItem}
+          setMenuShowed={setMenuShowed}
+        />
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import {SyntheticEvent} from 'react';
 
-import {ECommonHeaderItems} from 'common/Header/types';
+import {EHeaderItems} from 'common/Header/types';
 import {app_colors} from 'constants/styleVars';
 import {ESpaceSelectedTab} from 'types/main';
 
@@ -10,7 +10,7 @@ export type TPosition = 'left' | 'center' | 'right';
 export type TItemStyle = 'inline' | 'default';
 
 export type TdropdownItem = {
-  id: ECommonHeaderItems;
+  id: EHeaderItems;
   title: string;
   isExternal: boolean;
   link?: string;
@@ -20,7 +20,7 @@ export type TdropdownItem = {
 };
 
 export type TProps = {
-  id: ECommonHeaderItems;
+  id: EHeaderItems;
   icon?: string;
   isActive: boolean;
   color: keyof TColor;
@@ -43,8 +43,8 @@ export type TArrowBlockProps = {
 
 export type TMenuProps = {
   dropdownItems: TdropdownItem[] | undefined;
-  activeDropdownItem: ECommonHeaderItems | ESpaceSelectedTab | '';
+  activeDropdownItem: EHeaderItems | ESpaceSelectedTab | '';
   width?: string;
   itemStyle?: TItemStyle;
-  onDropdownClick: (id: ECommonHeaderItems) => void;
+  onDropdownClick: (id: EHeaderItems) => void;
 };

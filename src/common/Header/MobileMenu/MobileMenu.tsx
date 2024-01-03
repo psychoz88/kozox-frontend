@@ -11,6 +11,7 @@ import {
   mainColor,
   offsetLg,
 } from 'constants/styleVars';
+import {TMenuListProps} from '../types';
 
 export const Container = styled.div`
   position: absolute;
@@ -26,21 +27,27 @@ export const Wrapper = styled.div`
   padding: 0 ${offsetLg};
 `;
 
-type TProps = {
-  setMenuShowed: () => void;
-};
+export const MobileMenu = ({
+  activeItem,
+  selectMenuItem,
+  setMenuShowed,
+}: TMenuListProps) => {
+  const commonProps: any = {
+    activeItem,
+    selectMenuItem,
+    setMenuShowed,
+  };
 
-export const MobileMenu = ({setMenuShowed}: TProps) => {
   return (
     <Container>
       <Wrapper>
-        <NavServices setMenuShowed={setMenuShowed} />
+        <NavServices {...commonProps} />
       </Wrapper>
       <Wrapper>
-        <NavPortfolio setMenuShowed={setMenuShowed} />
+        <NavPortfolio {...commonProps} />
       </Wrapper>
       <Wrapper>
-        <NavContacts setMenuShowed={setMenuShowed} />
+        <NavContacts {...commonProps} />
       </Wrapper>
     </Container>
   );

@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 import Button from 'components/Button';
 
-import {fontSizeXSm, greyTextColor} from 'constants/styleVars';
+import {fontSizeXSm, greyTextColor, blueTextColor} from 'constants/styleVars';
 
-export const StyledLink = styled.a`
-  color: ${greyTextColor};
+export const StyledLink = styled.a<{isActive?: boolean}>`
+  color: ${({isActive}) => (isActive ? blueTextColor : greyTextColor)};
   font-size: ${fontSizeXSm};
   text-transform: uppercase;
 `;

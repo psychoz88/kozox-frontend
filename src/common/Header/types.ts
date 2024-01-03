@@ -1,49 +1,27 @@
-import {SyntheticEvent} from 'react';
-
-// import {ESpaceSelectedTab, ISpacesData} from 'types/venue';
-
-export enum ECommonHeaderItems {
+export enum EHeaderItems {
+  HeaderLogo = 'HeaderLogo',
   Services = 'Services',
+  Portfolio = 'Portfolio',
   Contacts = 'Contacts',
+  ContactButton = 'ContactButton',
+  MenuButton = 'MenuButton',
 }
 
-type TLayoutComponent = {
+export type TMenuListProps = {
+  activeItem: EHeaderItems | '';
+  selectMenuItem: (value: EHeaderItems) => void;
+  setMenuShowed?: () => void;
+  currentPath?: string; // TODO: check do we need it
+};
+
+export type TLayoutComponent = {
   component: string;
   isButtonVisible?: boolean;
 };
 
-type TLayout = {
+export type TLayout = {
   type: string;
   components: TLayoutComponent[];
-};
-
-type TMenuListProps = {
-  currentPath: string;
-  venueId: string;
-  activeItem: ECommonHeaderItems | '';
-  selectMenuItem: (value: ECommonHeaderItems) => void;
-  role?: string;
-};
-
-// type TMenuListPropsWithSpaces = {
-//   spaces: ISpacesData[] | null;
-// } & TMenuListProps;
-
-export type {
-  TLayout,
-  TLayoutComponent,
-  TMenuListProps,
-  // TMenuListPropsWithSpaces,
-};
-
-export type TDropdownItem = {
-  id: ECommonHeaderItems;
-  title: string;
-  isExternal: boolean;
-  link?: string;
-  disabled?: boolean;
-  customComponent?: JSX.Element;
-  onClick?: (() => void) | ((e: SyntheticEvent) => void);
 };
 
 export type TNavProps = {

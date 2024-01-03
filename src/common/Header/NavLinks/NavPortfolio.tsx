@@ -4,17 +4,29 @@ import {useNavigate} from 'react-router';
 import {Routes} from 'constants/routes';
 
 import {StyledLink} from './NavLinks.styles';
-import {TNavProps} from '../types';
+import {EHeaderItems, TMenuListProps} from '../types';
 
-const NavPortfolio = ({setMenuShowed}: TNavProps) => {
+const NavPortfolio = ({
+  activeItem,
+  selectMenuItem,
+  setMenuShowed,
+}: TMenuListProps) => {
   const navigate = useNavigate();
 
   const onClick = useCallback(() => {
     navigate(Routes.portfolio);
+    selectMenuItem(EHeaderItems.Services);
     if (setMenuShowed) setMenuShowed();
-  }, [navigate, setMenuShowed]);
+  }, [navigate, selectMenuItem, setMenuShowed]);
 
-  return <StyledLink onClick={onClick}>PORTFOLIO</StyledLink>;
+  return (
+    <StyledLink
+      isActive={activeItem === EHeaderItems.Portfolio}
+      onClick={onClick}
+    >
+      PORTFOLIO
+    </StyledLink>
+  );
 };
 
 export default NavPortfolio;

@@ -7,51 +7,45 @@ import NavPortfolio from './NavLinks/NavPortfolio';
 import NavContactButton from './NavLinks/NavContactButton';
 import NavMenuButton from './NavLinks/NavMenuButton';
 
-import {ECommonHeaderItems} from './types';
+import {EHeaderItems, TMenuListProps} from './types';
 
 const containerComponents = (
   currentPath: string,
-  venueId: string,
-  activeItem: ECommonHeaderItems | '',
-  selectMenuItem: (value: ECommonHeaderItems) => void,
+  activeItem: EHeaderItems | '',
+  selectMenuItem: (value: EHeaderItems) => void,
   rest: Partial<Record<string, unknown>>,
 ): Record<string, JSX.Element> => {
-  // const commonProps: TMenuListProps = {
-  //   activeItem,
-  //   selectMenuItem,
-  //   currentPath,
-  //   venueId,
-  // };
+  const commonProps: TMenuListProps = {
+    activeItem,
+    selectMenuItem,
+  };
 
   return {
     isLogo: <NavHeaderLogo />,
-    isServices: <NavServices {...rest} />,
-    isPortfolio: <NavPortfolio />,
-    isContacts: <NavContacts />,
+    isServices: <NavServices {...rest} {...commonProps} />,
+    isPortfolio: <NavPortfolio {...commonProps} />,
+    isContacts: <NavContacts {...commonProps} />,
     isContactButton: <NavContactButton />,
-    isMenuButton: <NavMenuButton />,
+    isMenuButton: <NavMenuButton {...commonProps} />,
   };
 };
 
 type TProps = {
   currentPath: string;
   component: string;
-  activeItem: ECommonHeaderItems | '';
-  selectMenuItem: (value: ECommonHeaderItems) => void;
-  venueId: string;
+  activeItem: EHeaderItems | '';
+  selectMenuItem: (value: EHeaderItems) => void;
 };
 
 function HeaderInnerContainer({
   currentPath,
   component,
-  venueId,
   activeItem,
   selectMenuItem,
   ...rest
 }: TProps) {
   const ComponentToRender = containerComponents(
     currentPath,
-    venueId,
     activeItem,
     selectMenuItem,
     rest,

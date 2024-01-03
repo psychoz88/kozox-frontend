@@ -1,13 +1,13 @@
 import {Routes} from 'constants/routes';
 import {getCommonLayout} from '../layoutConfigs/CommonLayout';
 
-import {ECommonHeaderItems} from '../types';
+import {EHeaderItems} from '../types';
 
 // TODO
 const getUserMenuDropdownItems = () => {
   return [
     {
-      id: ECommonHeaderItems.Contacts,
+      id: EHeaderItems.Contacts,
       title: 'Log out',
       // check
       link: Routes.contacts,
@@ -19,7 +19,7 @@ const getUserMenuDropdownItems = () => {
 // TODO
 const userMenuList = () => [
   {
-    id: ECommonHeaderItems.Contacts,
+    id: EHeaderItems.Contacts,
     text: 'Profile',
     isVisible: true,
     dropDownItems: getUserMenuDropdownItems(),

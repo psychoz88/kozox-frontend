@@ -4,7 +4,7 @@ import {Routes} from 'constants/routes';
 import {commonMenu} from './menuConfigs/CommonMenu';
 import {mobileMenu} from './menuConfigs/MobileMenu';
 
-import {ECommonHeaderItems, TLayout} from './types';
+import {EHeaderItems, TLayout} from './types';
 
 const getCurrentMenu = (isMobile: boolean): any => {
   // case if need another menu
@@ -17,7 +17,10 @@ const getIsExactPath = (customRoutes: string[], currentPath: string) =>
     return matchPath(route, currentPath);
   }) || '';
 
-export const setHeaderStyle = (currentPath: string, isMobile: boolean): TLayout => {
+export const setHeaderStyle = (
+  currentPath: string,
+  isMobile: boolean,
+): TLayout => {
   const {
     layout: {defaultLayoutType, customRoutesLayout = {}},
   } = getCurrentMenu(isMobile);
@@ -44,14 +47,15 @@ export const setHeaderStyle = (currentPath: string, isMobile: boolean): TLayout 
   };
 };
 
-// TODO
-export const getActiveItemFromRoute = (
-  pathname: string,
-): ECommonHeaderItems => {
+export const getActiveItemFromRoute = (pathname: string): EHeaderItems => {
   switch (pathname) {
+    case Routes.services:
+      return EHeaderItems.Services;
+    case Routes.portfolio:
+      return EHeaderItems.Portfolio;
     case Routes.contacts:
-      return ECommonHeaderItems.Contacts;
+      return EHeaderItems.Contacts;
     default:
-      return ECommonHeaderItems.Services;
+      return EHeaderItems.HeaderLogo;
   }
 };
