@@ -56,7 +56,8 @@ const MainLayout: FC<PropsWithChildren<any>> = (props) => {
         <ContentContainer>{props.children}</ContentContainer>
       </PageContentContainer>
       <Footer />
-      <CookiesModal />
+      {/* TOOD: update styles and test */}
+      <CookiesModal /> 
     </AppContainer>
   );
 };

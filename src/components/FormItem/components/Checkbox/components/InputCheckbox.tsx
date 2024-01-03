@@ -48,6 +48,7 @@ const InputCheckbox = ({
             offsetSize={size}
             disabled={disabled}
             icon='SIMPLE_CHECKED'
+            main
           />
         )}
 

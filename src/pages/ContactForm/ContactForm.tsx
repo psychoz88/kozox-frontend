@@ -100,8 +100,8 @@ const ContactForm = () => {
                           rules={noteFieldRules}
                         />
                         <FormItemCheckbox
-                          id='terms'
-                          name='terms'
+                          id='policy'
+                          name='policy'
                           label={
                             <span>
                               I have read and agree to the terms & conditions
