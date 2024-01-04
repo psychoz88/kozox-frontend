@@ -37,5 +37,6 @@ export const TitleParagraph = styled.p<{isPageTitle?: boolean}>`
 export const SubTitleParagraph = styled.p`
   color: ${dirtyGreyTextColor};
   font-size: ${fontSizeXXXXLg};
+  line-height: ${lineHeightXXXXLg};
   margin: 0;
 `;

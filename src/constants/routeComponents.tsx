@@ -8,6 +8,7 @@ import CookiePolicyPage from 'pages/CookiePolicyPage/CookiePolicyPage';
 
 import {Routes} from './routes';
 import TermsAndConditionsPage from 'pages/TermsAndConditions/TermsAndConditionsPage';
+import Page404 from 'pages/Page404/Page404';
 
 const RouteComponents = [
   {
@@ -58,7 +59,12 @@ const RouteComponents = [
     component: TermsAndConditionsPage,
     pageTitle: 'Terms & Conditions',
   },
-  // TODO: need to add page404
+  {
+    exact: true,
+    path: Routes.page404,
+    component: Page404,
+    pageTitle: 'Error 404',
+  },
 ].map((item, index) => ({...item, key: index}));
 
 export {RouteComponents};

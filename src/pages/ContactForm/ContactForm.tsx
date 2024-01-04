@@ -8,6 +8,7 @@ import FormTextarea from 'components/FormItem/components/Textarea/Textarea';
 import FormItemCheckbox from 'components/FormItem/components/Checkbox/FormItemCheckbox';
 import ErrorMessage from './components/ErrorMessage';
 
+import {Routes} from 'constants/routes';
 import {setContactFormData} from 'store/app/reducer';
 import {FormItemInput} from 'components/FormItem/FormItem';
 import {useAppDispatch, useAppSelector} from 'store/hooks';
@@ -104,8 +105,23 @@ const ContactForm = () => {
                           name='policy'
                           label={
                             <span>
-                              I have read and agree to the terms & conditions
-                              and privacy policy.
+                              I have read and agree to the{' '}
+                              <a
+                                href={`${Routes.termsAndConditions}`}
+                                target='_blank'
+                                rel='noreferrer'
+                              >
+                                terms & conditions{' '}
+                              </a>
+                              and{' '}
+                              <a
+                                href={`${Routes.privacyPolicy}`}
+                                target='_blank'
+                                rel='noreferrer'
+                              >
+                                privacy policy
+                              </a>
+                              .
                             </span>
                           }
                           rules={termsConditionsFieldRules}
