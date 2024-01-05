@@ -13,8 +13,9 @@ import {
   offsetSm,
   offsetXSm,
   offsetXLg,
-  whiteColor,
   offsetDef,
+  dirtyWhiteTextColor,
+  mainColor,
 } from 'constants/styleVars';
 
 export const ModalGlobalStyle = createGlobalStyle`
@@ -23,19 +24,29 @@ export const ModalGlobalStyle = createGlobalStyle`
 
       &-content {
         border-radius: ${borderRadiusLg};
-        background-color: ${whiteColor};
+        background-color: ${mainColor};
         overflow: hidden;
       }
 
       &-header {
         border-radius: ${borderRadiusLg} ${borderRadiusLg} 0 0;
         border-bottom: 0;
-        background-color: ${whiteColor};
+        background-color: ${mainColor};
+      }
+
+      &-title {
+        color: ${dirtyWhiteTextColor};
+      }
+
+      &-close {
+        color: ${dirtyWhiteTextColor};
       }
 
       &-body {
         border-radius: 0 0 ${borderRadiusLg} ${borderRadiusLg};
         overflow: auto;
+        background-color: ${mainColor};
+        color: ${dirtyWhiteTextColor};
       }
 
       &-footer {
@@ -43,7 +54,8 @@ export const ModalGlobalStyle = createGlobalStyle`
         padding: 0 ${offsetXLg} ${offsetSm};
         text-align: left;
         border-radius: ${borderRadiusLg};
-        background-color: ${whiteColor};
+        background-color: ${mainColor};
+        color: ${dirtyWhiteTextColor};
         display: flex;
         justify-content: flex-end;
       }

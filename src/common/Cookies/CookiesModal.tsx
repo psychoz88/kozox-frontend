@@ -51,15 +51,13 @@ const CookiesModal = () => {
   );
 
   return (
-    <div>
-      <Modal
-        header='Cookies'
-        body={`By using our website, you agree to our Privacy Policy and our cookies usage.`}
-        footer={footer}
-        onClose={onClose}
-        isShowed={isOpen}
-      />
-    </div>
+    <Modal
+      header='Cookies'
+      body={`By using our website, you agree to our privacy policy and cookies usage.`}
+      footer={footer}
+      onClose={onClose}
+      isShowed={isOpen}
+    />
   );
 };
 

@@ -6,7 +6,7 @@ import {useLocation} from 'react-router-dom';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import CookiesModal from './Cookies/CookiesModal';
+// import CookiesModal from './Cookies/CookiesModal';
 
 import {useDeviceType} from 'hooks/useDeviceType';
 
@@ -56,8 +56,8 @@ const MainLayout: FC<PropsWithChildren<any>> = (props) => {
         <ContentContainer>{props.children}</ContentContainer>
       </PageContentContainer>
       <Footer />
-      {/* TOOD: update styles and test */}
-      <CookiesModal /> 
+      {/* If need cookies modal - just recomment */}
+      {/* <CookiesModal />  */}
     </AppContainer>
   );
 };
