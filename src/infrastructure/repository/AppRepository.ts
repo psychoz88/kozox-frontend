@@ -16,6 +16,16 @@ const appRepository = (api: IApi) => ({
             return {error: true};
           }),
     ),
+  getBybitTokens: async () => {
+    try {
+      return await api.get(
+        ApiType.Bybit,
+        `v5/market/instruments-info?category=linear`,
+      );
+    } catch {
+      return {error: true};
+    }
+  },
 });
 
 export default appRepository;

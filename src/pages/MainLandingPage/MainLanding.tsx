@@ -6,9 +6,9 @@ import Title from 'components/Title/Title';
 import earth from '../../images/earth.png';
 import FirstDoubleBlock from './component/FirstDoubleBlock/FirstDoubleBlock';
 
-import {dataWhyChooseUS} from './helper';
-import {servicesList} from 'pages/ServicesPage/helpers';
-import {Devider} from 'components/Devider/Devider.styles';
+import { dataWhyChooseUS } from './helper';
+import { servicesList } from 'pages/ServicesPage/helpers';
+import { Devider } from 'components/Devider/Devider.styles';
 
 const MainLanding = () => {
   const additionalText = `Indeed, many of these values can become pathological when taken to an

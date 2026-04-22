@@ -1,25 +1,27 @@
 import {AxiosResponse} from 'axios';
 
 import {serverAgent} from 'store/config';
-import {OFFERS, TELEGRAM} from './config.service';
 import {objectToQueryString} from 'utils/queryUtils';
+import {GATEWAY_BASE} from './config.service';
 
 export enum ApiType {
   Offers,
   Telegram,
+  Bybit,
 }
 
 export const createBaseUrl = (type: ApiType, url: string): string => {
   let baseURL: string;
-  const Offers: string = OFFERS();
-  const Telegram: string = TELEGRAM();
 
   switch (type) {
     case ApiType.Offers:
-      baseURL = `${Offers}`;
+      baseURL = `${GATEWAY_BASE()}/offers/`;
       break;
     case ApiType.Telegram:
-      baseURL = `${Telegram}`;
+      baseURL = 'https://api.telegram.org/';
+      break;
+    case ApiType.Bybit:
+      baseURL = 'https://api.bybit.com/';
       break;
   }
   return baseURL + url;
@@ -32,14 +34,16 @@ export const getRequest = async (
 ): Promise<any> => {
   try {
     let allUrl = createBaseUrl(type, url);
+
     if (params !== undefined) {
       allUrl += '?' + objectToQueryString(params);
     }
+
     const response: AxiosResponse<any> = await serverAgent.get(allUrl);
+
     return await response.data;
   } catch (error: unknown) {
     return Promise.reject(error);
-    // return error;
   }
 };
 
@@ -49,11 +53,14 @@ const request = async (
   params?: any,
 ): Promise<any> => {
   const baseURL = createBaseUrl(type, url);
+
   try {
     const isFormData = params instanceof FormData;
+
     const data: FormData | string = isFormData
       ? params
       : JSON.stringify(params);
+
     const headers = {
       'Content-Type': isFormData ? 'multipart/form-data' : 'application/json',
     };
@@ -61,6 +68,7 @@ const request = async (
     const response: AxiosResponse<any> = await serverAgent.post(baseURL, data, {
       headers,
     });
+
     return await response.data;
   } catch (error: unknown) {
     console.error(error);
@@ -74,9 +82,11 @@ const requestPut = async (
   params?: any,
 ): Promise<any> => {
   const baseURL = createBaseUrl(type, url);
+
   try {
     const data: FormData | string =
       params instanceof FormData ? params : JSON.stringify(params);
+
     const headers = {
       'Content-Type': 'application/json',
     };
@@ -84,6 +94,7 @@ const requestPut = async (
     const response: AxiosResponse<any> = await serverAgent.put(baseURL, data, {
       headers,
     });
+
     return await response.data;
   } catch (error: unknown) {
     console.error(error);
@@ -97,9 +108,11 @@ const requestPatch = async (
   params?: any,
 ): Promise<any> => {
   const baseURL = createBaseUrl(type, url);
+
   try {
     const data: FormData | string =
       params instanceof FormData ? params : JSON.stringify(params);
+
     const headers = {
       'Content-Type': 'application/json',
     };
@@ -111,6 +124,7 @@ const requestPatch = async (
         headers,
       },
     );
+
     return await response.data;
   } catch (error: unknown) {
     console.error(error);
@@ -124,6 +138,7 @@ const requestDelete = async (
   params?: any,
 ): Promise<any> => {
   const baseURL = createBaseUrl(type, url);
+
   try {
     const data: FormData | string =
       params instanceof FormData ? params : JSON.stringify(params);
@@ -136,6 +151,7 @@ const requestDelete = async (
       headers,
       data,
     });
+
     return await response.data;
   } catch (error: unknown) {
     console.error(error);
@@ -152,7 +168,6 @@ export interface IApi {
   delete: (type: ApiType, url: string, params?: any) => Promise<any>;
 }
 
-// INTERFACE WITH MAIN CRUD OPERATION METHODS
 const api: IApi = {
   get: (type: ApiType, url: string, params?: any) =>
     getRequest(type, url, params),

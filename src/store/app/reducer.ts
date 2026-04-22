@@ -12,6 +12,7 @@ const initialState: IAppReducer = {
     isDesktop: false,
   },
   contactFormData: [],
+  bybitTokensData: {},
 };
 
 export const appSlice = createSlice({
@@ -24,9 +25,12 @@ export const appSlice = createSlice({
     setDeviceType(state, action: PayloadAction<TDeviceType>) {
       state.deviceType = action.payload;
     },
+    setBybitTokensData(state, action: PayloadAction<any>) {
+      state.bybitTokensData = action.payload;
+    },
   },
 });
 
-export const {setContactFormData, setDeviceType} = appSlice.actions;
+export const {setContactFormData, setDeviceType, setBybitTokensData} = appSlice.actions;
 
 export default appSlice.reducer;
