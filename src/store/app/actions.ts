@@ -27,12 +27,18 @@ export const getBybitTokensData =
       onSuccess: (data: any) => {
         console.log(data, 'BYBIT data from response');
 
-        const symbols = data.result.list
-          // @ts-ignore
+        const symbols = (data.result.list as Array<{symbol: string}>)
           .map((item) => item.symbol)
-          // @ts-ignore
           .map((symbol) => `BYBIT:${symbol}.P`);
         console.log(symbols.join(', '));
+
+        const blob = new Blob([symbols.join('\n')], {type: 'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'actual-list-bybit.txt';
+        a.click();
+        URL.revokeObjectURL(url);
 
         dispatch(setBybitTokensData(data));
       },
