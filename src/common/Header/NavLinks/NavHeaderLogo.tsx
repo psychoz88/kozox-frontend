@@ -7,6 +7,11 @@ import {Routes} from 'constants/routes';
 import {maxGreenTextColor} from 'constants/styleVars';
 
 const StyledLink = styled.a`
+  display: inline-block;
+  justify-self: start;
+  width: fit-content;
+  padding: 4px 8px;
+  margin: -4px -8px;
   color: ${maxGreenTextColor};
   font-size: 25px;
 `;
